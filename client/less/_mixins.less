@@ -1,0 +1,63 @@
+@import "./_variables.less";
+@import "baselayout-mixin";
+
+.clear-float() {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+// 水平/垂直居中
+.center-align(@horizontal: true, @vertical: true) {
+    @top: 0;
+    @left: 0;
+    @translate-x: 0;
+    @translate-y: 0;
+    & { // 创建额外的作用域以使得变量默认值可以被覆盖
+        .var() when (@horizontal = true) {
+            @left: 50%;
+            @translate-x: -50%;
+        }
+        .var() when (@vertical = true) {
+            @top: 50%;
+            @translate-y: -50%;
+        }
+        .var();
+        position: absolute;
+
+        & when not (@top = 0) {
+            top: @top;
+        }
+        & when not (@left = 0) {
+            left: @left;
+        }
+        transform: translate(@translate-x, @translate-y);
+    }
+}
+
+.circle(@size) {
+    width: @size;
+    height: @size;
+    border-radius: 50%;
+}
+
+// 扩大节点可点击区域, 比如原始图标过小不容易点击
+.enlarge-icon-clickable-area(@width: 20 * @rex, @height: @width) {
+    position: relative;
+    &:after {
+        content: '';
+        display: block;
+        .center-align();
+        width: @width;
+        height: @height;
+    }
+}
+
+.clear-button-style() {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}

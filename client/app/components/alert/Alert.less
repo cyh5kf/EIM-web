@@ -1,0 +1,95 @@
+.react-alert{
+  position:fixed;
+  right:0;
+  bottom:0;
+  margin:14px;
+  z-index:9999999;
+  width: 300px;
+  height: 50px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.172);
+  border-radius:2px;
+  
+  .alert-body{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        .icon{
+            width:32px;
+            height:32px;
+            margin: 10px 8px;
+            
+            div{
+                width:100%;
+                height:100%;
+                background-position:50%;
+                background-repeat:no-repeat;
+            }
+        }
+        
+        .message-container{
+             flex:3;
+             margin: 0;
+             height: 30px;
+            .message{
+                text-transform:uppercase;
+            }
+            .tip{
+                text-transform:uppercase;
+            }
+        }
+
+        .close{
+            height:50px;
+            border-radius:0 2px 2px 0;
+            line-height:50px;
+            cursor:pointer;
+            .close-light{
+                width:100%;
+                height:100%;
+                background-position:50%;
+                background-repeat: no-repeat;
+            }
+            .close-dark{
+                width:100%;
+                height:100%;
+                background-position:50%;
+                background-repeat:no-repeat;
+            }
+
+            &:hover{
+                opacity:0.5;
+            }
+        }
+            
+        .scale-enter{
+            transform:scale(0);
+        }
+        .scale-enter.scale-enter-active{
+            transform:scale(1);
+            transition:all 250ms cubic-bezier(0, 0, 0.5, 1.5);
+        }
+        .scale-leave{
+            transform:scale(1);
+        }
+        .scale-leave .scale-leave-active{
+            transform:scale(0);
+            transition:all 250ms ease-in-out;
+        }
+        .fade-enter{
+             opacity:0.1;
+        }
+        .fade-enter .fade-enter-active{
+            opacity:1;
+            transition:all 250ms ease-out
+        }
+        .fade-leave{
+            opacity:1;
+        }
+        .fade-leave .fade-leave-active{
+            opacity:0.1;
+            transition:all 250ms ease-in;
+        }
+    }
+}

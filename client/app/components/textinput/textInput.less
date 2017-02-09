@@ -1,0 +1,74 @@
+@import "../../../less/_mixins.less";
+@import "../../../less/_variables.less";
+.textinput_wrap {
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    display: block;
+    .textinput_header {
+        margin: 0;
+        text-align: left;
+        opacity: 0.8;
+        font-size: 16px;
+        color: #433A39;
+        line-height: 16px;
+        font-family: "DeskMo-Lato-regular";
+    }
+    .textinput_content {
+        display: block;
+        position: relative;
+        width: 100%;
+        input[name] {
+            width: 100%;
+            outline: none;
+            height: 48px;
+            line-height: 48px;
+            border-width: 0 0 1px;
+            border-style: solid;
+            border-color: #dedede;
+            font-size: 21px;
+            color: #433A39;
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+            border-radius: 0;
+            text-align: left;
+        }
+        input[name]:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px white inset;
+        }
+        input[name]:focus,
+        input[name]:active {
+            // background-color: #F5F5F5;
+            border-bottom-color: #00ACC1;
+        }
+    }
+    .textinput_message {
+        display: inline-block;
+        margin: 8px 0 0;
+        opacity: 0.5;
+        font-size: 16px;
+        color: #433A39;
+        letter-spacing: 0px;
+        line-height: 24px;
+        text-align: left;
+        width: 100%;
+    }
+    .textinput_visible {
+        visibility: hidden;
+    }
+}
+
+.textinput_wrap.textinput_wrap_error {
+    .textinput_message {
+        color: #F95B50;
+        opacity: 1;
+    }
+    .textinput_content {
+        input[name] {
+            border-color: #F95B50;
+        }
+    }
+}

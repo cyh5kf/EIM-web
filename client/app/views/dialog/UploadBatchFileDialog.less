@@ -1,0 +1,115 @@
+@import "../../../less/_variables";
+@import (reference) '../../../less/eim-deprecated';
+.dialog-mask.dlg-batchFile{
+  .dialog-entity{
+    width: 650 * @rex;
+    height: 586 * @rex;
+  }
+
+  .content{
+    position: absolute;
+    top: 76 * @rex;
+    bottom: 80 * @rex;
+    width:100%;
+    overflow: auto;
+    ul.uploadFileList {
+      padding: 0;
+      margin: 10 * @rex 0 0 0;
+      list-style-type: none;
+
+      >li{
+        height: 100%;
+        padding: 10 * @rex 20 * @rex;
+        overflow: hidden;
+        &.selected,&:hover{
+          background: #f7f7f7;
+          >.deleteIcon{
+            background-image: url('../../../static/images/delete.png');
+            background-size: 100% auto;
+          }
+        }
+        >.imageBox {
+          float: left;
+          width: 100 * @rex;
+          height: 100 * @rex;
+          line-height: 94 * @rex;
+          border-radius: 4 * @rex;
+          text-align: center;
+          overflow: hidden;
+          border: 1 * @rex solid #ddd;
+          width: 100 * @rex;
+          height: 100 * @rex;
+          line-height: 94 * @rex;
+          border-radius: 4 * @rex;
+          text-align: center;
+          overflow: hidden;
+          border: 1 * @rex solid #ddd;
+          &.isImage{
+            overflow: hidden;
+            border-radius: 50%;
+            background-image:none;
+          }
+
+          .eim-doc{
+            margin: 30 * @rex auto;
+          }
+
+          img{
+            max-width: 99 * @rex;
+            max-height: 99 * @rex;
+          }
+
+        }
+        >.inputTextBox{
+          float: left;
+          width: 450 * @rex;
+          min-height: 100 * @rex;
+          margin: 0 0 0 10 * @rex;
+
+          input[type='text'].utitle{
+            width:100%;
+            height: 40 * @rex;
+            line-height: 40 * @rex;
+            color:#323a3d;
+            padding-left: 14 * @rex;
+            border-radius: 5 * @rex;
+            border:1 * @rex solid #e7e7e7;
+          }
+
+          textarea.desc{
+            width: 100%;
+            height: 50 * @rex;
+            resize: none;
+            line-height: 20 * @rex;
+            color: #323a3d;
+            margin-top: 10 * @rex;
+            padding-left: 14 * @rex;
+            border-radius: 5 * @rex;
+            border: 1 * @rex solid #e7e7e7;
+          }
+        }
+        .deleteIcon{
+          width: 24 * @rex;
+          height: 24 * @rex;
+          float: right;
+          background: url('../../../static/images/deletenor.png') no-repeat center center;
+          background-size: 100% auto;
+          margin-top: 40 * @rex;
+        }
+      }
+    }
+
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80 * @rex;
+    padding: 23 * @rex 24 * @rex 0 0;
+    text-align: right;
+    border-radius: 0 0 8 * @rex 8 * @rex;
+    border-top: 1 * @rex solid #f5f5f5;
+    background-color: #fcfcfc;
+  }
+}

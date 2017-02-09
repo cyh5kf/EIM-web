@@ -1,0 +1,97 @@
+@import "../../../less/_variables";
+.account {
+    float: left;
+    position: relative;
+    .account-logo {
+      margin-left: 33px;
+      margin-top: 12px;
+      img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+      }
+      .status-indicator {
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px #ffffff;
+        background-color: @color-green-3;
+      }
+    }
+    .account-dropdown {
+      position: absolute;
+      top: 12px;
+      left: 33px;
+      width: 35px;
+      height: 35px;
+      .dropdown {
+        width: 35px;
+        height: 44px;
+        .dropdown-toggle {
+          padding: 0;
+          width: 35px;
+          height: 35px;
+          background-color: transparent;
+          color: transparent;
+          border: none;
+          box-shadow: none;
+        }
+        .dropdown-menu {
+          border-radius: 0;
+          width: 188px;
+          li {
+            .btn-item {
+              height: 40px;
+              line-height: 40px;
+              margin: 0 0;
+              color: @color-coffee-5;
+            }
+          }
+        }
+      }
+      .user-logo {
+        overflow: hidden;
+        .user-head {
+          float: left;
+          margin-left: 9px;
+          margin-right: 10px;
+          img {
+            width: 36px;
+            height: 36px;
+            border-radius:4px;
+          }
+        }
+        .user-info {
+          position: relative;
+          width: 200px;
+          .nick-name {
+            line-height: 24px;
+            color: #323a3d;
+            overflow: hidden;
+            font-weight: 900;
+            font-size: 18px;
+            text-overflow: ellipsis;
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+          }
+          .nick-desc {
+            height: 18px;
+            line-height: 15px;
+            color: #a0a0a2;
+            overflow: hidden;
+            font-size: 15px;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+      .btn-item {
+        height: 25px;
+        line-height: 25px;
+        overflow: hidden;
+        margin: 5px 5px;
+      }
+    }
+}

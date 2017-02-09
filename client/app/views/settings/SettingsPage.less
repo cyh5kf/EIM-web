@@ -1,0 +1,202 @@
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-sprites";
+
+.setttings-page-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  &.nav-menu-opened {
+    overflow-x: hidden;
+  }
+}
+
+.settings-page {
+  @left-nav-width: 280*@rex;
+  @header-height: 80*@rex;
+  @menu-toggler-width: 146*@rex;
+
+  position: relative;
+  display: inline-block;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: #f9f9f9;
+  color: @-deprecated-color-text-secondary;
+
+  .settings-page-header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: @header-height;
+    box-shadow: 0 1px 4*@rex rgba(0,0,0,.15);
+    background-color: @color-white;
+    color: #404b55;
+
+    .menu-toggler {
+      float: left;
+      position: relative;
+      width: @menu-toggler-width;
+      padding: 29*@rex 27*@rex 26*@rex 32*@rex;
+      font-size: 18*@rex;
+      font-weight: 700;
+      cursor: pointer;
+      &:hover {
+        color: @-deprecated-color-text-blue-light;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 20*@rex;
+        bottom: 20*@rex;
+        right: 0;
+        border-right: 1px solid #ddd;
+      }
+    }
+
+    .company-info {
+      float: left;
+      padding: 22*@rex 16*@rex 16*@rex 24*@rex;
+      font-size: 22*@rex;
+      font-weight: 700;
+      line-height: 40*@rex;
+      cursor: pointer;
+      .company-avatar {
+        position: relative;
+        top: -3px;
+        vertical-align: middle;
+        margin-right: 17*@rex;
+      }
+      &:hover {
+        color: @-deprecated-color-text-blue-light;
+        .company-avatar {
+          .icon-header-listview-home-hover();
+        }
+      }
+    }
+  }
+
+
+  .settings-page-left-nav {
+    position: absolute;
+    z-index: 1;
+    top: 88*@rex;
+    left: 0;
+    width: @left-nav-width;
+    padding-left: 24*@rex;
+    font-size: 16*@rex;
+    color: @-deprecated-color-text-secondary;
+
+    .signed-in-user-info {
+      height: 80*@rex;
+      padding-top: 16*@rex;
+      .user-avatar {
+        background: url(../../../static/images/default_user_avatar.png) center/cover no-repeat;
+        float: left;
+        width: 48*@rex;
+        height: 48*@rex;
+        margin-right: 16*@rex;
+        border-radius: 4*@rex;
+      }
+      .username-container {
+        font-size: 12*@rex;
+        line-height: 28*@rex;
+        .username {
+          margin-top: -5*@rex;
+          font-size: 18*@rex;
+          line-height: 24*@rex;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .settings-nav-item {
+      display: block;
+      padding: 4*@rex 0;
+      font-weight: 700;
+      line-height: 24*@rex;
+      color: inherit;
+    }
+
+    .primary-nav {
+      padding: 8*@rex 0 24*@rex;
+      .settings-nav-item {
+        .icon {
+          vertical-align: middle;
+          margin-right: 12*@rex;
+        }
+      }
+    }
+
+    .admin-nav-title {
+      line-height: 28*@rex;
+      font-size: 12*@rex;
+    }
+
+    .admin-nav {
+      padding-bottom: 16*@rex;
+    }
+  }
+
+  .settings-page-content {
+    margin: 0 auto;
+    padding: 128*@rex 32*@rex;
+    box-sizing: content-box;
+    max-width: 960*@rex;
+  }
+
+
+
+  // 适应性布局
+  transition: left 150ms;
+  left: 0;
+  .settings-page-header {
+    .menu-toggler {
+      transition: margin-left 150ms;
+      margin-left: -@menu-toggler-width;
+    }
+  }
+  .settings-page-mask {
+    transition: background-color 150ms;
+    pointer-events: none;
+    position: absolute;
+    top: @header-height;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .settings-page-left-nav {
+    transition: left 150ms;
+  }
+  @floating-menu-style: {
+    .settings-page-header .menu-toggler {
+      margin-left: 0;
+    }
+    .settings-page-left-nav {
+      top: 0;
+      bottom: 0;
+      left: -@left-nav-width;
+      background-color: #3c4b5b;
+      color: @color-white;
+      .username-tip,
+      .admin-nav-title {
+        color: #6b7682;
+      }
+    }
+  };
+  @media only screen and (max-width: 1440px) {
+    @floating-menu-style();
+    .settings-page-left-nav {
+      transition: none;
+    }
+  }
+  .setttings-page-wrapper.nav-menu-opened & {
+    left: @left-nav-width;
+    @floating-menu-style();
+    .menu-toggler {
+      color: @-deprecated-color-text-blue-light;
+    }
+    .settings-page-mask {
+      pointer-events: auto;
+      background-color: rgba(0, 0, 0, .1);
+    }
+  }
+}

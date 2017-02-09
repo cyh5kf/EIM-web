@@ -1,0 +1,16 @@
+@import "../../../../less/_variables";
+@import "../../../../less/_mixins";
+
+.online-status-indicator {
+  display: block;
+  .circle(10px);
+
+  &.online {
+    background-color: @color-green-3;
+  }
+
+  &.offline {
+    border: 1px solid @color-coffee-11;
+    background-color: @color-white;
+  }
+}

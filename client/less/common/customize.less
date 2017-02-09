@@ -1,0 +1,29 @@
+/* 定制三方组件的默认样式 */
+@import "../_variables";
+
+// react-bootstrap DropDownMenu -> MenuItem
+.dropdown-menu {
+  padding: 10px 0;
+  font-size: 13px;
+  color: @color-text-dark;
+  border-radius: 2px;
+  box-shadow: fade(@color-black, 20%) 0 2px 10px;
+
+  > li {
+    > a, a:link, a:visited {
+      padding: 0 20px;
+      line-height: 40px;
+      color: inherit;
+      &:hover {
+        color: inherit;
+        background-color: @color-bg-light;
+      }
+    }
+  }
+}
+
+
+// react-bootstrap Popover
+.popover{
+  font-family: inherit;
+}

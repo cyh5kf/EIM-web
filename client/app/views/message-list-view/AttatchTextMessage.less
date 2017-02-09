@@ -1,0 +1,80 @@
+@import "../../../less/_variables.less";
+
+.inline-attachment{    
+
+    border-radius: 0;
+    margin: 0;
+    padding: 4 * @rex 0 4 * @rex 12 * @rex;
+    font-size: 0;
+    line-height: 0;
+
+    position: relative;
+
+    .msg-inline-attachment-border{
+        background-color: #e8e8e8;
+        border-radius: 8 * @rex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -4 * @rex;
+        width: 4 * @rex;
+        z-index: 1;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 15 * @rex;
+        line-height: 22 * @rex;
+    }
+
+    .msg-inline-attachment-content{
+        width: 100%;        
+        vertical-align: top;
+        font-size: 15 * @rex;
+        line-height: 22 * @rex;
+
+      .sender-avatar{
+        border-radius: 2 * @rex;
+        margin-right: 6 * @rex;
+        position: relative;
+
+        vertical-align: middle;
+      }
+
+      .attachment-source{
+          margin-bottom: 1 * @rex;
+          .attachment-source-name{
+            color: #2c2d30;
+            font-weight: 900;
+            cursor: pointer;
+        }
+      }
+
+      .scroll-y{
+          overflow-y: auto;
+          max-height: 270 * @rex;
+      }
+
+      .content-wrap{
+          padding-right: 12 * @rex;
+          font-size: 15 * @rex;
+          line-height: 22 * @rex;
+          color: #2c2d30;
+          
+          word-wrap: break-word;
+      }
+
+      .attachment-footer{
+        vertical-align: middle;
+        line-height: 15 * @rex;
+        margin-top: 1 * @rex;
+        color: #9e9ea6;
+        font-size: 12 * @rex;
+        line-height: 14 * @rex;
+        padding-top: 4 * @rex;
+
+        .divider{
+            color: #e8e8e8;
+            margin: 0 4 * @rex;
+        }
+      }
+    }
+  }

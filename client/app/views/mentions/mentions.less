@@ -1,0 +1,195 @@
+@import "../../../less/_variables";
+
+.mentions{
+  //padding: 4px 0 4px 4px;
+  opacity: 100;
+  margin: 0;
+  overflow: hidden;
+
+  @font-face {
+    font-family: appleLogo;
+    src: local("Lucida Grande");
+    unicode-range: U+F8FF;
+  }
+  
+  .loaddingGif{
+      margin: 40%;
+      display: block;
+      position: absolute;
+      span{
+        font-size: 1.2rem;
+        white-space: nowrap;
+        line-height: 3rem;
+      }
+    }
+
+  .flex_content_scroller {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0 0 1rem;
+    word-wrap: break-word;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+
+    .help{
+      font-size: 1rem;
+      color: #9e9ea6;
+      // font-family: Slack-Lato,appleLogo,sans-serif;
+      line-height: 1.3rem;
+      padding-top: 1rem;
+      border-top: 5px solid #4c9689;
+      margin: 2rem .5rem;
+    }
+  }
+  .flex_content_scroller .file_container.post_container .file_header {
+    padding: 0.5625rem 46px 0.625rem 0.95rem;
+  }
+  .flex_content_scroller .file_container.post_container .file_header .file_header_icon {
+    top: .6875rem;
+    left: auto;
+    right: 2.0625rem;
+  }
+
+
+
+  .selectable_flex_pane_padder {
+    margin: 0 12px;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+
+    .help {
+      font-size: 1rem;
+      color: #9e9ea6;
+      font-family: Slack-Lato,appleLogo,sans-serif;
+      line-height: 1.3rem;
+      padding-top: 1rem;
+      border-top: 5px solid #4c9689;
+      margin: 2rem .5rem;
+    }
+
+    .flexpane_load_more {
+      text-align: center;
+      padding: 30px 0;
+      .g_btn{
+        padding: 8px 14px 9px;
+        font-size: .9375rem;
+      }
+    }
+  }
+  .mention_day_container_div {
+    margin: 20px 0;
+    .msg-list-bundle-content .msg-list-item{
+      padding-left: 0!important;  //这是取消 messagelist-style.less 中该类同属性值得做法
+    }
+  }
+
+  .channel_mention_wrap{
+    h3{
+      font-size: 1.1rem;
+      line-height: 1.1rem;
+    }
+
+    /*这个是取消 message-list-view-style.less  中该类min-width: 400 * @rex; 的做法*/
+    .content-wrap{
+      min-width: 100%!important;
+    }
+    hr.spacer {
+    margin: 3px 0;
+      visibility: hidden;
+    }
+  }
+
+
+
+
+  .mention-timeline{
+     position: relative;
+     height: 18px;
+
+    .hr_1{
+      border-bottom: solid 1px @color-border;
+      z-index: 1;
+      display: block;
+      height: 9px;
+      width: 100%;
+    }
+
+    .format-string{
+      position: relative;
+      margin: 0 auto;
+      background-color: @color-white;
+      display: inline-block;
+      z-index: 2;
+      top: -10px;
+      padding: 0 10px;
+      color: @color-coffee-5;
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: bold;
+    }
+  }
+
+
+  .channel_link{
+    color: @color-green-4;
+    font-size: 15px;
+  }
+
+
+
+  .message-item-wrapper{
+    margin-bottom: 5px;
+  }
+
+
+}
+
+.userInfoDialog_mention{
+  right: 2px;
+  left: auto;
+  // z-index: 51;
+}
+
+.mention_selector{
+  min-width: 238px;
+  .popover-content{
+    padding: 12px 16px 0;
+  }
+  label{
+    padding-bottom: 12px;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-right: 0;
+    cursor: pointer;
+  }
+  input{
+      margin-left: 0!important;
+      vertical-align: middle;
+      margin-top: -3px;
+  }
+}
+
+.mention_message{
+  position: relative;
+  .msg_right_link {
+    // font-family: Slack-Lato,appleLogo,sans-serif;
+    color: @color-green-4;
+    font-size: 13px;
+    line-height: 1.2rem;
+    right: 1px;
+    top: 2px;
+    position: absolute;
+    z-index: 60;
+    display: none;
+  }
+
+  &:hover .msg_right_link{
+    display: inline-block;
+  }
+
+}

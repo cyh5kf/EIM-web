@@ -1,0 +1,155 @@
+@import "../../../less/_variables";
+
+.search-messages-result-panel{
+    .msg-list{
+        top: 48 * @rex !important;
+    }
+}
+
+.search-messages-result-panel,.file-filter-result-panel {
+    .msg-type-selectors {
+        display: flex;        
+        .button {
+            flex-grow: 1;
+            &:first-child {
+                border-radius: 4px 0 0 4px;
+            }
+            &:last-child {
+                border-radius: 0 4px 4px 0;
+            }
+            &.button-simple {
+                border-color: #dedfe0;
+            }
+        }
+    }
+
+    .msg-list {
+        top: 20 * @rex;
+
+        padding-top: 10 * @rex;
+        .text-msg-item {
+            padding: 16 * @rex 0;
+            position: relative;
+
+            .session-logo {
+                position: absolute;
+                left: 12px;
+                top: 12px;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: url(../../../static/images/default_user_avatar.png) center/cover no-repeat;
+
+                .status-indicator {
+                    position: absolute;
+                    bottom: 1px;
+                    right: 1px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0 2px @color-white;
+                    background-color: @color-green-3;
+                }
+            }
+
+            .msg-header {
+                display: flex;                
+                justify-content: space-between;
+                font-size: 14 * @rex;
+                .msg-session-name {
+                    font-size: 16 * @rex;
+                    color: @color-coffee-5;                    
+                }                
+            }
+
+            .right-container {
+                    font-size: 12 * @rex;
+                    color: #958f8f;
+                    font-weight: lighter;
+                }
+
+            .jump-to-msg {
+                        cursor: pointer;
+                        opacity: 0;
+                    }
+
+            &:hover{
+                .jump-to-msg {
+                    opacity: 1;
+                }
+            }
+
+            .msg-info {
+                display: flex;               
+                .msg-detail {
+                    flex: 1;
+                    display: block;
+                    overflow: hidden;
+                    margin-left: 63 * @rex;
+
+                    padding-right: 10 * @rex;                    
+                                        
+                    .msg-content {
+                        margin-top: 5 * @rex;
+                        font-size: 13 * @rex;                        
+                        color: #958f8f;
+                    }
+                }
+            }
+        }
+
+
+        .file-msg-item {
+            @file-icon-size: 32 * @rex;
+            @padding: 8 * @rex;
+            @padding-left: @padding + @file-icon-size + 6 * @rex;
+            position: relative;
+            margin: 8 * @rex -8 * @rex 0;
+            padding: @padding @padding @padding @padding-left;
+            border-radius: 4px;
+            &:hover {
+                background-color: @-deprecated-color-bg-light;
+            }
+
+            .file-thumbnail-icon {
+                position: absolute;
+                top: 8 * @rex;
+                left: 8 * @rex;
+                border: 1px solid @-deprecated-color-border;
+                border-radius: 4px;
+                &.img-file {
+
+                }
+            }
+            .file-name {
+                line-height: 1;
+                font-size: 14 * @rex;
+                color: @-deprecated-color-text-secondary;
+            }
+            .file-sender-info {
+                line-height: 1;
+                padding-top: 6 * @rex;
+                font-size: 12 * @rex;
+                color: @-deprecated-color-text-hint;
+                .file-sender-name {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 100 * @rex;
+                }
+                .file-sender-time {
+                    display: inline-block;
+                    vertical-align: top;
+                    position: relative;
+                    top: 1 * @rex;
+                    transform: scale(0.83);
+                }
+            }
+            .file-msg-source {
+                padding-top: 4 * @rex;
+                color: @-deprecated-color-text-link;
+                font-size: 12 * @rex;
+                cursor: pointer;
+            }
+        }
+    }
+}

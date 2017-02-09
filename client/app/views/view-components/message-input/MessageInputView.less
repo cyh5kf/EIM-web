@@ -1,0 +1,122 @@
+@import "../../../../less/_variables.less";
+@import (reference) "../../../../less/eim-sprites";
+
+.msg-inputview-container {
+  position: relative;
+  height: 153px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+
+  .input-toolbar{
+    height: 40px;
+    color: @color-coffee-11;
+
+
+    .select-attachment{
+      float: left;
+      width: 22px;
+      height: 22px;
+      //margin-top: 10px;
+      //margin-left: 21px;
+      font-size: 20px;
+    }
+
+
+    .emoji-select{
+      float: left;
+      width: 40px;
+      height: 40px;
+      padding-top: 10px;
+      padding-left: 21px;
+      font-size: 22px;
+
+      .eficon-ic_emoji_001{
+        cursor: pointer;
+      }
+
+      .eficon-ic_emoji_001:hover{
+        color: @color-orange-1;
+      }
+
+    }
+
+    .input-opt{
+      float: left;
+      padding-top: 10px;
+      padding-left: 28px;
+      font-size: 19px;
+
+      .webuploader-button:hover{
+        color: @color-purple-1;
+        cursor: pointer;
+      }
+    }
+
+    .search-tips{
+      float: right;
+      line-height: 40px;
+      margin-right: 20px;
+      font-size: 14px;
+    }
+
+  }
+
+
+
+
+  .messageinput{
+    overflow-y: auto;
+    min-height: 42 * @rex;
+    max-height: 300 * @rex;
+    outline: 0;
+    line-height: 20 * @rex;
+    resize: none;
+    border: none;
+    height: 108px;
+    resize:none;
+
+    div{
+      display: inline-block;
+    }
+
+    img{
+      border: none;
+    }
+
+    .emojiObject{
+      text-indent: -1000px;
+      overflow: hidden;
+    }
+
+  }
+
+
+  .messageinput:focus{
+    border: none;
+  }
+
+  .form-control{
+    box-shadow: none;
+    padding-right: 100px;
+  }
+
+  .send-button{
+    //background-color: #000000;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    .eficon-4{
+      color: #00ACC1;
+      font-size: 21px;
+    }
+  }
+
+
+
+}

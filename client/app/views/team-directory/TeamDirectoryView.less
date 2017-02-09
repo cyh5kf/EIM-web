@@ -1,0 +1,176 @@
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-sprites";
+
+.team-directory {
+  height: 100%;
+  overflow: auto;
+
+  .td-bordered-block {
+    margin: 32*@rex 8*@rex;
+    padding-top: 16*@rex;
+    border-top: 5*@rex solid @-deprecated-color-green-dark;
+    font-size: 16*@rex;
+    color: @-deprecated-color-text-note;
+    a {
+      color: @-deprecated-color-text-link;
+    }
+  }
+
+  .team-directory-header {
+    padding: 16*@rex 12*@rex;
+    margin-bottom: 8*@rex;
+    font-size: 22*@rex;
+    line-height: 1;
+    background-color: @-deprecated-color-bg-light;
+    border-radius: 6*@rex 6*@rex 0 0;
+    .actions-container {
+      float: right;
+      .team-setting-icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 22*@rex;
+        height: 22*@rex;
+        margin-right: 16*@rex;
+        background: url(../../../static/images/conv_setting.png) center/contain no-repeat;
+        cursor: pointer;
+      }
+      .btn-opt {
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+      .icon-global-button-action-closeblack{
+        &:hover{
+          .icon-global-button-action-closebule();
+        }
+      }
+    }
+    .team-setting-icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 22*@rex;
+      height: 22*@rex;
+      margin-right: 16*@rex;
+      background: url(../../../static/images/conv_setting.png) center/contain no-repeat;
+      cursor: pointer;
+    }
+  }
+
+  .item-list {
+    .team-member-item {
+      padding: 8*@rex;
+      margin-top: 2*@rex;
+      border: 1px solid transparent;
+      border-radius: 5*@rex;
+      cursor: pointer;
+      .member-avatar {
+        float: left;
+        width: 72*@rex;
+        height: 72*@rex;
+        margin-right: 10*@rex;
+        background: url(../../../static/images/default_user_avatar.png) center/cover no-repeat;
+        border-radius: 4*@rex;
+      }
+      .member-details {
+        padding-top: 6*@rex;
+        font-size: 15*@rex;
+        line-height: 20*@rex;
+      }
+      &:hover {
+        border-color: @-deprecated-color-border-light;
+        .member-username {
+          color: #4bbe2e;
+        }
+      }
+    }
+
+    .contact-group-item {
+      padding: 16*@rex;
+      border-bottom: 1px solid @-deprecated-color-split-line;
+      line-height: 1;
+      font-size: 15 * @rex;
+      cursor: pointer;
+      .group-name {
+        padding-bottom: 8 * @rex;
+        font-weight: bold;
+        color: @-deprecated-color-text-default;
+        font-size: 18*@rex;
+        .highlight {
+          color: @-deprecated-color-text-search-highlight;
+        }
+      }
+      .group-desc {
+        padding-bottom: 8 * @rex;
+        color: @-deprecated-color-text-secondary;
+      }
+      .group-more-info {
+        font-size: 12 * @rex;
+        color: @-deprecated-color-text-hint;
+      }
+      &:hover {
+        background-color: #f9f9f9;
+        .group-name {
+          color: #439fe0;
+        }
+      }
+    }
+  }
+
+  &.rightside-team-directory {
+    display: flex;
+    flex-direction: column;
+    .team-directory-header {
+      flex-shrink: 0;
+    }
+
+    .navigator-tabs {
+      flex-shrink: 0;
+      .nav-tab-item {
+        flex-grow: 1;
+        flex-basis: 1px;
+      }
+    }
+
+    .team-directory-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      .search-input-wrapper {
+        flex-shrink: 0;
+      }
+      .user-groups-actions {
+        flex-shrink: 0;
+      }
+      .item-list {
+        overflow: auto;
+      }
+    }
+
+    .user-groups-actions {
+      height: 38*@rex;
+      font-size: 14*@rex;
+      background-color: @-deprecated-color-bg-light;
+      line-height: 35*@rex;
+      padding-top: 3*@rex;
+      .group-action {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 8*@rex;
+        padding-left: 8*@rex;
+        color: @-deprecated-color-text-note;
+        font-weight: bold;
+        .ficon {
+          margin-right: 4*@rex;
+        }
+      }
+    }
+
+    .wg-search-input input {
+      height: 40*@rex;
+      border-width: 0 0 1px 0;
+      border-color: @-deprecated-color-split-line;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}

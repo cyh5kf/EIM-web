@@ -1,0 +1,22 @@
+@import "../../../less/_variables";
+@import "../../../less/_mixins";
+
+.member-item {
+
+    .opt-action{
+      position: absolute;
+      right: 10px;
+      top: 15px;
+    }
+
+    .eim-dropdown {
+      display: none;
+      color: @color-coffee-4;
+      transform: scale(.45);
+      .enlarge-icon-clickable-area(40px);
+    }
+    &:hover .eim-dropdown,
+    .eim-dropdown.open{
+      display: block;
+    }
+  }

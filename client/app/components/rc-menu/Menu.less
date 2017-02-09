@@ -1,0 +1,21 @@
+@import "../../../less/_variables";
+
+.rc-menu {
+  min-width: 188px;
+  font-size: 14px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 2px;
+  box-shadow: fade(@color-black, 20%) 0 2px 10px;
+  background-color: @color-white;
+  color: @color-text-dark;
+
+  .rc-menu-item {
+    padding-left: 20px;
+    cursor: pointer;
+    &:hover,
+    &.rc-menu-item-active {
+      background-color: @color-bg-item-hover;
+    }
+  }
+}

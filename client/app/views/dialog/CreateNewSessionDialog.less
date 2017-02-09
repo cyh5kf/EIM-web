@@ -1,0 +1,176 @@
+@import "../../../less/_variables";
+
+.dialog-mask.dlg-createNewSession {
+  .dialog-entity {
+    width: 416px;
+    height: 610px;
+    border-radius: 4px;
+  }
+  .header {
+    padding: 18px 0 16px 20px;
+    height:58px;
+    background: #F8F8F8;
+    border-radius: 0;
+    .title {
+      line-height: 18px;
+    }
+    .btn_close {
+      top: 24px;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .content {
+    .search-toolbar {
+      position: relative;
+      .rc-select {
+        line-height: 0;
+        .rc-select-selection {
+          border-radius: 0;
+          padding:17px 17px 17px 60px;
+          border: none;
+          .rc-select-selection__rendered {
+            margin-left: 0;
+            height: 27px;
+            .rc-select-selection__placeholder {
+              top:10px;
+            }
+            .rc-select-selection__choice {
+              margin-top: 0;
+              height: 26px;
+              border-radius: 14px;
+              background-color: @color-green-1;
+              color: @color-coffee-5;
+              font-size: 14px;
+              .rc-select-selection__choice__content {
+                .selected-item {
+                  padding: 0 30px 0 36px;
+                  .user-avatar {
+                    width: 26px;
+                    height: 26px;
+                    border-radius: 50%;
+                  }
+                }
+              }
+              .rc-select-selection__choice__remove {
+                color: @color-coffee-1;
+                padding-right: 8px;
+                top: -1px;
+              }
+
+            }
+          }
+          &:hover,&:focus,&:active {
+            box-shadow: none;
+            outline:none;
+            border:none;
+          }
+        }
+      }
+      .rc-select-focused {
+        &:hover,&:focus,&active {
+          box-shadow: none;
+          outline:none;
+          border:none;
+        }
+        .rc-select-selection {
+            box-shadow: none;
+            outline:none;
+            border:none;
+        }
+
+      }
+
+      .search-icon {
+        width:13px;
+        height:13px;
+        border: 1px solid @color-coffee-11;
+        position: absolute;
+        top: 21px;
+        left: 15px;
+        border-radius: 50%;
+      }
+      .submit-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        position: absolute;
+        top: 7px;
+        right: 15px;
+        border:none;
+      }
+      .button-green {
+        background-color: @color-green-3;
+        display: block;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+
+    .popup-container {
+      .rc-select-dropdown {
+        border-radius: 0;
+        box-shadow: none;
+        border-top: 1px solid @-deprecated-color-border-light;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        top: 120px!important;
+        .rc-select-dropdown-menu {
+          max-height: 480px;
+          .rc-select-dropdown-menu-item {
+            padding: 12px 12px 12px 20px;
+            .user-info-item {
+              position: relative;
+              .item-logo {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                position: relative;
+                .online-status-indicator {
+                  position: absolute;
+                  bottom: 1px;
+                  right: 1px;
+                  box-shadow: 0 0 0 2px #ffffff;
+                }
+              }
+              .user-info {
+                margin-left: 12px;
+                margin-top: 0;
+                margin-right: 0;
+                margin-bottom: 0;
+                color: @color-coffee-5;
+                font-size: 16px;
+                font-weight: 300;
+              }
+              .last-active-time {
+                position: absolute;
+                top:2px;
+                right:0;
+              }
+            }
+            &:hover {
+              background-color: @color-bg-light;
+            }
+          }
+          .rc-select-dropdown-menu-item-selected {
+            background-color: @color-green-1;
+            color: none;
+          }
+        }
+      }
+    }
+
+  }
+
+  .footer {
+    height: 0;
+    padding: 0;
+  }
+}
+
+
+

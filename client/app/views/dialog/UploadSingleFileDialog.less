@@ -1,0 +1,112 @@
+@import "../../../less/_variables";
+@import (reference) '../../../less/eim-deprecated';
+
+.dlg-singleFile{
+  &.dialog-mask>.dialog-entity{
+    width: 650 * @rex;
+    height: 586 * @rex;
+  }
+
+  .content{
+    position: absolute;
+    top: 76 * @rex;
+    bottom: 80 * @rex;
+    width:100%;
+    overflow: hidden;
+    .leftMenuBox {
+      float: left;
+      height: 100%;
+      width: 324 * @rex;
+      padding: 135 * @rex 0 0 25 * @rex;
+      .imageBox {
+        width: 276 * @rex;
+        height: 155 * @rex;
+        overflow: hidden;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+
+        &.file{
+          border-radius: 5 * @rex;
+          border:1 * @rex solid #e3e3e3;
+        }
+
+        img{
+          max-width: 276 * @rex;
+          max-height: 155 * @rex;
+          border-radius: 5 * @rex;
+          border:1 * @rex solid #e3e3e3;
+        }
+
+        .eim-doc{
+          margin: auto;
+        }
+      }
+    }
+
+    .rightContentBox {
+      position: absolute;
+      float: left;
+      height: 100%;
+      left: 324 * @rex;
+      right: 0;
+      padding: 72 * @rex 27 * @rex 20 * @rex 27 * @rex;
+      border-left: 1 * @rex solid #e7e7e7;
+
+      .labelText{
+        font-size: 16 * @rex;
+        color: #323a3d;
+        line-height: 15 * @rex;
+
+        .descText {
+          color: #c1c1c1;
+          font-size: 12 * @rex;
+        }
+      }
+
+      .titleBox{
+        margin-top: 10 * @rex;
+        margin-bottom: 24 * @rex;
+      }
+
+      .descBox{
+        margin-top: 10 * @rex;
+        margin-bottom: 0;
+      }
+
+      input[type='text']{
+        width:100%;
+        height: 40 * @rex;
+        line-height: 40 * @rex;
+        color:#323a3d;
+        padding-left: 10 * @rex;
+        border-radius: 5 * @rex;
+        border:1 * @rex solid #e7e7e7;
+      }
+
+      textarea{
+        width: 100%;
+        height: 150 * @rex;
+        resize: none;
+        line-height: 20 * @rex;
+        color: #323a3d;
+        padding-left: 10 * @rex;
+        border-radius: 5 * @rex;
+        border: 1 * @rex solid #e7e7e7;
+      }
+    }
+
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80 * @rex;
+    padding: 23 * @rex 24 * @rex 0 0;
+    text-align: right;
+    border-radius: 0 0 8 * @rex 8 * @rex;
+    border-top: 1 * @rex solid #f5f5f5;
+    background-color: #fcfcfc;
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../../less/_variables";
+
+.rc-select {
+  width: 100%;
+}
+
+.rc-select-search__field {
+  box-sizing: content-box;
+  min-width: 50*@rex;
+}
+
+.rc-select-arrow {
+  top: 0;
+  height: 100%;
+}
+
+.rc-select-selection--multiple {
+  height: 100%;
+  overflow: auto;
+  .rc-select-selection__rendered {
+    padding-bottom: 0;
+  }
+}
+
+.rc-select-selection--single {
+  height: 28px;
+  line-height: 28px;
+  .rc-select-selection__rendered {
+    height: 100%;
+    line-height: inherit;
+  }
+}
+
+
+
+.rc-select-dropdown {
+  z-index: 300;
+  &.no-datasource {
+    display: none;
+  }
+
+  .rc-select-dropdown-menu {
+    max-height: 240 * @rex;
+    overflow: auto;
+  }
+
+  .rc-select-dropdown-menu-item:nth-child(n+2) {
+    border-top: 1px solid @-deprecated-color-split-line;
+  }
+
+  .rc-select-dropdown-menu-item-active {
+    color: #666;
+    background-color: #f7f7f7;
+  }
+  .rc-select-dropdown-menu-item-selected {
+    background-color: #ddd;
+  }
+}

@@ -1,0 +1,54 @@
+@import "../../../less/_variables.less";
+.messagePopBox{
+    color: #555459;
+    background: #fff;
+    line-height: 24 * @rex;
+    font-size: 18 * @rex;
+    border-radius: 4 * @rex;
+    border: 1 * @rex solid #e8e8e8;
+    border-left: 5 * @rex #edb431 solid;
+    margin: 16 * @rex auto 0 * @rex auto;
+    padding: 11 * @rex 15 * @rex 11 * @rex 17 * @rex;
+    
+    .icon-channel-listview-hint{
+        position: relative;
+        top: 5 * @rex;
+        margin-right: 9 * @rex;
+    }
+
+    i[class*="ficon_"] {
+        position: relative;
+        top: -2px;
+        font-size: 20 * @rex;
+        line-height: 20 * @rex;
+        margin-right: 8 * @rex;
+    }
+
+    &.warning{
+        border-left-color: #edb431;
+        >i[class*="ficon_"]{
+            color: #edb431;
+        }
+    }
+
+    &.info{
+        border-left-color: #3aa3e3;
+        >i[class*="ficon_"]{
+            color: #3aa3e3;
+        }
+    }
+
+    &.error{
+        border-left-color: #cb5234;
+        >i[class*="ficon_"]{
+            color: #cb5234;
+        }
+    }
+
+    &.success{
+        border-left-color: #2ab27b;
+        >i[class*="ficon_"]{
+            color: #2ab27b;
+        }
+    }
+}

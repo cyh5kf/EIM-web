@@ -1,0 +1,295 @@
+@import "../../../../less/_variables";
+@import "../../../../less/_mixins";
+
+.message-item {
+  @min-item-height: 32px;
+  position: relative;
+  z-index: 0;
+  min-height: @min-item-height;
+  font-size: 15px;
+
+  .message-more {
+    display: none;
+  }
+  &:hover .message-more {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -30px;
+    right: -30px;
+    z-index: -1;
+  }
+
+  .msg-item-status {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 5px;
+    &.msg-failure-indicator {
+      @failure-icon-size: 18px;
+      top: (@min-item-height - @failure-icon-size) / 2;
+      font-size: @failure-icon-size;
+      color: @color-red;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    &.loading-indicator {
+      @loading-indicator-size: 18px;
+      top: (@min-item-height - @loading-indicator-size) / 2;
+    }
+    &.msg-readnum-indicator {
+      top: auto;
+      bottom: 0;
+      font-size: 12px;
+      line-height: 15px;
+      white-space: nowrap;
+      &.msg-unread {
+        color: @color-text-green;
+      }
+      &.msg-read {
+        color: @color-text-hint;
+      }
+    }
+  }
+
+  .msg-actions-anchor {
+    display: none;
+  }
+  &:hover .msg-actions-anchor,
+  .msg-actions-anchor.keep-showing {
+    display: block;
+    position: absolute;
+    left: 100%;
+    bottom: 17px;
+    width: 19px;
+    height: 14px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: @color-green-3;
+  }
+
+  .message-item-content {
+    &.text-msg {
+      padding: 7px 12px;
+      word-break: break-all;
+      background-color: @color-bg-light;
+      color: @color-text-dark;
+    }
+
+    &.file-msg {
+      border: 1px solid @color-border;
+      padding: 16px;
+      width: 268px;
+
+      .file-info {
+        overflow: hidden;
+        height: 42px;
+        color: @color-text-dark;
+        .file-icon {
+          float: left;
+          background: center/cover no-repeat;
+          width: 38px;
+          height: 100%;
+          margin-right: 13px;
+        }
+        &.type-word .file-icon {
+          background-image: url(../../../../static/images/ic_file_word.png);
+        }
+        &.type-excel .file-icon {
+          background-image: url(../../../../static/images/ic_file_excel.png);
+        }
+        &.type-ppt .file-icon {
+          background-image: url(../../../../static/images/ic_file_ppt.png);
+        }
+        &.type-pdf .file-icon {
+          background-image: url(../../../../static/images/ic_file_pdf.png);
+        }
+        &.type-mp3 .file-icon {
+          background-image: url(../../../../static/images/ic_file_mp3.png);
+        }
+        &.type-zip .file-icon {
+          background-image: url(../../../../static/images/ic_file_zip.png);
+        }
+
+        .file-desc {
+          overflow: hidden;
+          font-size: 13px;
+          white-space: nowrap;
+          .file-name {
+            padding-bottom: 4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    &.image-msg {
+      padding: 0;
+      border: none;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: inherit;
+      }
+    }
+  }
+}
+
+
+.message-list-data {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .msg-timeline-label {
+    font-size: 12px;
+    text-align: center;
+    color: @color-text-hint;
+  }
+
+  .user-msgs-container {
+    @msg-radius-large: 17px;
+    @msg-radius-small: 4px;
+    position: relative;
+    margin: 20px 0;
+    padding-left: 59px;
+
+    .msg-sender-logo {
+      position: absolute;
+      left: 20px;
+      bottom: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: url(../../../../static/images/default_user_avatar.png) center/cover no-repeat;
+      cursor: pointer;
+    }
+
+    .msg-sender-name {
+      margin-bottom: 4px;
+      font-size: 14px;
+      margin-left: 12px;
+      color: @color-text-hint;
+    }
+
+    .user-msg-list {
+      .clear-float();
+      .message-item {
+        float: left;
+        clear: both;
+        max-width: 70%;
+        &:nth-child(n+2) {
+          margin-top: 5px;
+        }
+        .message-item-content {
+          border-radius: @msg-radius-small @msg-radius-large @msg-radius-large @msg-radius-small;
+        }
+        &:first-child .message-item-content {
+          border-radius: @msg-radius-large @msg-radius-large @msg-radius-large @msg-radius-small;
+        }
+      }
+    }
+
+    &.own-msgs {
+      padding-left: 0;
+      padding-right: 59px;
+      .msg-sender-logo {
+        left: auto;
+        right: 20px;
+      }
+      .msg-sender-name {
+        text-align: right;
+        margin-left: 0;
+        margin-right: 12px;
+      }
+      .user-msg-list {
+        .message-item {
+          float: right;
+          .message-item-content {
+            border-radius: @msg-radius-large @msg-radius-small @msg-radius-small @msg-radius-large;
+            &.text-msg {
+              background-color: @color-coffee-2;
+              color: @color-white;
+            }
+          }
+          &:first-child .message-item-content {
+            border-radius: @msg-radius-large @msg-radius-large @msg-radius-small @msg-radius-large;
+          }
+
+          .msg-item-status {
+            left: auto;
+            right: 100%;
+            margin-left: 0;
+            margin-right: 5px;
+          }
+
+          .msg-actions-anchor {
+            left: auto;
+            right: 100%;
+            margin: 0 5px 0 0;
+          }
+        }
+      }
+    }
+  }
+
+
+  .message-hasmore {
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+}
+
+
+#message-docmore.popover {
+  .popover-content{
+    width: 146 * @rex;
+    padding: 0;
+  }
+
+  ul {
+    padding: 10 * @rex 10 * @rex;;
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+
+
+
+  ul > li.cell {
+    height: 24 * @rex;
+  }
+
+  ul > li.cell div{
+    padding-left: 8 * @rex;
+    width: 130 * @rex;
+  }
+
+  ul > li.cell a {
+    display: block;
+  }
+  ul > li.cell a, ul > li.cell a:visited, ul > li.cell a:active{
+    color: #797d7f;
+    font-size: 14 * @rex;
+    line-height: 24 * @rex;
+    text-decoration: blink;
+  }
+
+  ul > li.cell > div:hover {
+    border-radius: 4 * @rex;
+    background: #3aa3e3;
+    cursor: pointer;
+    a {
+      color: #fff;
+    }
+  }
+}

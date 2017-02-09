@@ -1,0 +1,102 @@
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-sprites";
+
+.rich-text-editor {
+  position: relative;
+  border: 1px solid @-deprecated-color-border;
+  background-color: @color-white;
+
+  .rte-toolbar {
+    .emojify-btn,
+    input[type="file"] {
+      display: none;
+    }
+    .ql-picker {
+      vertical-align: top;
+      margin-right: 12*@rex;
+      .ql-picker-label {
+        vertical-align: top;
+        height: 20*@rex;
+        line-height: 20*@rex;
+      }
+    }
+
+    > .icon {
+      margin-right: 14*@rex;
+      cursor: pointer;
+    }
+
+    label.icon {
+      margin: 0;
+    }
+    .icon-richfile-button-active-expression {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-expression-hover();
+      }
+    }
+    .icon-richfile-button-active-picture {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-picture-hover();
+      }
+    }
+    .icon-richfile-button-active-b {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-b-hover();
+      }
+    }
+    .icon-richfile-button-active-i {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-i-hover();
+      }
+    }
+    .icon-richfile-button-active-underline {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-underline-hover();
+      }
+    }
+    .icon-richfile-button-active-strikethrough {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-strikethrough-hover();
+      }
+    }
+    .icon-richfile-button-active-duanluo {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-duanluo-hover();
+      }
+    }
+    .icon-richfile-button-active-bianhao {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-bianhao-hover();
+      }
+    }
+    .icon-richfile-button-active-link {
+      &:hover,
+      &.ql-active {
+        .icon-richfile-button-active-link-hover();
+      }
+    }
+  }
+
+  .rte-content {
+    height: 300*@rex;
+
+    img.emoji {
+      width: 0;
+      height: 0;
+      padding-left: 27px;
+      padding-top: 27px;
+    }
+
+    img {
+      max-width: 80%;
+    }
+  }
+}

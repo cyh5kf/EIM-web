@@ -1,0 +1,260 @@
+@import url('../../../../less/_variables.less');
+.invitation_Result_box{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    .manage-team-directory-header {
+        height: 58 * @rex;
+        color: @color-coffee-5;
+        font-size: 22 * @rex;
+        line-height: 58 * @rex;
+        padding: 0 * @rex 20 * @rex;
+        background-color: fade(@color-border,20%);
+    }
+
+    .invitationHintMsg {
+        font-size: 12 * @rex;
+        line-height: 36 * @rex;
+        color: @color-text-light;
+        padding: 0 * @rex 20 * @rex;
+        .eficon-23{
+            float: left;
+            margin-top: 11px;
+            display: block;
+            margin-right: 6px;
+        }
+
+        .ficon_check_circle_o{
+            margin-right: 4 * @rex;
+        }
+
+        &.error{
+            .eficon-23{
+                color: @color-red;
+            }
+        }
+
+        &.success{
+            .ficon_check_circle_o{
+                color: @-deprecated-color-bg-green;
+            }
+        }
+    }
+
+    .invitationMsg,.resetInviteMsg{
+        margin-bottom:16 * @rex;
+    }
+
+    .invitationContent {
+        padding: 0 * @rex 20 * @rex;
+        background: @color-white;
+        margin-top: 10 * @rex;
+        .navigator-tabs.tabs-style{
+            height: 47 * @rex;
+            .nav-tab-item{
+                border:0 * @rex;
+                height: 47 * @rex;
+                font-size:15 * @rex;
+                color:@color-text-light;
+                padding: 0 * @rex;
+                font-weight: normal;
+                border-bottom: 3 * @rex solid transparent;
+                &.active {
+                    color:@color-coffee-5;
+                    border-bottom: 3 * @rex solid @color-green-3;
+                }
+
+                &:last-child{
+                    margin-left:50 * @rex;
+                }
+            }
+        }
+        
+        .operationLine{
+            overflow: hidden;
+            padding: 10 * @rex 0 * @rex 10 * @rex 0 * @rex;
+            border-bottom: 1 * @rex solid @color-border;
+            label{
+                font-size: 14 * @rex;
+            }
+
+            .sortedWords {
+                position: relative;
+            }
+
+            .searchWords {
+                outline: none;
+                box-shadow: none;
+                height: 28 * @rex;
+                width: 400 * @rex;
+                font-size: 16 * @rex;
+                line-height: 22 * @rex;
+                border-radius: 4 * @rex;
+                padding: 0 * @rex 34 * @rex 0 * @rex 34 * @rex;
+                border: 0 * @rex solid @color-border;
+            }
+
+            i.eficon-search{
+                color: #938F8F;
+                font-size: 14px;
+                position: absolute;
+                top: 8px;
+                left: 8px;
+            }
+
+
+            .notifyTypeSelect {
+                width: 96 * @rex;
+                margin-left: 10 * @rex;
+                display: inline-block;
+                .rc-select-selection--single{
+                    height: 37 * @rex;
+                    line-height: 35 * @rex;
+                }
+            }
+
+            ul.sortInfoLine {
+                list-style-type: none;
+                margin: 1.5 * @rex 0 * @rex 0 * @rex 0 * @rex;
+                padding: 0 * @rex;
+               li {
+                  display: inline-block;
+                  font-size: 13 * @rex;
+                  color: @color-text-light;
+                  width: 68 * @rex;
+                  height: 25 * @rex;
+                  line-height: 23 * @rex;
+                  text-align: center;
+                  cursor: pointer;
+                  background-color: fade(@color-border,20%);
+                  border: 1 * @rex solid @color-border;
+                  border-radius: 3 * @rex;
+                  &.active{
+                    border-color: fade(@color-green-3, 20%);
+                    color: @color-green-3;
+                    cursor: default;
+                    background-color: fade(@color-green-1, 20%);
+                  }
+              }
+              .sortedName{
+                margin-left: 15 * @rex;
+              }
+            }
+            
+        }
+    }
+
+    .invitations{
+            flex-grow: 1;
+            overflow-y: scroll;
+            margin: 0 14 * @rex 0 30 * @rex;
+            .acceptedInviteBox>li{
+                cursor: default;
+                .textRight{
+                    margin-right: 0 * @rex;
+                }
+            }
+
+            .noRequestData{
+                margin-top: 26%;
+                text-align: center;
+                word-break: break-word;
+                .btn_small{
+                    margin-top: 10 * @rex;
+                }
+            }
+
+            .btn_small {
+                color: @color-green-3;
+                display: inline-block;
+                line-height: 22px;
+                border-radius: 2px;
+                width: 125px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 13px;
+                cursor: pointer;
+                border: 1px solid fade(@color-green-3, 20%);
+                background-color: fade(@color-green-1, 20%);
+            }
+
+            .btn_resend{
+                margin-left:8 * @rex;
+            }
+            >ul{
+                color: @color-coffee-11;
+                padding: 0 * @rex;
+                margin-right: 12 * @rex;
+                list-style-type: none;
+                font-size: 14px;
+                color: #958F8F;
+                >li{
+                    position: relative;
+                    overflow: hidden;
+                    padding: 5px 0;
+                    cursor: pointer;
+                    border-bottom:1px solid @color-bg-light;
+                    .userName{
+                        font-weight: normal;
+                        color: #433A39;
+                    }
+
+                    .email{
+                        line-height: 38px;
+                    }
+
+                    .email2{
+                        line-height: 22px;
+                    }
+
+                    .date{
+                        line-height: 38px;
+                        display: inline-block;
+                        text-align: left;
+                        margin-right: 10px;
+                    }
+
+                    .ownerLine{
+                        line-height: 38px;
+                        display: inline-block;
+                        width: 190px;
+                        overflow: hidden;
+                        font-size: 14px;
+                        color: #7C7A78;
+                        text-overflow: ellipsis;
+                    }
+
+                    .textRight{
+                        text-align: right;
+                        margin-right: 18 * @rex;
+                    }
+
+
+                    .ficon_caret_right,.ficon_caret_down{
+                        position: absolute;
+                        top: 12 * @rex;
+                        right: -4 * @rex;
+                        font-size: 20 * @rex;
+                        color: @-deprecated-color-text-link;
+                    }
+
+                    .memberActions {
+                        padding: 6 * @rex 0 * @rex 4 * @rex 0 * @rex;
+                    }
+
+                    .avatar {
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 100px;
+                        background: url('../../../../static/images/default_user_avatar.png') center center;
+                        background-size: contain;
+                        margin-right: 10 * @rex;
+                    }
+                }
+            }
+        }
+}

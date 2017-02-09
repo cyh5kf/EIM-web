@@ -1,0 +1,23 @@
+@import "../../../less/_variables.less";
+
+.dlg-toast.dialog-mask {
+    background-color: transparent !important;
+    pointer-events: none;
+    z-index: 201; // 大于普通dialog
+    .dialog-entity {
+        width: auto;
+        height: auto;
+        min-width: 300 * @rex;
+        max-width: 600 * @rex;
+
+        .header,
+        .footer {
+            display: none;
+        }
+
+        .content {
+            padding: 10 * @rex 20 * @rex;
+            text-align: center;
+        }
+    }
+}

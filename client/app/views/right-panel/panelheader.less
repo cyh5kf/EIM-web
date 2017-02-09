@@ -1,0 +1,34 @@
+//rightpanel header
+@import "../../../less/_variables";
+@import "../../../less/baselayout-mixin.less";
+@import "../../../less/_mixins.less";
+
+  .heading{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: @color-coffee-5;//433A39
+    position: relative;
+    z-index: 50;
+    font-size: 22px;
+    line-height: 58px;
+    height: 58px;
+    font-weight: 400;
+    padding: 0 50px 0 15px;
+    background: #F8F8F8;
+    border-bottom: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .close_flexpane{
+      position: absolute;
+      top: 18px;
+      right: 10px;           
+      cursor: pointer;
+      line-height: 20px;
+    }
+
+    .ficon_delete:before {
+      color: #B5B1B1;
+    }
+
+  }

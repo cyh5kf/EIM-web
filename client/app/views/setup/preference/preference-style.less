@@ -1,0 +1,684 @@
+@import url('../../../../less/_variables.less');
+@import (reference) '../../../../less/eim-deprecated.less';
+@import (reference) '../../../../less/eim-sprites.less';
+.dlg-fullscreen.dlg-preference{
+    .disabled{
+        opacity: 0.3;
+        display: none;
+    }
+
+    .dialog-entity .fs-btn-close{
+        top: 0;
+        z-index: 3;
+        width: 56 * @rex;
+        height: 56 * @rex;
+        .icon-global-button-action-esc{
+            margin: 8 * @rex 0 * @rex 0 * @rex 16 * @rex;
+        }
+    }
+    
+    .content {
+        position: absolute;
+        top: 0 * @rex;
+        bottom: 0;
+        width: 100%;
+        font-size: 16 * @rex;
+        .header {
+            position: fixed;
+            top: 0 * @rex;
+            width: 100%;
+            height: 60 * @rex;
+            line-height: 60 * @rex;
+            text-align: center;
+            font-size: 22.4 * @rex;
+            font-weight: bold;
+            background: #fff;
+            box-shadow: 0 1 * @rex 4 * @rex rgba(0,0,0,.15);
+        }
+
+        .disable{
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .contextBox {
+            position: absolute;
+            top: 60 * @rex;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+        .left_side{
+            width: 160 * @rex;
+            height: 100%;
+
+            ul.menu{
+                padding: 0;
+                margin-top: 34 * @rex;
+                list-style-type: none;
+                li{
+                    cursor:pointer;
+                    overflow: hidden;
+                    padding: 0 10 * @rex 0 12 * @rex;
+                    width: 160 * @rex;
+                    font-size: 14 * @rex;
+                    color: #323a3d;
+                    height: 25 * @rex;
+                    line-height: 25 * @rex;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    background: #fff;
+                    border-radius: 5 * @rex;
+                    &.selected{
+                        color: #fff;
+                        font-weight: 700;
+                        background-color: #3aa3e3;
+                        text-shadow: 0 1 * @rex 0 rgba(0,0,0,.1);
+                    }
+
+                    &:not(.selected):hover{
+                        background-color: #eef7ff;
+                    }
+
+                    & + li{
+                        margin-top: 3 * @rex;
+                    }
+                }
+            }
+        }
+
+        .right_side {
+            margin-left: 78 * @rex;
+            width: 640 * @rex;
+            max-width: 100%;
+            .displayBox{
+                margin: 34 * @rex 10 * @rex 6 * @rex 0 * @rex;
+            }
+
+            .setContactLine{
+                .setContactMsg{
+                    width:100%;
+                    height: 37 * @rex;
+                    padding-left: 10 * @rex;
+                    line-height: 37 * @rex;
+                    border-radius: 5 * @rex;
+                    border:1 * @rex solid #ddd;
+                    box-sizing: border-box;
+                }
+            }
+
+            
+
+            .informationModel{
+                -webkit-transition: 0s 2s ease-in height,opacity;
+                &.closed{
+                    height: 0;
+                    opacity: 0;
+                    display: none;
+                }
+
+                &.open{
+                    height: auto;
+                    opacity: 1;
+                }
+            }
+
+            
+
+            .optionLabel {
+                margin-top: 40 * @rex;
+                margin-bottom: 6 * @rex;
+                color: #2c2d30;
+                font-weight: bold;
+                line-height: 22 * @rex;
+                font-size: 16 * @rex;
+            }
+
+            .tinyEmailDesc {
+                color: #c1c1c1;
+                font-size: 12 * @rex;
+                margin: 6 * @rex 0 5 * @rex 0;
+            }
+
+            .disabledNotifyTitle {
+                font-weight: bold;
+                margin-top: 12px;
+                margin-bottom: 12px;
+            }
+
+            .disabledNotifyDesc {
+                font-size: 14px;
+            }
+
+            .contactDesc {
+                font-size: 16 * @rex;
+                color: #323a3d;
+                line-height: 23px;
+                margin: 15 * @rex 0 6 * @rex 0;
+                .ficon_Bell_o{
+                    position: relative;
+                    top:-2px;
+                }
+            }
+
+            .showSessionOption {
+                width: 100%;
+                color: #323a3d;
+                box-sizing: border-box;
+                background: #fff;
+
+                option{
+                    height: 40 * @rex;
+                    font-size: 14 * @rex;
+                    color:#323a3d;
+                    line-height: 40 * @rex;
+                    border-bottom: 1 * @rex solid #cccccc;
+                }
+            }
+
+            
+
+            .notificationButton{
+                color: #555459;
+                height: 36 * @rex;
+                outline: none;
+                line-height: 32 * @rex;
+                padding-right: 10 * @rex;
+                padding-left: 10 * @rex;
+                background: #fff;
+                border-radius: 5 * @rex;
+                font-weight: bold;
+                background: #fbfbfa;
+                border: 1 * @rex solid #C7CACD;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                &:hover{
+                    color:#3aa3e3;
+                }
+                &:active{
+                    box-shadow: inset 0 * @rex 1 * @rex 1 * @rex 1 * @rex rgba(0,0,0,0.12);
+                }
+            }
+
+            .notification{
+                padding: 0 * @rex;
+                
+                .notification_summary{
+                    font-size: 16 * @rex;
+                    line-height: 23 * @rex;
+                    padding-top: 15 * @rex;
+                    padding-bottom: 17 * @rex;
+                    padding-left: 33 * @rex;
+                    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    .small_right_margin {
+                        margin-right: 14 * @rex;
+                        a{
+                            display:none;
+                        }
+                    }
+                }
+
+                .summaryTitle {
+                    position: relative;
+                    margin:0 * @rex;
+                    cursor: pointer;
+                    font-size: 24 * @rex;
+                    font-weight: bold;
+                    line-height: 34 * @rex;
+                    padding-left: 1 * @rex;
+                    .eim-notificasetting {
+                        display: inline-block;
+                        position: relative;
+                        top: -4 * @rex;
+                        margin-right: 8 * @rex;
+                    }
+
+                    .ficon_Bell_o{
+                        color:#eb4d5c;
+                    }
+
+                    .ficon_snooze_outline{
+                        color:#3aa3e3;
+                    }
+
+                    >.drop-icon{
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        opacity: 1;
+                        font-size: 24 * @rex;
+                        margin-top: -17 * @rex;
+                    }
+                }
+
+                .notificationLabel{
+                    margin-top: 17 * @rex;
+                    margin-bottom: 7 * @rex;
+                }
+
+                .optionList>li{
+                    font-weight: bold;
+                }
+
+                .soundVedio{
+                    position: relative;
+                    top:-2 * @rex;
+                    display:none;
+                    line-height: 16 * @rex;
+                    cursor: pointer;
+                    color: #3aa3e3;
+                    margin-left: 12 * @rex;
+                    
+                }
+
+                .soundsList{
+                    margin-top:6 * @rex;
+                    >li{
+                        width:33.33%;
+                        cursor: pointer;
+                        display: inline-block;
+                        &.childRadio>.eim-checkBox{
+                            top: 4 * @rex;
+                        }
+
+                        &:hover>.soundVedio{
+                            display: inline-block;
+                        }
+                    }
+
+                    &.mute-disabled>li{
+                        color: #9e9ea6;
+                        cursor: not-allowed;
+                        >.eim-radio{
+                            opacity: 0.3;
+                            cursor: not-allowed;
+                            pointer-events: none;
+                        }
+
+                        >.soundVedio{
+                            display: none;
+                        }
+                    }
+                }
+
+                .sendTestNotifica{
+                    margin-top: 17 * @rex;
+                    >i{
+                        display: inline-block;
+                        position: relative;
+                        font-size: 15 * @rex;
+                        top: -3 * @rex;
+                    }
+                }
+
+                .sendNotificationMsg {
+                    color:#9e9ea6;
+                    line-height: 23 * @rex;
+                    margin-top: 16 * @rex;
+                    margin-bottom: 45 * @rex;
+                }
+
+                .muteAllSounds{
+                    margin-top: 15 * @rex;
+                    .eim-checkBox {
+                        position: absolute;
+                        display: inline-block;
+                        left: 0 * @rex;
+                        top: 3 * @rex;
+                    }
+
+                    .text{
+                        position: relative;
+                        padding-left: 20 * @rex;
+                        color: #555459;
+                        font-size: 15 * @rex;
+                        font-weight: bold;
+                        line-height: 22 * @rex;
+                        margin-bottom: 5 * @rex;
+                    }
+
+                    .desc{
+                        color:#9e9ea6;
+                        margin-left: 20 * @rex;
+                    }
+                }
+
+                .showNoticeDesc {
+                    color: #9e9ea6;
+                    margin-left: 20 * @rex;
+                }
+
+                .notificationLine{
+                    &.closed{
+                        cursor: pointer;
+                        .informationModel{
+                            display: none;
+                        }
+
+                        .ficon_caret_down{
+                            display: none;
+                        }
+                    }
+                    &.closed:hover{
+                        background-color: #f9f9f9;
+                    }
+
+                    &.open{
+                        .notification_summary{
+                            display: none;
+                        }
+
+                        .ficon_caret_right{
+                            display: none;
+                        }
+                    }
+                }
+
+                .notificaSetBox {
+                    padding-left: 20 * @rex;
+                    padding: 16 * @rex;
+                    border-top: 1 * @rex solid #d5d5d5;
+                    
+                }
+
+                .notInterruptBox{
+                    padding: 16 * @rex;
+                    border-top: 1 * @rex solid #d5d5d5;
+                    border-bottom: 1 * @rex solid #d5d5d5;
+                }
+
+                .informationModel {
+                    padding-left: 32 * @rex;
+                    margin-bottom: 28 * @rex;
+                }
+
+                .notDisturbBox{
+                    .inactiveNotice{
+                        position: relative;
+                        font-weight: bold;
+                        line-height: 24 * @rex;
+                        margin-bottom: 7 * @rex;
+                    }
+
+                    input[type='checkBox']{
+                        position: relative;
+                        top:3 * @rex;
+                        margin-right: 4 * @rex;
+                    }
+
+                    .timeLimitLine {
+                        margin-bottom: 10 * @rex;
+                        .startTime,.endTime {
+                            float: left;
+                            width: 124 * @rex;
+                            font-size: 16 * @rex;
+                            .rc-select{
+                                .rc-select-selection--single{
+                                    height: 36 * @rex;
+                                    line-height: 34 * @rex;
+                                }
+                            }
+                        }
+
+                        .timeText {
+                            float: left;
+                            margin: 8 * @rex 10 * @rex 0 10 * @rex;
+                        }
+
+                        .currentTimezone{
+                            float: left;
+                            width: 200 * @rex;
+                            margin: 10 * @rex 0 * @rex 0 * @rex 10 * @rex;
+                            
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+
+                        .changeTimezone{
+                            float:left;
+                            margin-top: 10 * @rex;
+                        }
+                    }
+
+                }
+
+                .buttonBoxLine{
+                    margin-bottom:15 * @rex;
+                    .confirm{
+                        margin-left:0 * @rex;
+                    }
+                }
+            }
+
+            .messageMedia{
+                .messageShowModule{
+                    border-bottom: 1 * @rex solid #e8e8e8;
+                    padding: 0 * @rex 0 * @rex 30 * @rex 0 * @rex;
+                }
+
+                .emojiStyleBox {
+                    padding-top: 10 * @rex;
+                    padding-bottom: 10 * @rex;
+                    .emojiListDetail > li{
+                        width:335 * @rex;
+                    }
+
+                    .showJumbomoji{
+                        margin-top: 15 * @rex;
+                    }
+                }
+
+                .messageMediaLabel{
+                    color: #2c2d30;
+                    font-weight: bold;
+                    font-size: 24 * @rex;
+                }
+
+                .optionDesc {
+                    padding-top: 2 * @rex;
+                    padding-bottom: 6 * @rex;
+                    font-weight: normal!important;
+                }
+
+                .optionList>li{
+                    font-weight: bold;
+                    .normal{
+                        font-weight: normal;
+                    }
+                }
+
+                .optionLabel{
+                    margin: 20 * @rex 0 * @rex 6 * @rex 0 * @rex;
+                }
+                
+                .emoji-sizer{
+                    width: 22 * @rex;
+                    height: 22 * @rex;
+                    background-size: contain;
+                    background-position: center center;
+                    vertical-align: middle;
+                }
+
+                .emoji_preview {
+                    float: right;
+                }
+
+                .applesmail{
+                    background-image: url('../../../../static/images/1f604.png');
+                }
+
+                .messageThemeBox{
+                    overflow: hidden;
+                    padding-bottom: 10 * @rex;
+                    .msgThemeList{
+                        width: 53%;
+                        padding-right: 10 * @rex;
+                    }
+
+                    .themeImage{
+                        width: 294 * @rex;
+                        height: 82 * @rex;
+                        min-width: 294 * @rex;
+                        min-height: 82 * @rex;
+                        margin-top: 35 * @rex;
+                        .messages_clean{
+                            background: url('../../../../static/images/messages_clean.png') no-repeat 0 0;
+                            background-size: contain;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .messages_compact{
+                            background: url('../../../../static/images/messages_compact.png') no-repeat 0 0;
+                            background-size: contain;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                    }
+                }
+
+                .inlineMediaModule {
+                    margin-top: 40 * @rex;
+                    padding-bottom: 10 * @rex;
+                    .messageMediaLabel {
+                        margin-bottom: 14 * @rex;
+                    }
+                }
+            }
+
+            .readStatusSetting{
+                .readStatusLabel{
+                    position: relative;
+                    margin: 0 * @rex;
+                    cursor: pointer;
+                    font-size: 24 * @rex;
+                    font-weight: bold;
+                    line-height: 34 * @rex;
+                }
+
+                .readStatusDesc {
+                    color: #555459;
+                    margin-top: 17 * @rex;
+                }
+
+                .viewChannelLabel{
+                    margin-top: 18 * @rex;
+                }
+
+                .msgHintLabel{
+                    margin-top: 30 * @rex;
+                }
+
+                .optionList>li{
+                    font-weight: bold;
+                }
+
+                ul.readHintNotice{
+                    margin:3 * @rex 0 0 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li{
+                        color:#323a3d;
+                        font-size:14 * @rex;
+                        line-height: 23 * @rex;
+                        margin-bottom: 9 * @rex;
+                        &.secondKeyLine{
+                            margin-top: 4 * @rex;
+                        }
+                    }
+
+                    .icon{
+                        display: inline-block;
+                        width:22 * @rex;
+                        height: 22 * @rex;
+                        margin-top: -4 * @rex;
+                        margin-right: 3 * @rex;
+                        vertical-align: middle;
+                    }
+
+                    .shortcutEsc>.icon{
+                        background: url('../../../../static/images/shortcut_1.png') no-repeat 0 0;
+                        background-size: contain;
+                    }
+
+                    .shortcutSEsc>.icon{
+                        background: url('../../../../static/images/shortcut_2.png') no-repeat 0 0;
+                        background-size: contain;
+                    }
+
+                    .shortcutAlt>.icon{
+                        background: url('../../../../static/images/shortcut_3.png') no-repeat 0 0;
+                        background-size: contain;
+                    }
+                }
+                
+            }
+
+            .advancedOption{
+                .optionLabel{
+                    margin-top:0 * @rex;
+                    font-size: 24 * @rex;
+                    line-height: 26px;
+                    margin-bottom: 12 * @rex;
+                }
+
+                .optionText{
+                    font-weight: bold;
+                    font-size: 16 * @rex;
+                    color:#555459;
+                    margin-bottom: 15 * @rex;
+                }
+
+                .optionDesc{
+                    color: #9e9ea6;
+                    padding-top: 2 * @rex;
+                    padding-bottom: 6 * @rex;
+                    font-weight: normal;
+                }
+
+                .optionList>li:not(.optionDesc){
+                    font-weight: bold;
+                }
+
+                .channelListBox .optionList{
+                    >li{
+                        font-weight: normal;
+                    }
+
+                    .optionLabel{
+                        margin-bottom: 7 * @rex;
+                    }
+
+                    .privateChannel{
+                        margin-top: 13 * @rex;
+                    }
+                    
+                }
+
+                .otherOptionBox {
+                    .optionDesc{
+                        padding-bottom: 5 * @rex;
+                    }
+                }
+                .themeBox+.themeBox{
+                    padding: 18 * @rex 0 * @rex;
+                    border-top: 1 * @rex solid #e8e8e8;
+                }
+
+                .inputOptionBox.themeBox {
+                    padding: 0 * @rex 0 * @rex 13 * @rex 0 * @rex;
+                }
+
+                .debuggingBox .optionDesc {
+                    color:#555459;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import url('../../../../less/_variables.less');
+.mentionlist{
+    padding:  0;
+    list-style-type: none;
+    margin: 0;
+    background-clip: padding-box;
+    overflow: hidden;
+
+    hr.small_top_margin {
+        margin-top: .5rem!important;
+    }
+    
+    hr.small_bottom_margin {
+        margin-bottom: .5rem!important;
+    }
+
+    .member_image{
+        border-radius: .2rem;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: relative;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: .4rem;
+        margin-top: -2px;
+        vertical-align: middle;
+    }
+
+    .username , .broadcast{
+        font-weight: 900;
+        margin-right: .4rem;
+    }
+    
+    .realname {
+        margin-right: .4rem;
+        color: #9e9ea6;
+    }
+}
+
+
+.mentionlist li.listitem{
+    border: 0;
+    cursor: pointer;
+    background: 0 0;
+    padding: 3*@rex 10*@rex;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1.5rem;
+}
+
+.mentionlist li.listitem-active {
+    background: #439fe0;
+    color: #fff!important;
+    text-shadow: 0 1px rgba(0,0,0,.1);
+}
+
+.mentionlist li.listitem-active span{
+     color: #fff!important;
+}

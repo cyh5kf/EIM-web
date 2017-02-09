@@ -1,0 +1,76 @@
+@import "../../../less/_variables";
+@import (reference) '../../../less/eim-sprites.less';
+
+.center-dialog-header{
+  padding: 20 * @rex 16 * @rex;
+  background: @color-gray-1;
+  color: #555459;
+  font-weight: 900;
+  border-bottom: none;
+  border-top-right-radius: 4 * @rex;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 4 * @rex;
+  background-clip: padding-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .hearder-title{
+    flex-grow: 1;
+    margin-bottom: 5 * @rex;
+  }
+
+  .btn-close{
+    float: right;
+    margin-bottom: 5 * @rex;
+    cursor: pointer;
+    
+    color: @color-coffee-11;
+  }
+
+  .icon-createsnippet-button-action-close:hover{
+    .icon-createsnippet-button-action-close-hover();
+  }
+}
+
+.center-dialog-content{
+  overflow-x: hidden;
+  margin-bottom: 0;  
+  padding-bottom: 120 * @rex;
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 40 * @rex;
+  margin-right: 80 * @rex;
+  margin-left: 80 * @rex;
+  overflow-y: hidden;
+  max-height: 485 * @rex;
+}
+
+
+.center-dialog-footer{
+  .users-selector{
+    width: 420 * @rex;
+
+    display: inline-block;
+  }
+
+  .btn-container{
+    float: right;
+    vertical-align: middle;
+    display: block;
+  }
+
+  .btn-common{
+    display: inline-block;
+    cursor: pointer;
+
+    padding: 10 * @rex 20 * @rex;    
+    font-size: 16 * @rex;
+    line-height: 20 * @rex;
+
+    &.confirm{
+      margin-left: 10 * @rex;
+    }
+  }
+}

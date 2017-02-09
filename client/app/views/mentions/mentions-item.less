@@ -1,0 +1,53 @@
+@import "../../../less/_variables";
+
+.mentions-message-item{
+
+  position: relative;
+  font-size: 15px;
+
+
+  .sender-avatar{
+    position: absolute;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: url(../../../static/images/default_user_avatar.png) center/cover no-repeat;
+    cursor: pointer;
+  }
+
+  .message-content{
+
+    margin-left: 40px;
+
+    .sender-name{
+      font-weight: bold;
+      font-size: 16px;
+      color: @color-coffee-5;
+      display: inline-block;
+    }
+
+    .msg-time{
+      display: inline-block;
+      color: #958F8F;
+      font-size: 13px;
+      margin-left: 5px;
+      font-family: 'Helvetica Neue';
+    }
+
+    .message-text{
+      font-size: 15px;
+      color: @color-coffee-5;
+      line-height: 24px;
+
+      .atLink{
+        color: #0094A0;
+      }
+
+      .atLinkCurUser{
+        background-color: #FEF6D3;
+      }
+    }
+
+  }
+}

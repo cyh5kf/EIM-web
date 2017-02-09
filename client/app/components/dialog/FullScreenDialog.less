@@ -1,0 +1,55 @@
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-sprites";
+
+.dlg-fullscreen {
+  background-color: transparent !important;
+  .dialog-entity {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow-y: auto;
+    .dlg-title {
+      font-size: 34 * @rex;
+      font-weight: bold;
+      color: @-deprecated-color-text-default;
+      line-height: 1;
+    }
+
+    .fs-btn-close {
+      position: absolute;
+      top: 48 * @rex;
+      right: 48 * @rex;
+      width: 64 * @rex;
+      height: 64 * @rex;
+      border-radius: 50%;
+      color: @-deprecated-color-text-note;
+      font-size: 13 * @rex;
+      text-align: center;
+      cursor: pointer;
+      .icon-global-button-action-esc {
+        display: block;
+        margin: 15 * @rex auto 1 * @rex;
+      }
+      &:hover {
+        color: @-deprecated-color-text-secondary;
+        background-color: @-deprecated-color-bg-gray;
+        .icon-global-button-action-esc {
+          .icon-global-button-action-esc-hover();
+        }
+      }
+      &:active {
+        color: @color-white;
+        background-color: @-deprecated-color-bg-green;
+        .icon-global-button-action-esc {
+          .icon-global-button-action-esc-active();
+        }
+      }
+    }
+
+    .footer {
+      display: none;
+    }
+  }
+}

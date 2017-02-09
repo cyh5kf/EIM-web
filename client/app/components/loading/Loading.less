@@ -1,0 +1,84 @@
+//.loading-indicator {
+//  white-space: nowrap;
+//  text-align: center;
+//
+//  .inner-loading-container {
+//    display: inline-block;
+//  }
+//
+//  .loading-dot {
+//    display: inline-block;
+//    width: 6px;
+//    height: 6px;
+//    border-radius: 50%;
+//    background-color: #BCBEBE;
+//    animation: loading-dot 1.2s infinite;
+//
+//    &.dot-2 {
+//      animation-delay: .2s;
+//      margin: 0 5px;
+//    }
+//
+//    &.dot-3 {
+//      animation-delay: .4s;
+//    }
+//  }
+//}
+//
+//@keyframes loading-dot {
+//  0%,80%,to {
+//    opacity: 0
+//  }
+//
+//  40% {
+//    opacity: 1
+//  }
+//}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.delayed {
+    display: none;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.loading-saving{
+    opacity: 1;
+    position: relative;
+    padding-left: 22px;
+    color: #36a64f;
+    font-size: 15px;
+    line-height: 20px;
+    margin-left: 10px;
+    display: inline-block;
+    &.hideLoading{
+        opacity: 0;
+        transition: opacity 2s 1.5s ease-in;
+        -webkit-transition: opacity 2s 1.5s ease-in;
+    }
+    >div {
+        width: 16px!important;
+        height: 16px!important;
+        display: inline-block;
+        position: absolute;
+        top: 3px;
+        left:0px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+
+    i.ficon_check_circle_o {
+        position: absolute;
+        top: -2px;
+        left: -1px;
+        font-size: 21px;
+        margin-right: 2px;
+    }
+}

@@ -1,0 +1,44 @@
+@import "../../../../less/_variables";
+@import "../../../../less/_mixins";
+
+.manage-team {
+  height: 100%;
+
+  .manage-team-title {
+    > .ficon {
+      vertical-align: top;
+      padding-right: 12*@rex;
+      color: #7d60c5;
+    }
+    .button {
+      font-weight: normal;
+      height: 36*@rex;
+      line-height: normal;
+      color: @color-white;
+      .ficon {
+        vertical-align: top;
+        margin-right: 8*@rex;
+      }
+    }
+  }
+
+  .tip-text {
+    font-size: 18*@rex;
+  }
+
+  .navigator-tabs {
+    .nav-tab-item.disabled-members {
+      color: @-deprecated-color-text-note;
+      &.active {
+        color: @-deprecated-color-text-secondary;
+      }
+    }
+  }
+
+  .manage-team-content {
+    border: 1px solid @-deprecated-color-split-line;
+    border-radius: 0 0 4*@rex 4*@rex;
+    border-top: none;
+    background-color: @color-white;
+  }
+}

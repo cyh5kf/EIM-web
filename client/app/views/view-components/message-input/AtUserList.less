@@ -1,0 +1,88 @@
+@import url('../../../../less/_variables.less');
+
+.atUserListContainer{
+
+}
+
+.atUserList{
+  position: absolute;
+  overflow: auto;
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  border-radius: 2px;
+
+  .atUserListContent{
+    max-height: 300px;
+    max-width: 590px;
+    min-width: 400px;
+    overflow: auto;
+  }
+
+
+  .atUserListHeader{
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    background: #F8F8F8;
+    color: #7F7F83;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    background-clip: padding-box;
+    border-radius: 6px 6px 0 0;
+  }
+
+
+  ul,li{
+    margin: 0px;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  li.atUserItem{
+    height: 32px;
+    padding: 5px 0px;
+    line-height: 22px;
+    font-size: 15px;
+    color: #433A39;
+
+    .online-status-wrapper{
+      width: 10px;
+      height: 10px;
+      margin: 5px 5px 0 20px;
+      display: block;
+      float: left;
+    }
+
+    .avatar{
+      width: 24px;
+      height: 24px;
+      display: block;
+      float: left;
+      border-radius: 100px;
+      background-size: cover;
+    }
+    .username{
+      display: inline-block;
+      margin-left: 12px;
+      cursor: default;
+    }
+
+    .desc{
+
+    }
+
+    &.isAtChannel{
+      padding-left: 8px;
+    }
+
+  }
+
+  li.selected{
+    background: #F0F0F0;
+  }
+
+
+}

@@ -1,0 +1,86 @@
+@import "../../../../less/_variables";
+
+.dlg-quickSwitcher.dialog-mask {
+  justify-content: flex-start;
+  padding-top: 30vh;
+  transition: background-color 300ms;
+
+  .dialog-entity {
+    width: 460*@rex;
+    height: auto;
+    padding: 12*@rex 16*@rex 16*@rex;
+
+    .jump-session-tip {
+      font-size: 12*@rex;
+      color: #8b898f;
+      margin-bottom: 8*@rex;
+      .tip-left-margin {
+        padding-left: 8*@rex;
+      }
+    }
+
+    .users-selector {
+      height: 73*@rex;
+      line-height: 67*@rex;
+      font-size: 32*@rex;
+      font-weight: bold;
+      color: @-deprecated-color-text-default;
+      .rc-select-selection {
+        padding: 0;
+      }
+    }
+    .user-list-container {
+      .users-selector-dropdown {
+        position: static !important;
+        border: none;
+        box-shadow: none;
+        margin-top: 16px;
+
+        .rc-select-dropdown-menu-item {
+          border: none;
+          line-height: 30*@rex;
+          border-radius: 6*@rex;
+          padding: 0 0 0 12*@rex;
+          font-size: 16*@rex;
+          .user-item:before {
+            content: '';
+            display: inline-block;
+            width: 8*@rex;
+            height: 8*@rex;
+            margin: 0 8*@rex 0 4*@rex;
+            background-color: #93cc9c;
+            border-radius: 50%;
+          }
+          .group-item:before {
+            content: '#';
+            display: inline-block;
+            width: 20*@rex;
+            padding-left: 4*@rex;
+          }
+          .item-name {
+            font-weight: bold;
+            color: @-deprecated-color-text-default;
+          }
+          .item-tip {
+            padding-left: 8*@rex;
+            color: @-deprecated-color-text-note;
+          }
+          .search-highlight {
+            background-color: transparent;
+          }
+          &.rc-select-dropdown-menu-item-active {
+            background-color: @-deprecated-color-bg-blue;
+            .item-name,
+            .item-tip {
+              color: @color-white;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      display: none;
+    }
+  }
+}

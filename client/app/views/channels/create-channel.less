@@ -1,0 +1,479 @@
+@import url('../../../less/_variables.less');
+@import (reference) '../../../less/eim-sprites.less';
+// .dlg-createChannel .content {
+//     display: flex;
+//     flex-direction: column;
+//     width: 640 * @rex;
+//     height: 100%;
+//     padding-top: 10rem;
+//     margin: 0 auto;
+
+//     a.fs-btn-back {
+//         position: absolute;
+//         top: 50 * @rex;
+//         left: 50 * @rex;
+//         width: 64 * @rex;
+//         height: 64 * @rex;
+//         color: #9e9ea6;
+//         text-align: center;
+//         border-radius: 50%;
+        
+//         .ficon_button{
+//             font-size: 32 * @rex;
+//             position: absolute;
+//             top: 2 * @rex;
+//             left: 0;
+//             width: 100%;
+//             display: block;
+            
+//         }
+
+//         span.keyLabel {
+//             position: absolute;
+//             top: 2.25rem;
+//             left: 0;
+//             width: 100%;
+//             display: block;
+//         }
+        
+//         &:hover{
+//             color: #555459;
+//             background: #e8e8e8;
+//             text-decoration: blink;
+//         }
+
+//         &:active{
+//             color: #ffffff;
+//             background-color: #2ab27b;
+//         }
+//     }
+
+//     .dlg-desc {
+//         color: #9e9ea6;
+//         font-size: 14 * @rex;
+//         margin-top: 20 * @rex;
+//         margin-bottom: 25 * @rex;
+//         line-height: 19 * @rex;
+//     }
+
+//     input[type="text"],textarea {
+//         font-size: 18 * @rex;
+//         &::-webkit-input-placeholder{
+//             color: #9e9ea6;
+//             font-size: 17 * @rex;
+//         }
+
+//         &:hover {
+//             border-color: #2780f8;
+//         }
+//     }
+
+//     input.nameInputBox{
+//         width: 640 * @rex;
+//         height: 48 * @rex;
+//         color: #555459;
+//         border-radius: 5 * @rex;
+//         border: 1 * @rex solid #d5d5d5;
+//         padding: 10 * @rex 5 * @rex 10 * @rex 10 * @rex;
+//     }
+
+//     .optionLabel{
+//         margin-left: 3 * @rex;
+//         color: #9e9ea6;
+//         font-weight: normal;
+//     }
+
+//     .txtTitleLine {
+//         color: #555459;
+//         margin-top: 18 * @rex;
+//         margin-bottom: 5 * @rex;
+//         font-weight: bold;
+//     }
+
+//     .isPublicLine {
+//         overflow: hidden;
+//         margin: 18 * @rex 0 * @rex 16 * @rex 0 * @rex;
+//         .publicDesc {
+//             float:left;
+//             font-size: 14 * @rex;
+//             color: #555459;
+//             margin-top: 3 * @rex;
+//         }
+//         .ts_toggle{
+//             float:left;
+//             .ts_toggle_on_text{
+//                 visibility: hidden;
+//             }
+
+//             .ts_toggle_off_text{
+//                 visibility: visible;
+//             }
+
+//             &.checked{
+//                 .ts_toggle_button {
+//                     background: #2ab27b;
+//                     color: #fff;
+//                     padding: .1rem 2rem .1rem 1rem;
+//                 }
+
+//                 .ts_toggle_on_text{
+//                     visibility: visible;
+//                     -webkit-transform: translateY(-100%);
+//                     -moz-transform: translateY(-100%);
+//                     -ms-transform: translateY(-100%);
+//                     transform: translateY(-100%);
+//                 }
+
+//                 .ts_toggle_off_text{
+//                     visibility: hidden;
+//                 }
+
+//                 .ts_toggle_handle{
+//                     left: 100%;
+//                     margin-left: -25 * @rex;
+//                 }
+//             }
+//         }
+
+//         .ts_toggle_button{
+//             background: #FF8B00;
+//             color: #fff;
+//             display: inline-block;
+//             border-radius: 1rem;
+//             margin-right: .5rem;
+//             padding: .1rem 1rem .1rem 2rem;
+//             font-size: .9rem;
+//             font-weight: 700;
+//             -webkit-transition: 70ms ease-out;
+//             -moz-transition: 70ms ease-out;
+//             transition: 70ms ease-out;
+//             cursor: pointer;
+//             position: relative;
+//             text-align: center;
+//             overflow: hidden;
+//             height: 27 * @rex;
+//             line-height: 24 * @rex;
+//         }
+
+//         .ts_toggle_handle {
+//             background: #fff;
+//             display: inline-block;
+//             width: 23 * @rex;
+//             height: 23 * @rex;
+//             border-radius: 1rem;
+//             position: absolute;
+//             left: 0;
+//             top: 0;
+//             margin: 2 * @rex;
+//             -webkit-transition: 70ms ease-out;
+//             -moz-transition: 70ms ease-out;
+//             transition: 70ms ease-out;
+//         }
+
+        
+//     }
+
+//     .nameInfoBox{
+//         color: #9e9ea6;
+//         .nameLine{
+//             margin-bottom: 5 * @rex;
+//         }
+
+//         i.simpol {
+//             font-style: normal;
+//             font-size: 18 * @rex;
+//             font-weight: bold;
+//             margin: 0 * @rex 10 * @rex;
+//         }
+
+//         .nameDesc {
+//             color: #9e9ea6;
+//             font-size: 13 * @rex;
+//             margin-top: 3 * @rex;
+//             margin-bottom: 18 * @rex;
+//         }
+
+//         input[type="text"]{
+//             padding-left: 31 * @rex;
+//         }
+        
+//     }
+
+//     .inputBoxLine{
+//         position: relative;
+//         .searchIcon{
+//             position: absolute;
+//             top: 16 * @rex;
+//             left: 16 * @rex;
+//             z-index: 2;
+//         }
+
+//         .nameIcon{
+//             position: absolute;
+//             top: 14 * @rex;
+//             left: 14 * @rex;
+//             font-size: 18 * @rex;
+//         }
+
+//         .lockIcon{
+//             position: absolute;
+//             top: 11 * @rex;
+//             left: 10 * @rex;
+//             z-index: 2;
+//             font-size: 20 * @rex;
+//             line-height: 20 * @rex;
+//         }
+
+//         .users-selector{
+//             .rc-select-selection--multiple{
+//                 padding-left: 35 * @rex;
+//             }
+//         }
+//     }
+
+//     .sendInviteBox{
+//         margin-top: 18 * @rex;
+//         margin-bottom: 27 * @rex;
+//         .nameInputBox{
+//             width: 640 * @rex;
+//             height: 48 * @rex;
+//             border-radius: 5 * @rex;
+//             border: 1 * @rex solid #d5d5d5;
+//             padding: 10 * @rex 5 * @rex 10 * @rex 45 * @rex;
+//         }
+//     }
+
+//     .buttonList{
+//         overflow: hidden;
+//         .button {
+//             height: 49*@rex;
+//             padding: 0 18*@rex;
+//             font-size: 20 * @rex;
+//             margin-left: 8*@rex;
+//             font-weight: 700;
+//             float: left;
+//         }
+//     }
+// }
+
+.dlg-browseChannel .content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 80 * @rex;
+    
+    .dlg-title{
+        button.createChannel {
+            width: 116 * @rex;
+            height: 36 * @rex;
+            border: 0 * @rex;
+            color: #fff;
+            outline: none;
+            font-size: 14 * @rex;
+            font-weight: bold;
+            line-height: 32 * @rex;
+            border-radius: 5 * @rex;
+            background-color: #2ab27b;
+        }
+        &::after{
+            content:"";
+            clear: both;
+        }
+    }
+
+    input[type="text"]{
+        &:hover {
+            border-color: #2780f8!important;
+        }
+    }
+
+    .operateChannels{
+        margin-top: 35 * @rex;
+        .searchChannels {
+            width: 300 * @rex;
+            input.searchBox {
+                outline: none;
+                width: 100%;
+                height: 37 * @rex;
+                line-height: 35 * @rex;
+                border-radius: 5 * @rex;
+                margin: 0 * @rex;
+                padding-left: 35 * @rex;
+                border: 1 * @rex solid #c5c5c5;
+            }
+
+            .searchIcon{
+                position: absolute;
+                margin: 10 * @rex 8 * @rex 10 * @rex 12 * @rex;
+            }
+        }
+
+        .sortedProps{
+            position: relative;
+            height: 37 * @rex;
+            width: 324 * @rex;
+            margin-left: 16 * @rex;
+            border-radius: 5 * @rex;
+            label {
+                position: absolute;
+                z-index: 2;
+                height: 33 * @rex;
+                line-height: 33 * @rex;
+                color: #9e9ea6;
+                font-weight: normal;
+                background: #fff;
+                padding: 0 * @rex 3 * @rex 0 * @rex 18 * @rex;
+                margin: 2 * @rex 0 * @rex 0 * @rex 1 * @rex;
+                border-radius: 7 * @rex;
+            }
+
+            .selectProps {
+                .rc-select .rc-select-selection--single {
+                    height: 37*@rex;
+                    line-height: 35*@rex;
+                }
+
+                .rc-select .rc-select-selection__rendered{
+                    margin-left:66 * @rex;
+                }
+            }
+            
+
+
+        }
+    }
+
+    .yourChannelsLabel {
+        margin: 28 * @rex 0 * @rex 0 * @rex 0 * @rex;
+        padding-left: 10 * @rex;
+        color: #2c2d30;
+        font-weight: bold;
+    }
+
+    .browseChannel {
+        display: flex;
+        flex-direction: column;
+        width: 640 * @rex;
+        margin: 0 auto;
+    }
+
+    .subtleSilver{
+        color:#9e9ea6!important;
+        .ficon_button{
+            position: relative;
+            top: -1 * @rex;
+            margin-right: 4 * @rex;
+            font-size: 20 * @rex;
+            color: #9e9ea6;
+        }
+    }
+
+    .aboutChannels{
+        margin-right: 20 * @rex;
+    }
+
+    .channelsBox{
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+
+    .channelLists {
+        margin: 8 * @rex 0 * @rex 0 * @rex 0 * @rex;
+        padding: 0 * @rex;
+        list-style: none;
+        >li{
+            position: relative;
+            padding: 12 * @rex 10 * @rex;
+            border: 1 * @rex solid transparent;
+            border-top: 1 * @rex solid #e3e3e3;
+            .attend_icon{
+                display: none;
+            }
+
+            .ficon_enter{
+                font-size: 19px;
+            }
+
+            .joindedLabel{
+                color: #babbbf;
+            }
+            &:hover{
+                border-radius: 6 * @rex;
+                background: #edf7fd;
+                border: 1 * @rex solid #d3ecfa;
+                &+li{
+                    border-top: 1 * @rex solid transparent;
+                }
+
+                .userIcon{
+                    display: none;
+                }
+
+                .attend_icon{
+                    position: absolute;
+                    top: 50%;
+                    right: 10 * @rex;
+                    margin-top: -20 * @rex;
+                    cursor: pointer;
+                    color: #439fe0;
+                    display: inline-block;
+                    text-align: center;
+                }
+            }
+        }
+
+        .channelLine{
+            color: #9e9ea6;
+            font-size: 16px;
+            line-height: 25 * @rex;
+            display: inline-block;
+            padding: 0 * @rex 0 * @rex 2 * @rex 0 * @rex;
+            font-variant: small-caps;
+        }
+
+        .userIcon{
+            float: right;
+            display: block;
+            margin-top: 5px;
+            .ficon_button{
+                position: relative;
+                top: 1 * @rex;
+                color: #9e9ea6;
+                font-size: 18 * @rex;
+                display: inline-block;
+            }
+
+            .text{
+                position: relative;
+                top: 3px;
+                display: inline-block;
+                padding-left: 3 * @rex;
+                color: #9e9ea6;
+                font-size: 13 * @rex;
+            }
+        }
+
+        .channelName{
+            color: #2c2d30;
+            font-weight: bold;
+            font-variant: normal;
+            margin: 0 * @rex 6 * @rex 0 * @rex 3 * @rex;
+        }
+
+        .createdInfo{
+            font-size: 13 * @rex;
+            color: #9e9ea6;
+            font-style: oblique;
+            >a{
+                color: #2c2d30;
+                font-style: normal;
+            }
+        }
+
+        .channelDesc{
+            font-size: 13 * @rex;
+            color: #9e9ea6;
+            padding-right: 40 * @rex;
+        }
+    }
+}

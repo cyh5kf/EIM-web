@@ -1,0 +1,144 @@
+@import "../../../less/_variables";
+@import "../../../less/_mixins";
+@import (reference) '../../../less/eim-deprecated.less';
+@import (reference) "../../../less/eim-sprites";
+
+//消息列表和form表单 盒子
+.message-list-view {
+  @message-header-height: 58 * @rex;
+  @message-form-height: 153px;
+  height: 100%;
+  padding: @message-header-height 0 @message-form-height;
+  position: relative;
+
+  .file-opt-content {
+    position: absolute;
+    top: 50 * @rex;
+    left: 30 * @rex;
+
+    ul.menuList {
+
+      margin: 0;
+      padding: 19 * @rex 0 0 0;
+      width: 132 * @rex;
+      height: 184 * @rex;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      border: 1px solid #c1c1c1;
+      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.222);
+
+      > li {
+        line-height: 25 * @rex;
+      }
+    }
+  }
+
+  .message-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  //真正的消息列表容器
+  .message-list-data {
+    height: 100%;
+  }
+
+  //消息表单
+  .message-form-footer {
+    width: 100%;
+    min-height: 44 * @rex;
+    max-height: 300 * @rex;
+    //padding: 0 16 * @rex;
+    //margin-bottom: 25 * @rex;
+    .position-left-bottom();
+    background: @color-white;
+    .join_channel_container {
+      text-align: center;
+    }
+
+    .join_channel_box {
+      margin: 0 auto;
+      max-width: 530px;
+      overflow: hidden;
+      display: inline-block;
+      .joined_desc {
+        font-size: 16px;
+        color: #7a8390;
+      }
+      .joined_operate {
+        font-size: 12px;
+        font-weight: 700;
+        color: #7a8390;
+        margin-left: 25px;
+      }
+
+      .join_channel_btn {
+        height: 29px;
+        line-height: 29px;
+        padding: 0 10px;
+        font-size: 14px;
+      }
+
+      .joined_desc {
+        font-size: 16px;
+        color: #7a8390;
+        margin-top: 11px;
+      }
+
+      .attend_desc {
+        margin-top: 4px;
+        text-align: left;
+      }
+    }
+  }
+
+  .progressbar{
+    position:relative;
+    .progressbar-title{
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      -webkit-transform:translate(-50%,-50%);
+      position:absolute;
+      color: #fff;
+    }
+
+    .progress {
+      background-color:#b2d5c9;
+    }
+    .progress-cancel-btn{
+      right:0;
+      top:0;
+      color: #fff;
+      position:absolute;
+    }
+
+    .progress-cancel-btn:hover{
+      color: #fff;
+    }
+  }
+
+  .message-loading{
+    width: 64 * @rex;
+    height: 64 * @rex;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .message-empty{
+    width: 400 * @rex;
+    height: 64 * @rex;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+
+    .bold{
+      color:#555459;
+      font-weight: 700;
+    }
+  }
+}

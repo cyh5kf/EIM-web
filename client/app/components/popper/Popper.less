@@ -1,0 +1,17 @@
+.popper {
+  @popper-offset: 7px;
+  z-index: 100;
+
+  &[data-placement^="top"] {
+    margin-bottom: @popper-offset;
+  }
+  &[data-placement^="bottom"] {
+    margin-top: @popper-offset;
+  }
+  &[data-placement^="left"] {
+    margin-right: @popper-offset;
+  }
+  &[data-placement^="right"] {
+    margin-left: @popper-offset;
+  }
+}

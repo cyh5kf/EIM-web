@@ -1,0 +1,82 @@
+//应用左侧--频道导航栏目
+@import "../../../less/_variables";
+@import "../../../less/baselayout-mixin.less";
+@import "../../../less/_mixins.less";
+.menubar {
+    position: relative;
+    width: 100 * @rex;
+
+    .menu-list{
+        margin-top: 60 * @rex;
+        .menu-action{
+            width: 100%;
+            height: 80 * @rex;
+
+            .menu-icon{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            .icon-chatting{
+                background: url(./images/ic_tab_msg.png) center no-repeat;
+            }
+            .icon-mail{
+                background: url(./images/ic_tab_mail.png) center no-repeat;
+            }
+            .icon-app{
+                background: url(./images/ic_tab_application.png) center no-repeat;
+            }
+            .icon-contacts{
+                background: url(./images/ic_tab_contacts.png) center no-repeat;
+            }
+            .icon-me{
+                background: url(./images/ic_tab_me.png) center no-repeat;
+            }
+
+            .active{
+                &.icon-chatting{
+                    background: url(./images/ic_tab_msg_press.png) center no-repeat;
+                }
+                &.icon-mail{
+                    background: url(./images/ic_tab_mail_press.png) center no-repeat;
+                }
+                &.icon-app{
+                    background: url(./images/ic_tab_application_press.png) center no-repeat;
+                }
+                &.icon-contacts{
+                    background: url(./images/ic_tab_contacts_press.png) center no-repeat;
+                }
+                &.icon-me{
+                    background: url(./images/ic_tab_me_press.png) center no-repeat;
+                }
+            }
+        }
+    }
+
+    .bottom-menu-list {
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        .menu-action {
+            padding: 16px 0;
+            text-align: center;
+            .btn-group {
+                .dropdown-toggle {
+                    float: none;
+                    width: 100%;
+                    font-size: 30px;
+                    line-height: 30px;
+                    .clear-button-style();
+                }
+            }
+
+            &.logo-label {
+                font-size: 18px;
+                padding-right: 7px;
+                text-align: right;
+                color: @color-text-hint-2;
+            }
+        }
+    }
+}

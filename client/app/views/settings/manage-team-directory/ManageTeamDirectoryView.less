@@ -1,0 +1,105 @@
+@import "../../../../less/_variables";
+@import "../../../../less/_mixins";
+@import (reference) "../../../../less/eim-sprites";
+
+.manage-team-directory {
+  .manage-team-directory-header {
+    h1 > .ficon {
+      vertical-align: top;
+      margin-right: 12*@rex;
+      color: #eb4d5c;
+    }
+    .button {
+      float: right;
+      height: 36*@rex;
+      font-weight: normal;
+      line-height: normal;
+      color: @color-white;
+      .ficon {
+        vertical-align: top;
+        margin-right: 8*@rex;
+      }
+    }
+    .guide-msg {
+      font-size: 18*@rex;
+    }
+  }
+
+  .navigator-tabs .nav-tab-item.disabled-members {
+    color: @-deprecated-color-text-note;
+    &.active {
+      color: @-deprecated-color-text-secondary;
+    }
+  }
+
+  .team-directory-content {
+    border: 1px solid @-deprecated-color-split-line;
+    border-radius: 0 0 4*@rex 4*@rex;
+    border-top: none;
+    background-color: @color-white;
+
+    .search-input-wrapper {
+      .clear-float();
+      padding: 24*@rex 24*@rex 8*@rex 0;
+      border-bottom: 1px solid @-deprecated-color-split-line;
+      .wg-search-input {
+        float: right;
+        width: 230*@rex;
+        height: 37*@rex;
+      }
+    }
+
+    .user-groups-actions {
+      display: none;
+    }
+
+    .item-list {
+      padding: 32*@rex 32*@rex 16*@rex;
+      .team-member-item {
+        padding: 16*@rex 0 27*@rex;
+        border: none;
+        cursor: default;
+        .member-details {
+          float: left;
+          width: 31.5%;
+        }
+        .member-email-container {
+          float: left;
+          display: flex;
+          padding-top: 8*@rex;
+          width: 49.2%;
+          color: @-deprecated-color-text-default;
+          font-size: 15*@rex;
+          .member-email-title {
+            width: 140*@rex;
+            flex-shrink: 1;
+            color: #a0a0a2;
+          }
+          a {
+            color: inherit;
+          }
+        }
+        > .dropdown {
+          float: right;
+          margin-top: 16*@rex;
+          .dropdown-toggle.btn {
+            position: relative;
+            width: 44*@rex;
+            height: 36*@rex;
+            border-color: #c7cacd;
+            background-color: #fbfbfa;
+            .icon {
+              .center-align();
+            }
+            &:hover {
+              background-color: @color-white;
+              .icon {
+                .icon-message-button-action-more32-hover();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "../../../../less/_variables";
+@import "../../../../less/_mixins";
+
+.message-header {
+  height: 58px;
+  padding: 0 20px;
+  border-bottom: 1px solid @color-border;
+
+  .channel-logo {
+    cursor: pointer;
+    float: left;
+    width: 38px;
+    height: 38px;
+    margin-top: 10px;
+    border-radius: 50%;
+    background: url(../../../../static/images/default_user_avatar.png) center/cover no-repeat;
+  }
+
+  .channel-info {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 10px;
+
+    .channel-name {
+      color: @color-text-dark;
+      font-size: 16px;
+    }
+
+    .channel-member-cnt {
+      padding-top: 3px;
+      font-size: 12px;
+      color: @color-text-light;
+    }
+  }
+
+  .more-actions-icon {
+    float: right;
+    .circle(36px);
+    line-height: 36px;
+    text-align: center;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    &:hover{
+      color: @color-green-3;
+    }
+    &.active {
+      background-color: @color-bg-light;
+    }
+  }
+}

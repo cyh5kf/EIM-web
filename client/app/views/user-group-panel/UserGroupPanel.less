@@ -1,0 +1,106 @@
+@import "../../../less/_variables";
+
+.user-group-panel {
+  .user-group-panel-title {
+    padding: 16*@rex 12*@rex;
+    font-size: 22*@rex;
+    color: @-deprecated-color-text-secondary;
+    background-color: @-deprecated-color-bg-light;
+    border-radius: 6*@rex 6*@rex 0 0;
+    .panel-title-label {
+      cursor: pointer;
+      &:hover {
+        color: @-deprecated-color-text-link;
+      }
+    }
+    .ficon {
+      font-size: 20*@rex;
+      vertical-align: top;
+      cursor: pointer;
+      &:hover {
+        color: @-deprecated-color-text-link;
+      }
+      &.icon-close {
+        float: right;
+      }
+    }
+  }
+
+  .user-group-info {
+    padding: 16*@rex 8*@rex 0;
+    font-size: 15*@rex;
+    color: @-deprecated-color-text-secondary;
+    .group-name {
+      font-size: 22*@rex;
+      margin-bottom: 2*@rex;
+    }
+    .notify-tip {
+      color: @-deprecated-color-text-note;
+      margin-bottom: 2*@rex;
+    }
+    .create-tip {
+      color: @-deprecated-color-text-note;
+    }
+  }
+
+  .navigator-tabs {
+    margin-bottom: 8*@rex;
+    .nav-tab-item {
+      flex-grow: 1;
+    }
+  }
+
+  .user-members-tab {
+    .group-member-item {
+      padding: 8*@rex;
+      margin-top: 2*@rex;
+      border: 1px solid transparent;
+      border-radius: 5*@rex;
+      cursor: pointer;
+      .member-avatar {
+        float: left;
+        width: 72*@rex;
+        height: 72*@rex;
+        margin-right: 10*@rex;
+        background: url(../../../static/images/default_user_avatar.png) center/cover no-repeat;
+        border-radius: 4*@rex;
+      }
+      .member-details {
+        padding-top: 6*@rex;
+        font-size: 15*@rex;
+        line-height: 20*@rex;
+      }
+      &:hover {
+        border-color: @-deprecated-color-border-light;
+        .member-realname {
+          color: #4bbe2e;
+        }
+      }
+    }
+  }
+
+  .default-channels-tab {
+    .group-channel-item {
+      padding: 16*@rex;
+      border-bottom: 1px solid @-deprecated-color-split-line;
+      line-height: 20*@rex;
+      cursor: pointer;
+      &:hover {
+        background-color: #f9f9f9;
+        .channel-name {
+          color: #439fe0;
+        }
+      }
+      .channel-name {
+        margin-bottom: 2*@rex;
+        font-size: 18*@rex;
+        font-weight: 700;
+        color: @-deprecated-color-text-secondary;
+      }
+      .create-tip {
+        font-size: 15*@rex;
+        color: @-deprecated-color-text-note;
+      }
+    }
+  }
+}

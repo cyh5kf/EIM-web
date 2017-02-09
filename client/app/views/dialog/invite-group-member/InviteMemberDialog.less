@@ -1,0 +1,410 @@
+@import url('../../../../less/_variables.less');
+
+@INVITE_DIALOG_HEIGHT: 601px;
+
+.invite-member-dialog {
+
+  .header {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+
+  .dialog-entity {
+    width: 635px;
+    height: @INVITE_DIALOG_HEIGHT;
+    border-radius: 4px;
+  }
+
+  .clearFloat {
+    clear: both;
+  }
+
+  .inviteInputView {
+    position: relative;
+    width: 500px;
+    height: @INVITE_DIALOG_HEIGHT;
+    margin: 0 auto;
+
+    .title {
+      padding-top: 40px;
+      padding-bottom: 25px;
+      font-size: 30px;
+      color: #433A39;
+      text-align: center;
+    }
+
+    .bottom-button {
+
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      height: 115px;
+      width: 100%;
+      cursor: pointer;
+
+      .invite-button {
+        background-color: @color-green-3;
+        color: @color-white;
+        font-size: 18px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        border-radius: 4px;
+        font-family: @btn-font-family-1;
+
+        .loaddingGif {
+          height: 48px;
+          display: inline-block;
+          position: relative;
+          margin-right: 5px;
+          div {
+            position: relative;
+            top: 4px;
+          }
+        }
+
+        .button-text {
+          display: inline-block;
+          height: 48px;
+        }
+
+      }
+
+      .to-pending {
+        color: @color-green-3;
+        font-size: 15px;
+        margin-top: 10px;
+      }
+
+
+      .invite-button-multi{
+        width: 160px;
+        display: inline-block;
+        font-size: 14px;
+      }
+
+      .invite-button-cancel{
+        width: 160px;
+        display: inline-block;
+        margin-left: 10px;
+        background-color: rgba(222,222,222,0.2);
+        color: #7C7A78;
+        border: 1px solid #DEDEDE;
+        font-size: 14px;
+      }
+    }
+
+
+    .errorAlert{
+      color: #F95B50;
+      text-align: center;
+      position: absolute;
+      top: -18px;
+      width: 100%;
+    }
+
+    .collectAlert{
+      font-size: 12px;
+      color: #7C7A78;
+      line-height: 14px;
+      width: 478px;
+      margin-bottom: 20px;
+    }
+
+
+    .input-list {
+      position: relative;
+      height: 500px;
+
+      .entered-members {
+
+        max-height: 300px;
+        overflow: auto;
+
+        .member {
+          height: 63px;
+          clear: both;
+          //margin-bottom: 15px;
+          color: #433A39;
+          padding: 0 5px;
+          position: relative;
+
+          input.entering-input {
+            float: left;
+            outline: none;
+            width: 100%;
+            padding-right: 30px;
+            border: none;
+            line-height: 48px;
+            height: 48px;
+            border-bottom: 1px solid @color-gray-3;
+            font-size: 18px;
+            color: #433A39;
+            padding-left: 5px;
+
+            &:focus {
+              border-bottom: 1px solid @color-green-3;
+            }
+
+          }
+
+          i.ficon_delete {
+            position: absolute;
+            color: #958F8F;
+            cursor: pointer;
+            right: 10px;
+            top: 16px;
+            display: none;
+          }
+
+          &:hover {
+
+            input.entering-input {
+              background-color: @color-gray-2;
+            }
+
+            i.ficon_delete {
+              display: block;
+            }
+          }
+
+          .email-validate-msg {
+            position: absolute;
+            color: #F95B50;
+            font-size: 15px;
+            top: 50px;
+            left: 9px;
+            display: none;
+            z-index: 10;
+          }
+
+          &.email-validate-false {
+            .email-validate-msg {
+              display: block;
+            }
+
+            input.entering-input {
+              border-bottom: 1px solid @color-red;
+            }
+
+          }
+
+        }
+
+
+        &.multi-collect-true{
+          max-height: 250px;
+        }
+      }
+
+      .enter-more {
+        line-height: 44px;
+        height: 44px;
+        background-color: @color-gray-1;
+        margin-top: 10px;
+        font-size: 15px;
+        padding: 0 12px;
+
+        a {
+          color: @color-green-3;
+        }
+        span {
+          color: @color-text-light;
+        }
+      }
+    }
+
+
+    .multi-input{
+      position: relative;
+      height: 500px;
+
+      .subTitle{
+        font-weight: bold;
+        line-height: 30px;
+        font-size: 16px;
+        color: #433A39;
+        padding-top: 25px;
+      }
+
+      .desc{
+        font-size: 14px;
+        line-height: 21px;
+        color: #958F8F;
+        word-spacing: 1px;
+      }
+
+      textarea{
+        resize:none;
+        margin-top: 6px;
+        height: 240px;
+        width: 100%!important;
+        padding: 7px 12px;
+        border: 1px solid #DEDEDE;
+        border-radius: 4px;
+        outline-offset: 0;
+        outline: 0;
+        line-height: 28px;
+        font-size: 15px;
+        color: #433A39;
+
+        &:focus{
+          border-color: #00ACC1;
+        }
+      }
+
+
+    }
+
+
+  }
+  /*inviteInputView*/
+
+  .inviteResultView {
+
+    position: relative;
+    width: 500px;
+    height: @INVITE_DIALOG_HEIGHT;
+    margin: 0 auto;
+
+    .title {
+      padding-top: 70px;
+      h1 {
+        color: #7C7A78;
+        font-size: 30px;
+        text-align: center;
+        font-weight: normal;
+      }
+      h2 {
+        font-weight: normal;
+        font-size: 16px;
+        color: #433A39;
+        text-align: center;
+      }
+    }
+
+    .result-list {
+
+      .result-title, .result-item {
+        color: #433A39;
+        height: 44px;
+        line-height: 44px;
+      }
+
+      .result-title {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .result-content {
+
+        max-height: 265px;
+        overflow: auto;
+        font-size: 15px;
+
+        .result-item {
+          border-bottom: 1px solid #DEDEDE;
+        }
+        .result-item:last-child {
+          border-bottom-color: transparent;
+        }
+      }
+
+      &.success {
+
+        .result-title {
+          border-bottom: 1px solid #00ACC1;
+        }
+
+        .listStateTitle {
+          display: none;
+        }
+        .statusDesc {
+          display: none;
+        }
+      }
+
+      &.partialSuccess, &.error {
+        .emailLabel {
+          float: left;
+          width: 240px;
+        }
+        .listStateTitle {
+          float: left;
+        }
+
+        .email {
+          float: left;
+          width: 240px;
+        }
+
+        .statusDesc {
+          float: left;
+          width: 255px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+      }
+
+      //部分成功
+      &.partialSuccess {
+
+        .result-title {
+          border-bottom: 1px solid #00ACC1;
+        }
+
+        .isLastSuccess {
+          border-bottom-color: #F95B50;
+        }
+
+      }
+
+      //全部失败
+      &.error {
+        .result-title {
+          border-bottom: 1px solid #F95B50;
+        }
+      }
+
+    }
+
+    .oper-buttons {
+
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+
+      button {
+        width: 160px;
+        height: 44px;
+        background-color: rgba(223, 241, 240, 0.2);
+        border: 1px solid rgba(0, 172, 193, 0.2);
+        border-radius: 4px;
+        line-height: 44px;
+        font-size: 14px;
+        color: #00ACC1;
+        text-align: center;
+        display: block;
+        float: left;
+        margin-right: 10px;
+        padding: 0;
+        outline: none;
+
+        &:hover {
+          border: 1px solid rgba(0, 172, 193, 0.5);
+        }
+      }
+
+      button:last-child {
+        margin-right: 0px;
+      }
+    }
+
+  }
+  /*inviteResultView*/
+
+}

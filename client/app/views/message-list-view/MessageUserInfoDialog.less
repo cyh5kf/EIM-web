@@ -1,0 +1,164 @@
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-deprecated";
+.dlg-userInfoDialog{
+      .btn_close{
+        position: absolute;
+        top: 10 * @rex;
+        right: 10 * @rex;
+        cursor: pointer;
+        opacity: 0.4;
+        &:hover{
+          opacity: 1;
+        }
+      }
+
+      .userOption {
+        padding: 0 * @rex;
+        margin: 30 * @rex 0 0 0;
+        font-size: 15 * @rex;
+        list-style-type: none;
+        >li {
+            overflow: hidden;
+            line-height: 26 * @rex;
+            padding: 8 * @rex 20 * @rex;
+            >label {
+                font-weight: normal;
+                float: left;
+                color: @color-coffee-5;
+            }
+            >.userText {
+                float: right;
+                color: @color-coffee-11;
+            }
+            >.userPhone{
+                cursor: pointer;
+                color:@color-green-3;
+                .editLabel {
+                    margin-left: 10 * @rex;
+                    text-decoration: underline;
+                }
+
+                input.userMobileNo {
+                    width: 140 * @rex;
+                    box-shadow: none;
+                    border: 0 * @rex;
+                    outline: none;
+                    padding-left: 7 * @rex;
+                    border-bottom: 1 * @rex solid;
+                }
+            }
+        }
+      }
+
+      ul.operationBox {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        list-style-type: none;
+        padding: 0 * @rex;
+        position: absolute;
+        bottom: 20 * @rex;
+        left: 40 * @rex;
+        right: 40 * @rex;
+        >li{
+          flex-grow: 1;
+        }
+        .operateIcon {
+            width: 60 * @rex;
+            height: 60 * @rex;
+            margin:0 auto;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 50%;
+            background: url('../menubar/images/ic_tab_msg.png') #F1FAFC no-repeat center center;
+            background-size: 26 * @rex;
+        }
+      }
+
+      .resetCacheBox {
+          position: absolute;
+          bottom: 50 * @rex;
+          left: 20 * @rex;
+          right: 20 * @rex;
+          cursor: pointer;
+          color: @color-green-3;
+          padding-top: 12 * @rex;
+          border-top: 1 * @rex solid @color-border;
+      }
+
+      .userInfoBox{
+        .avatarBox {
+          height: 154 * @rex;
+          overflow: hidden;
+          background: url('../../../static/user_info_bg.png') @color-white no-repeat center 10%;
+          background-size: contain;
+          border-radius: 7 * @rex 7 * @rex 0 * @rex 0 * @rex;
+        }
+
+        .smallAvatar {
+          width: 85 * @rex;
+          height: 85 * @rex;
+          overflow: hidden;
+          position: absolute;
+          border: 3 * @rex solid #AEC9FE;
+          top: 60 * @rex;
+          left: 50%;
+          border-radius: 50%;
+          margin-left: -42 * @rex;
+          >img{
+            width:100%;
+          }
+        }
+
+        .userDetail {
+          overflow: hidden;
+          color: @color-white;
+          line-height: 26 * @rex;
+          width: 100%;
+          text-align: center;
+          padding: 0 * @rex 15 * @rex;
+          .editNameIcon{
+              position: relative;
+              display: inline-block;
+              width: 14 * @rex;
+              height: 14 * @rex;
+              cursor: pointer;
+              background: url('../../../static/edit_icon.png');
+              background-size: cover;
+              margin-left: 6 * @rex;
+          }
+
+          .username {
+            font-size: 17 * @rex;
+            color: @color-coffee-5;
+            circle{
+              position: relative;
+              top:-1 * @rex;
+              width: 10 * @rex;
+              height: 10 * @rex;
+              border-radius: 50%;
+              display: inline-block;
+              background-color:@color-green-3;
+              &.offline{
+                background-color: @color-coffee-11;
+              }
+            }
+            span.text{
+              font-weight: 500;
+              padding-left: 6 * @rex;
+              text-transform: capitalize;
+            }
+
+            .usernameInput{
+                width: 300 * @rex;
+                text-align: left;
+                display: inline-block;
+                border:0 * @rex;
+                outline: none;
+                margin-left: 5 * @rex;
+                border-bottom: 1 * @rex solid @color-green-3;
+            }
+          }
+        }
+      }
+    }

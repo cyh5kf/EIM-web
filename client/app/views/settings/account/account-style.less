@@ -1,0 +1,751 @@
+@import url('../../../../less/_variables.less');
+@import (reference) '../../../../less/eim-deprecated.less';
+@import (reference) '../../../../less/eim-sprites.less';
+.manage-page{
+    margin: 0 auto;
+    color: #555459;
+    width: 960 * @rex;
+    font-size: 18 * @rex;
+}
+
+.accountSettingBox{
+    .icon-content-listview-account{
+        margin-right: 10 * @rex;
+    }    
+
+    .content {
+            background: #fff;
+            border-radius: 0 0 4 * @rex 4 * @rex;
+            box-shadow: 0 1 * @rex 0 rgba(0,0,0,.25);
+            padding: 32 * @rex 32 * @rex 16 * @rex;
+            margin: -1 * @rex auto 48 * @rex;
+            border: 1 * @rex solid #e8e8e8;
+            .displayBox.logonRecord{
+                padding: 0;
+            }
+            i.eim-back-nor{
+                position: absolute;
+                top: 10 * @rex;
+                left: 10 * @rex;
+                z-index: 2;
+                cursor: pointer;
+            }
+
+            .main-panel{
+                width: 100%;
+                margin: 0 * @rex 0 12 * @rex 0;
+                padding: 0 * @rex;
+                list-style-type: none;
+
+                >li{
+                    text-align: left;
+
+                    p.tips{
+                        margin: 6 * @rex 0 0;
+                        line-height: 1;
+                        width: 442 * @rex;
+                        text-align: left;
+                        font-size: 12 * @rex;
+                        color: #fa5f5f;
+                    }
+
+                }
+
+                
+            }
+            .disabledAccount{
+                margin: 0 auto;
+                text-align: center;
+                .disabledLabel {
+                    color: #323a3d;
+                    font-size: 24 * @rex;
+                    margin: 100 * @rex 0 84 * @rex 0;
+                }
+
+                .confirmDisableLabel {
+                    font-size: 14 * @rex;
+                    color: #797d7f;
+                }
+
+                .disabledMessage {
+                    color: #c1c1c1;
+                    font-size: 12 * @rex;
+                    line-height: 21 * @rex;
+                    margin: 16 * @rex 80 * @rex 10 * @rex 80 * @rex;
+                }
+
+                .bottomButtonBox{
+                    margin-top: 110 * @rex;
+                }
+            }
+            .logoffOthers{
+                margin: 0 auto;
+                text-align: center;
+
+                .logoffLabel {
+                    // color: #323a3d;
+                    font-size: 24 * @rex;
+                    line-height: 24 * @rex;
+                    margin: 100 * @rex 0 10 * @rex 0;
+                }
+
+                .logoffMessage {
+                    color: #797d7f;;
+                    font-size: 12 * @rex;
+                    margin: 0 0 70 * @rex;
+                    display: block;
+                    span{
+                        display: block;
+                        line-height: 1;
+                        margin-top: 6 * @rex;
+                    }
+                }
+
+                .bottomButtonBox{
+                    margin-top: 110 * @rex;
+                }
+
+                .inputPass {
+                    width: 280 * @rex;
+                    color: #323a3d;
+                    font-size: 14 * @rex;
+                    margin: 0 auto;
+                }
+
+                button.create {
+                    width: 144 * @rex;
+                    height: 32 * @rex;
+                    line-height: 32 * @rex;
+                    border: 0;
+                    color: #fff;
+                    padding: 0;
+                    margin: 0 auto;
+                    font-size: 12 * @rex;
+                    border-radius: 3 * @rex;
+                    background: #a068ab;
+                    box-sizing: border-box;
+                }
+            }
+            .hasDisabledCase,.hasLogoutCase{
+
+                .eim-no{
+                    line-height: 0;
+                    margin: 116 * @rex auto 40 * @rex auto;
+                }
+
+                .disabledLabel {
+                    font-size: 24 * @rex;
+                    color: #323a3d;
+                    line-height: 24 * @rex;
+                    text-align: center;
+                }
+            }
+
+            .notification{
+                float: none;
+                margin: 0px;
+                .notificationDesc{
+                    line-height: 24 * @rex;
+                    &.noticeTipLabel{
+                        padding-top: 10 * @rex;
+                        padding-bottom: 30 * @rex;
+                        border-bottom: 1 * @rex solid #e8e8e8;
+                    }
+                }
+
+                .sendNoticeLabel{
+                    line-height: 30 * @rex;
+                    font-size: 24 * @rex;
+                    font-weight: bold;
+                    margin-top: 31 * @rex;
+                    margin-bottom: 10 * @rex;
+                    &.additionSetting{
+                        margin-top: 50 * @rex;
+                    }
+                }
+
+                .secNoticeLabel {
+                    font-size: 20 * @rex;
+                    line-height: 24 * @rex;
+                    font-weight: bold;
+                    margin-top: 23 * @rex;
+   	                margin-bottom: 10 * @rex;
+                    &.narrow{
+                        margin-bottom: 0 * @rex;
+                    }
+                }
+
+                .receiveNewOption{
+                    margin-top: 15 * @rex;
+                    line-height: 28 * @rex;    
+                    font-size: 16 * @rex;
+                    input[type='checkbox']{
+                        position: relative;
+                        top: 2 * @rex;
+                        margin-right: 8 * @rex;
+                    }
+                }
+
+                .noticeSendEmaDesc {
+                    line-height: 24 * @rex;
+                    margin-top: 5 * @rex;
+                 }
+
+                 .noticeSendEmaLine {
+                    margin-top: 15 * @rex;
+                    a.link{
+                        font-size: 16 * @rex;
+                    }
+                }
+
+                .pushNoticeLoading,.notifyVoiceLoading{
+                    margin-top:8 * @rex;
+                    margin-left: 0 * @rex;
+                    position: absolute;
+                }
+
+                .sendEmailLoading,.sendNewTipLoading{
+                     margin-left:0;
+                }
+
+                .addtionalSettings{
+                    padding: 0 * @rex;
+                    list-style-type:none;
+                    >li.operationBox{
+                        position: relative;
+                        padding-right: 96 * @rex;
+                        padding-bottom: 30 * @rex;
+                        border-bottom: 1 * @rex solid #e8e8e8;
+                    }
+
+                    button.updateInvite {
+                        position: absolute;
+                        right: 0 * @rex;
+                        top: 5 * @rex;
+                        outline: none;
+                        line-height: 28 * @rex;
+                        font-size: 14 * @rex;
+                        font-weight: bold;
+                        padding: 0 * @rex 10 * @rex;
+                        border-radius: 4 * @rex;
+                        background: #fbfbfa;
+                        border: 1 * @rex solid #C7CACD;
+                    }
+
+                    >li:last-child{
+                        border-bottom: 0 * @rex;
+                    }
+                }
+
+                .markAsReadBox.optionList{
+                    margin-top: 15 * @rex;
+                }
+
+                .pushNoticeCase {
+                    .pushNoticeLine {
+                        float: left;
+                        .singleselect{
+                            .singleselect-search{
+                                border-color: #C5C5C5;
+                                &:hover{
+                                    border-color: #2780f8;
+                                }
+                            }
+
+                            .singleselect-search,ul.option-list > li{
+                                height: 36 * @rex;
+                                line-height: 36 * @rex;
+                            }
+                        }
+                    }
+
+                    .pushNoticeOptions{
+                        width: 422 * @rex;
+                        font-size: 16 * @rex;
+                    }
+
+                    .usedVoice{
+                        width: 308 * @rex;
+                        font-size: 16 * @rex;
+                        margin-left: 32 * @rex;
+                    }
+
+                    .pushLabel,.usedVoiceLabel {
+                        font-size: 14.4 * @rex;
+                        font-weight: bold;
+                        margin: 6 * @rex 0 * @rex;
+                    }
+
+                    .notifyTypeSelect,.notifySoundSelect{
+                        .rc-select-selection--single{
+                            height: 36 * @rex;
+                            line-height: 34 * @rex;
+                        }
+                    }
+
+                    i.ficon_volume_up {
+                        position: relative;
+                        font-size: 15 * @rex;
+                        top: -3 * @rex;
+                        margin-right: 6 * @rex;
+                    }
+
+                    .listenVoice{
+                        position: relative;
+                        top: 29 * @rex;
+                        left: 8 * @rex;
+                        float: left;
+                    }                    
+                }
+
+                .sendNoticeDesc {
+                    margin-top: 5 * @rex;
+                    line-height: 24 * @rex;
+                }
+
+                .sendEmailTome{
+                    margin-top: 15 * @rex;
+                    line-height: 24 * @rex;
+                }
+               
+
+                .messageSettingOptions {
+                    width: 100%;
+                    margin-top: 7 * @rex;
+                    font-size: 12 * @rex;
+                    .inputBoxLine{
+                        .remindWordSetting{
+                            width: 100%;
+                            min-height: 46 * @rex;
+                            line-height: 20 * @rex;
+                            font-size: 16 * @rex;
+                            border-radius: 4 * @rex;
+                            padding: 12 * @rex 8 * @rex 12 * @rex 12 * @rex;
+                            box-sizing: border-box;
+                            border: 1 * @rex solid #ccc;
+                        }
+                    }
+
+                    .highLightWordsTxt {
+                        color: #9e9ea6;
+                        font-size: 14.4 * @rex;
+                        line-height: 20 * @rex;
+                    }
+                    
+                }
+
+                .buttonBoxLine{
+                    display: inline-block;
+                    margin-top: 15 * @rex;
+                }
+
+                ul.optionList{
+                    margin-top: 4 * @rex;
+                    padding: 0 * @rex;
+                    >li {
+                        font-size: 16 * @rex;
+                        margin-bottom: 3 * @rex;
+                    }
+                }
+            }
+
+            .personalInfo{
+                .userHeadBox{
+                    margin: 94 * @rex auto 10 * @rex auto;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    line-height: 0;
+                    width: 100 * @rex;
+                    height: 100 * @rex;
+                    img{
+                        width:100%;
+                    }
+
+                    .eim-morentouxiang100 {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .userName{
+                    margin:10 * @rex 0;
+                }
+
+                circle{
+                    width: 8 * @rex;
+                    height: 8 * @rex;
+                    margin-right: 4 * @rex;
+                    display: inline-block;
+                    border-radius: 50%;
+                    background-color: #a068ab;
+
+                    &.logoff{
+                        background-color: #bcbebf;
+                    }
+                }
+
+                .userDetail {
+                    margin: auto;
+                    width: 230 * @rex;
+                    text-align: center;
+
+                    .buttonList{
+                        text-align: center;
+                        button{
+                            width: 43 * @rex;
+                            height: 28 * @rex;
+                            color: #c1c1c1;
+                            font-size: 12 * @rex;
+                            text-align: center;
+                            border-radius: 4 * @rex;
+                            border: 1 * @rex solid #ccc;
+                            background-color: #fff;
+
+                            &.btn_account {
+                                margin-left: 8 * @rex;
+                            }
+                        }
+                    }
+
+                    ul.userDetailsMsg {
+                        list-style-type: none;
+                        padding: 25 * @rex 0 0 0;
+                        margin: 35 * @rex 0 0 0;
+                        border-top: 1 * @rex solid #ddd;
+                        text-align: left;
+                        >li{
+                            >div{
+                                line-height: 28 * @rex;
+                                display: inline-block;
+                                &.labelText{
+                                    width: 75 * @rex;
+                                    color:#c1c1c1;
+                                    font-size:12 * @rex;
+                                    margin-left: 10 * @rex;
+                                }
+
+                                &.desc{
+                                    color:#323a3d;
+                                    font-size:12 * @rex;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .logonRecord{
+                    margin: 0;
+                    .headerLabel{
+                        line-height: 14 * @rex;
+                        font-size: 15 * @rex;
+                        color: #323a3d;
+                        padding: 0 10 * @rex;
+                        margin: 0 10 * @rex 30 * @rex 10 * @rex;
+                        -webkit-font-smoothing: auto;
+                        .displaylogonLabel {
+                            margin: 12 * @rex 0 12 * @rex 0;
+                        }
+
+                        .logonRecordLabel{
+                            margin: 0 0 20 * @rex 0;
+                            line-height: 25 * @rex;
+                            font-size: 18 * @rex;
+                        }
+                    }
+
+                    
+                    .splitPageLine{
+                        text-align: center;
+                        padding: 32 * @rex;
+                        border-top: @rex solid #dddddd;
+                        .splitPage{
+                            display: inline-block;
+                            padding: 0;
+                            margin: 0;
+                            .prev{
+                                border-radius: 5 * @rex 0 0 5 * @rex;
+                            }
+                            .next{
+                                border-radius: 0 5 * @rex 5 * @rex 0;
+                                border-right: 1px solid #e8e8e8;
+                            }
+                            .pageDisabled, .pageDisabled:hover{
+                                color: #9e9ea6;
+                                cursor: not-allowed;
+                                pointer-events: none;
+                                background-color: #fff;
+                                border-top: 1px solid #e8e8e8;
+                                border-bottom: 1px solid #e8e8e8;
+                            }
+                            li{
+                                display: inline;
+                                padding: 4 * @rex 12 * @rex;
+                                border-top: 1px solid #e8e8e8;
+                                border-bottom: 1px solid #e8e8e8;
+                                border-left: 1px solid #e8e8e8;
+                                color: #3aa3e3;
+                                cursor: pointer;
+                                
+                            }
+                            li:hover, .currentPage{
+                                color: #fff;
+                                background-color: #3aa3e3;
+                                border-top: 1px solid #3aa3e3;
+                                border-bottom: 1px solid #3aa3e3;
+                            }
+                        }
+                    }
+
+                    
+
+                    .logonContent{
+                        margin: 0 3 * @rex 0 10 * @rex;
+                        .logonRecordList{
+                             margin-right: 3 * @rex;
+                            .logonRecordLine {
+                                overflow: hidden;
+                                padding-top: 32 * @rex;
+                                padding-bottom: 32 * @rex;
+                                border-top: 1 * @rex solid #ddd;
+                                .logonDate {
+                                    float: left;
+                                    width: 32%;
+                                    font-weight: bold;
+                                }
+
+                                .logonList {
+                                    float: left;
+                                    width: 68%;
+                                    padding: 0 * @rex;
+                                    margin:0 * @rex;
+                                    list-style-type: none;
+                                    >li+li{
+                                        margin: 20 * @rex 0 * @rex 0 * @rex 0 * @rex;
+                                    }
+                                    .ficon_laptop{
+                                        font-size: 20 * @rex;
+                                    }
+
+                                    .logonLineTxt{
+                                        color:#555459;
+                                    }
+
+                                    .logonLineDesc{
+                                        font-size: 16 * @rex;
+                                        color: #9e9ea6;
+                                        margin-top: 4 * @rex;
+                                        line-height: 23 * @rex;
+                                        padding-right: 20 * @rex;
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
+
+            .teamSetting{
+                .headerLabel{
+                    color: #323a3d;
+                    font-weight: bold;
+                    line-height: 22 * @rex;
+                    margin: 5 * @rex 0 10 * @rex 0;
+                    -webkit-font-smoothing: auto;
+                }
+
+                .viewCompleted{
+                    margin-top: 12 * @rex;
+                    margin-bottom: 20 * @rex;
+                }
+
+                table.teamMemberList{
+                    width:100%;
+                    tr{
+                        height: 60 * @rex;
+                        border-bottom: 1 * @rex solid #e8e8e8;
+                        td{
+                            padding: 10 * @rex 0 * @rex 10 * @rex 0 * @rex;
+                            &:first-child{
+                                width: 56 * @rex;
+                                padding-left: 12 * @rex;
+                                padding-right: 8 * @rex;
+                                .userHead{
+                                    margin-top: 3 * @rex;
+                                    width: 36 * @rex;
+                                    height: 36 * @rex;
+                                    .avatar{
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: url('../../../../static/images/default_user_avatar.png') #fff;
+                                        background-size: contain;
+                                        border-radius: 3 * @rex;
+                                        border-bottom: 1 * @rex solid #666;
+                                    }
+                                    img{
+                                        border-radius: 3 * @rex;
+                                        max-width: 36 * @rex;
+                                        max-height: 36 * @rex;
+                                    }
+                                }
+                            }
+                            &:nth-child(2){
+                                .userName {
+                                    color: #555459;
+                                    font-weight: bold;
+                                    line-height: 20 * @rex;
+                                    .normal{
+                                        font-weight: normal;
+                                    }
+
+                                    .disowner-inblock{
+                                        color: #555459;
+                                        font-weight: normal;
+                                    }
+                                }
+
+                                .userTargetName {
+                                    line-height: 20 * @rex;
+                                    color: #c1c1c1;
+                                    .email{
+                                        color: #9e9ea6;
+                                    }
+                                }
+
+                                .upperUserName{
+                                    color: #797d7f;
+                                    padding-right: 0 * @rex;
+                                }
+
+                                .disowner-inblock{
+                                    position: relative;
+                                    top: 1 * @rex;
+                                    color: #9e9ea6;
+                                    font-style: normal;
+                                    margin: 0 * @rex 3 * @rex;
+                                    
+                                }
+                            }
+                            &:nth-child(3){
+                                color: #555459;
+                                width: 80 * @rex;
+                                font-size: 14 * @rex;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+}
+
+
+.signoutAccountBox{
+    i.ficon_sign_out {
+        color: #dfa941!important;
+        vertical-align: middle;
+        position: relative;
+        top: -6 * @rex;
+        margin-right: 5 * @rex;
+    }
+
+    .content {
+        background-color: #fff;
+        border-radius: 5 * @rex;
+        box-shadow: 0 1 * @rex 0 rgba(0,0,0,.25);
+        padding: 32 * @rex 32 * @rex 16 * @rex 32 * @rex;
+        margin: 0 auto 32 * @rex;
+        position: relative;
+        border: 1 * @rex solid #e8e8e8;
+
+        h4.signoutDesc {
+            font-size: 20 * @rex;
+            margin-bottom: 10 * @rex;
+        }
+
+        .signoutInfoDesc {
+            margin-bottom: 10 * @rex;
+        }
+
+        .resetedOptions {
+            padding-left: 33 * @rex;
+            >li{
+                line-height: 24 * @rex;
+            }
+        }
+
+        .resetPasswordLabel {
+            padding-top: 8 * @rex;
+        }
+
+        .signoutLine {
+            padding: 35 * @rex 0 * @rex 20 * @rex 0 * @rex;
+            font-weight: bold;
+            margin-top: 35 * @rex;
+            border-top: 1 * @rex solid #e8e8e8;
+            .inputPasswLine {
+                height: 37 * @rex;
+                margin-top: 18 * @rex;
+            }
+
+            .inputPassword{
+                width: 196 * @rex;
+                line-height: 35 * @rex;
+                padding: 0 * @rex 10 * @rex;
+                border-radius: 5 * @rex;
+                border: 1 * @rex solid #e8e8e8;
+            }
+
+            .signoutSessions {
+                height: 37 * @rex;
+                line-height: 37 * @rex;
+                margin-left: 12 * @rex;
+            }
+        }
+
+        
+
+    }
+}
+
+.signoutResultBox{
+    .signout_body {
+        background-color: #fff;
+        border-radius: .25rem;
+        box-shadow: 0 1 * @rex 0 rgba(0,0,0,.25);
+        padding: 2rem;
+        margin: 16 * @rex auto 2rem;
+        position: relative;
+        border: 1 * @rex solid #e8e8e8;
+
+        .resetAccountTitle {
+            line-height: 28 * @rex;
+            font-size: 24 * @rex;
+            font-weight: bold;
+        }
+
+        .resetAccountDesc {
+            line-height: 22 * @rex;
+            margin: 10 * @rex 0 * @rex 15 * @rex 0 * @rex;
+        }
+
+        .resetIntroduce {
+            line-height: 23 * @rex;
+            margin-bottom: 16 * @rex;
+        }
+        .sendMsgLinkLine{
+            margin-top: 10 * @rex;
+            margin-bottom: 10 * @rex;
+        }
+
+        i.ficon_share_email{
+            position: relative;
+            top:-3 * @rex;
+            margin-right: 8 * @rex;
+        }
+        
+    }
+}

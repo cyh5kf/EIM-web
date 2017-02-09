@@ -1,0 +1,246 @@
+@import url('_variables.less');
+@import "./_mixins.less";
+@import (reference) './eim-deprecated.less';
+
+.index-wrap{
+    .modal{
+        .modal-dialog{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -250 * @rex;
+            margin-top: -300 * @rex;
+            .modal-content{
+                width: 500 * @rex;
+                height: 600 * @rex;
+                .modal-header{
+                    position: relative;
+                    width: 100%;
+                    display: block;
+                    box-sizing: border-box;
+                    height: 42 * @rex;
+                    padding: 0;
+                    border-width: 0;
+                    .modal-backup{
+                        display: inline-block;
+                        margin: 13 * @rex;
+                        height: 19 * @rex;
+                        width: 18 * @rex;
+                        line-height: 19 * @rex;
+                        text-align: center;
+                        i.eim-back{
+                            display: inline-block;
+                            &:hover{
+                                width: 8px;
+                                height: 8px;
+                                background-position: -739px 0;
+                            }
+                        }
+                        
+                    }
+                    .modal-close{
+                            position: absolute;
+                            right: 13 * @rex;
+                            top: 13 * @rex;
+                            height: 19 * @rex;
+                            width: 18 * @rex;
+                            line-height: 19 * @rex;
+                            text-align: center;
+
+                            i.eim-rightdelete{
+                                display: inline-block;
+                                &:hover{
+                                    width: 12px;
+                                    height: 12px;
+                                    background-position: -956px 0;
+
+                                }
+                            }
+                    }
+                }
+                .modal-body{
+                    padding: 0;
+                    position: absolute;
+                    bottom: 0;
+                    top: 42 * @rex;
+                    left: 0;
+                    right: 0;
+                    .logo{
+                        display: block;
+                        background-image: url(../static/images/logo_100.png);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 100% auto;
+                        width: 100 * @rex;
+                        height: 100 * @rex;
+                        margin: 40 * @rex auto 0;
+                    }
+                    h4{
+                        display: block;
+                        font-size: 24 * @rex;
+                        color: #33393d;
+                        line-height: 1;
+                        text-align: center;
+                    }
+                    .modal-prompt-wrap{
+                        i{
+                            display: block;
+                            margin: 120 * @rex auto 0;
+                        }
+                        i.modal-prompt-succes{
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            width: 120 * @rex;
+                            height: 120 * @rex;
+                            background-image: url(../static/images/icon_done.png);
+                            background-size: 100% auto;
+                        }
+                        i.modal-prompt-failure{
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            width: 120 * @rex;
+                            height: 120 * @rex;
+                            background-image: url(../static/images/icon_fail.png);
+                            background-size: 100% auto;
+                        }
+
+                        h4{
+                            margin: 82 * @rex auto 0;
+                        }
+
+                        p{
+                            margin: 36 * @rex auto 0;
+                            padding: 0 5 * @rex;
+                            color: #797d7f;
+                            font-size: 14 * @rex;
+                            line-height: 1;
+                            text-align: center;
+                        }
+                    }
+                    .normal-modal-body{
+                        h4{
+                            margin: 82 * @rex auto 0;
+                        }
+                        .first-input{
+                            margin: 44 * @rex auto 0;
+                        }
+                    }
+                    .two-input-modal-body{
+                        h4{
+                            margin: 58 * @rex auto 0;
+                        }
+                        .first-input{
+                            margin: 44 * @rex auto 0;
+                        }
+                        .second-input{
+                            margin: 2 * @rex auto 0;
+                        }
+                    }
+                    .login-account-modal-body{
+                        h4{
+                            margin: 68 * @rex auto 0;
+                        }
+                        .first-input{
+                            margin: 110 * @rex auto 0;
+                        }
+                        .second-input{
+                            margin: 6 * @rex auto 0;
+                            p{
+                                margin: 50 * @rex 0 0 0;
+                            }
+                        }
+                        .checkbox-wrap{
+                            position: relative;
+                            margin: -51 * @rex auto auto;
+                            line-height: 1;
+                            width: 340 * @rex;
+                            .checkbox-label{
+                                height: 28 * @rex;
+                                // line-height: 28 * @rex;
+                                input[type='checkBox'].eim-deprecated {
+                                    cursor: pointer;
+                                    vertical-align: middle;
+                                    margin: -2 * @rex 6 * @rex 0 0;
+                                    outline: none;
+                                    border: 0px;
+                                    -webkit-appearance: none;
+                                    .eim-tuanduishezhi-xuanze();
+                                    &[data-checked='true']{
+                                        .eim-hover-tuanduishezhi-xuanze();
+                                    }
+                                }
+                            }
+                            a{
+                                position: absolute;
+                                right: 0;
+                                font-size: 12 * @rex;
+                                color: #a068ab;
+                            }
+                        }
+                    }
+                    .create-account-modal-body{
+                        h4{
+                            margin: 20 * @rex auto 0;
+                        }
+                        h5{
+                            margin: 10 * @rex auto 0;
+                            color: #33393d;
+                            font-size: 14 * @rex;
+                            text-align: center;
+                            line-height: 1;
+                        }
+                        .first-input{
+                            margin: 102 * @rex auto 0;
+                        }
+                        .other-input{
+                            margin: 26 * @rex auto 0;
+                        }
+                    }
+                    .registercomapny-laststep-modal-body{
+                        h4{
+                            margin: 18 * @rex auto 0;
+                        }
+                        .first-input{
+                            margin: 64 * @rex auto 0;
+                        }
+                        .other-input{
+                            margin: 8 * @rex auto 0;
+                        }
+                    }
+
+                    .messages {
+                        position: absolute;
+                        bottom: 40 * @rex;
+                        width: 340 * @rex;
+                        left: 50%;
+                        margin-left: -170 * @rex;
+                        color: #c1c1c1;
+                        font-size: 12 * @rex;
+                        text-align: center;
+                    }
+                    .error {
+                        position: absolute;
+                        bottom: 40 * @rex;
+                        width: 340 * @rex;
+                        left: 50%;
+                        margin-left: -170 * @rex;
+                        color: #fa5f5f;
+                        font-size: 12 * @rex;
+                        text-align: center;
+                    }
+
+                    .modal-button{
+                        position: absolute;
+                        bottom: 92 * @rex;
+                        left: 50%;
+                        margin-left: -170 * @rex;
+                        width: 340 * @rex;
+                        height: 40 * @rex;
+                    }
+
+                }
+            }
+        }
+    }
+}
+

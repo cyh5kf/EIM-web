@@ -1,0 +1,208 @@
+export default {
+    OK: 0, // 操作成功
+
+    DATABASE_ERROR: 1, // server端数据库异常
+
+    SESSION_TIMEOUTED: 2, // 旧版本中用于标识pipeKey/sessionKey不可用，
+
+    USER_NOT_EXISTED: 3, // 由于不想让用户知道是密码错误还是用户名不存在，所以一律返回该错误码
+
+    ERROR_SYSTEM: 4, // 系统错误，server端异常，一些没有其他Code的server异常，都可用该code
+
+    FAILED_ACCESS_RESOURCE: 5, // 资源访问失败
+
+    PERMISSION_DENIED: 6, // 该操作用户没有权限
+
+    INVALID_PARAM: 7, // 请求包含错误参数
+
+    INVALID_PROTOCOLBUFFER_EXCEPTION: 10, //
+
+    PASSWORD_ERROR: 18, //密码错误
+
+    USER_PROHIBIT: 19, //系统禁止登陆
+
+    USER_LOGINED_OTHERDEVICE: 20, //账户在其他地方登陆了
+
+    USER_TEMPPROHIBIT: 21, //系统临时禁止登陆,如IP过于频繁
+
+    USER_BAD_ACCESS_SERVER: 22, //错误的access_serever
+
+    USER_PROHIBIT_HINT: 23, //系统禁止登陆前提示
+
+    PARAM_TYPE_ERROR: 99, //参数的type不在枚举当中
+
+    //501~1000用户注册
+    //用户注册(501-600)
+    SIGNUP_INVALID_PHONE: 501, //手机号码无效
+    SIGNUP_PHONE_ALREADY_REGISTERED: 502, //手机号码已被注册
+    SIGNUP_PASSWORD_ALREADY_SET: 503, //密码已设置
+    SIGNUP_EXCEED_MAX_TOTAL: 504, //短信发送超过次数(未使用)
+    SIGNUP_INVALID_AUTHENTICODE: 505, //无效的验证码
+    SIGNUP_EXPIRED_AUTHENTICODE: 506, //验证码过期
+    SIGNUP_ERROR_INPUT_AUTHENTICODE: 507, //验证码错误
+    SIGNUP_FAILED_REGISTER: 508, //注册失败
+    SIGNUP_INVALID_GENDER: 509, //无效性别
+    SIGNUP_INVALID_TOKEN: 510, //无效的Device Token
+    SIGNUP_INVALID_PASSWORD: 511, //密码无效
+    SIGNUP_TOKEN_ALREADY_REGISTERED: 512, //Device Token已被注册
+    SIGNUP_INVALID_NICKNAME: 513, //无效昵称
+    SIGNUP_INVALID_USAGE: 514, //Validate Phone类型无效(usage: 1-注册 2-登录)
+
+    //In-App Verify(701~800)
+    VERIFY_APP_INVALID_PHONE: 701, //无效的手机号码
+    VERIFY_APP_PHONE_ALREAD_AUTHED: 702, //号码已被绑定
+    VERIFY_APP_INVALID_AUTHENTICODE: 703, //无效的验证码
+    VERIFY_APP_AUTHENTIINPUT_ERROR: 704, //验证码错误
+    VERIFY_APP_AUTHENTIEXPIRED: 705, //验证码已过期
+    VERIFY_APP_USER_ALREADY_AUTH_PHONE: 706, //用户已绑定手机
+
+    //Check Version(801~900)
+    CHECK_VERSION_INVALID_DEVICE_TYPE: 801, //无效的设备类型
+    CHECK_VERSION_INVALID_APP_VERSION: 802, //无效的版本号
+    REQIRED_PARAMETER: 900,
+    UNKNOWN_SERVICE: 901,
+    UNKNOWN_ACTION: 902,
+    UNKNOWN_CHARSET: 903,
+    SYSTEM_ERROR: 904,
+    NO_CREDENTIALS: 905,
+    RPC_CALL_ERROR: 906,
+    PROXY_RPC_CALL_ERROR: 906,
+    EMAIL_ILLEGAL_ERROR: 907,
+    TEXT_MSG_TOO_LONG: 909,
+
+    //1001~2000 分配给P2P消息
+    SENDP2P_NEEDFRIENDVERIFICATION: 1001, // 自己不在对方好友列表里，需要对方验证
+    SENDP2P_INVALIDMESSAGE: 1002, // 消息内容不正确，比如发送图片，但内容却为空
+    SENDP2P_MESSAGEALREADYSENT: 1003, // 该消息已发送过
+    SENDP2P_SENDMSG_TOOFREQUENT: 1004, //发送消息太快
+    SENDP2P_SEND_SMS_EXCEED_LIMIT: 1005, // 接收方不存在时 短信发送总次数超过限制
+    SENDP2P_SEND_SMS_FREQUENCY_LIMIT: 1006, // 接收方不存在时 短信发送频率过高
+    SENDP2P_SEND_SMS_BUCKET_LIMIT: 1007, // 接收方不存在时 一段时间内超过发送次数
+    SENDP2P_FREQUENTLY: 1008, // 客户端发送消息频率过高 超过一秒钟限制频率目前配置为10
+    SENDP2P_INVALID_ECCVERSION: 1009, // 接收方的ECC公钥已经变了
+    SENDP2P_ACK_MSGROW_NOT_FOUND: 1010, // 没有查到msgrow
+    SENDP2P_FROM_EQUALS_TO: 1011, // fromuid=touid
+    SENDP2P_FROM_USER_NOT_FOUND: 1012, // fromuid=touid
+    SENDP2P_TO_USER_NOT_FOUND: 1013, // fromuid=touid
+    SENDP2P_INVALID_EVENT_TYPE: 1014, //不支持的event type
+
+    //2001~3000 分配给FriendsApp，FriendService
+    FRIENDSHIP_BLOCKED: 2001, // 已被对方拉黑了
+    FRIENDSHIP_ALREADYFRIEND: 2002, // 已经是好友
+    FRIENDSHIP_INVALIDALIAS: 2003, // 好友的别名不合法
+    FRIENDSHIP_INVITEBYCLIENT: 2004, // 邀请短信须通过客户端发送
+
+    //3001~4000 分配给Group消息服务
+    GROUPCHAT_INVALID_PARAM: 3000, // 不合法参数
+    GROUPCHAT_USER_LIMIT_EXCEEDED: 3001, //超过群用户数量限制
+    GROUPCHAT_INVALID_GROUP_NAME: 3002, //不合法的群名称
+    GROUPCHAT_USER_ALREADY_IN_GROUP: 3003, //用户已经在群里
+    GROUPCHAT_MESSAGE_ALREADY_SENT: 3004, //消息已发送 重复发送
+    GROUPCHAT_WITHOUT_PERMISSION: 3005, //用户没有权限
+    GROUPCHAT_INVLID_GROUPID: 3006, //群ID不存在 (voip 复用)
+    GROUPCHAT_USER_NOT_EXISTED: 3007, //用户不存在
+    GROUPCHAT_FAILED_CREATE_GROUP: 3008, //创建群失败
+    GROUPCHAT_FAILED_ADD_GROUP_USER: 3009, //添加群用户失败
+    GROUPCHAT_INVALID_MESSAGE: 3010, //不合法的消息
+    GROUPCHAT_INVALID_GROUP_QRCODE: 3011, //二维码不存在
+    GROUPCHAT_SENDMSG_TOO_FREQUENT: 3012, //发送消息太快
+    GROUPCHAT_ALREADY_MANAGER: 3013, //已经是管理员了
+    GROUPCHAT_INVALID_DELETE: 3014, //不合法的删人操作
+    GROUPCHAT_GROUP_DUPLICATED_CREATE: 3015, //重复创建相同的群 (voip 不会使用此错误码)
+    GROUPCHAT_SHARE_LINK_EXPIRE: 3016, //share link 到期
+    GROUPCHAT_GROUP_NOT_EXIST: 3017, //群不存在
+    GROUPCHAT_INVALID_TOPIC: 3018, // TOPIC 长度不合法
+    GROUPCHAT_INVALID_PURPOSE: 3019, // PURPOSE 长度不合法
+
+    //4001~4500 AccountApp
+    ACCOUNT_APP_SETTING_ACCOUNT_TYPE_ERROR: 4001, //设置账户传入的type不存在
+    ACCOUNT_APP_USERNAME_EXISTED: 4002, // 用户名已存在
+    ACCOUNT_APP_INVALID__ID: 4003, //  id 不合法
+    ACCOUNT_APP_FORBIDDEN__ID: 4004, //  id 包含  instanza 等
+    ACCOUNT_APP_CHANGE__ID_BLOCKED: 4005, //  id 修改被屏蔽
+    ACCOUNT_APP__ID_EXISTED: 4006, //  id 已存在
+    ACCOUNT_APP_INVALID_STATUS: 4007, // 签名不合法
+    ACCOUNT_APP_INVALID_PASSWORD: 4008, // 密码不合法
+    ACCOUNT_APP_PASSWORD_NOT_CORRECT: 4009, // 原密码错误
+    ACCOUNT_APP_INVALID_DEVICE_TOKEN: 4010, // device token 不合法
+    ACCOUNT_APP_INVALID_EMAIL: 4011, // email 不合法
+    ACCOUNT_APP_USER_NOT_EXIST: 4012, // 搜索用户不存在
+    ACCOUNT_APP_INVALID_GENDER: 4013, // gender 不合法
+    ACCOUNT_APP_VERIFIED_EMAIL: 4014, // email 已经被人使用并激活
+    ACCOUNT_APP_ALREADY_VERIFIED_EMAIL: 4015, // email 已经被激活
+    ACCOUNT_APP_UID_LIST_EMPTY: 4016, // get simple  account list 输入参数为空
+    ACCOUNT_APP_NEW_PASSWORD_EMPTY: 4017, // new password empty
+    ACCOUNT_APP_INVALID_BIRTHDAY: 4018, // 生日设置不合法
+    ACCOUNT_APP_NAME_INVALID_LENGTH: 4019, //长度不合法
+    ACCOUNT_APP_NAME_CONTAINS_EMOJI: 4020, //包含emoji字符
+    ACCOUNT_APP_DATANOTCHANGED: 4021, //数据客户端与服务器一致没有变化
+    ACCOUNT_APP_MOBILE_INVALID: 4022, //用户手机输入手机和uid不一致
+    ACCOUNT_APP_TOO_MANY_FAV_GROUP: 4023, //超出添加GROUP数目
+    ACCOUNT_APP_RESET_PASSWORD_EXPIRED: 4024, //重置密码token过期
+    ACCOUNT_APP_NOT_FOUND_RESET_PASSWORD_TOKEN: 4026, //没有找到设置重置密码的token
+    ACCOUNT_APP_OLD_PASSWORD_NOT_RIGHT: 4027, //修改密码旧密码错误
+    ACCOUNT_APP_NOT_IN_SAME_COMPANY: 4028, //操作的不在同一个公司
+    ACCOUNT_APP_PERMISSIONS_REFUSED: 4029, //操作权限不够
+    ACCOUNT_APP_USER_IS_DISABLE: 4030, //用户是禁用的
+    ACCOUNT_APP_PARAM_RANGE_ILLEGAL: 4031, //参数范围不合法
+
+    //4500~5000 UDB
+    UDB_UNKNOW_ERROR: 4500, //请求UDB的未知错误
+    UDB_NOT_FIND_USERS_BY_IDS: 4501, //根据IDs没查找到用户
+    UDB_NOT_FIND_USER_BY_ID: 4502, //根据ID没查找到用户
+    UDB_NOT_FIND_COMPANY_BY_ID: 4503, //根据ID没查找到公司
+    UDB_NOT_FIND_USER_BY_EMAIL: 4504, //根据email没查找到用户
+    UDB_NOT_FIND_USERS_BY_EMAILS: 4505, //根据emails没查找到用户
+    UDB_NOT_FIND_RECENT_SESSION: 4506, //根据ID没查找到用户RecentSession
+    UDB_NOT_FIND_COMPANY_BY_DOMAIN: 4507, //根据ID没查找到公司
+    UDB_NOT_FIND_RESET_USER_PASSWORD: 4508, //没找到重置密码信息
+    UDB_NOT_FIND_CHECK_TOKEN: 4510, //没找到checktoken信息
+    UDB_VERIFY_TOKEN_NOT_RIGHT: 4511, //校验token不正确
+    UDB_VERIFY_TOKEN_EXPIRED: 4512, //校验token不正确
+    UDB_NOT_FIND_USER_BY_USERNAME: 4513, //根据USERNAME没查找到用户
+    UDB_EMAIL_DISABLED: 4514, //email不可用
+    UDB_NOT_IN_SAME_COMPANY: 4516, //不在同一个公司
+    UDB_USERNAME_DISABLED: 4517, //username不可用
+
+    //5001~6000 MSGSTORE
+    MSGSTORE_QUERY_CHATMSG_NOT_FOUND: 5001, //根据uid和msgid没有找到消息
+    MSGSTORE_CHATMSG_INSERT_IGNORE: 5002, //插入已存的chat_msg而ignore
+    MSGSTORE_UPDATE_FROM_READ_TO_RECEIVED: 5003, //企图将消息状态由已读改为已接收
+    MSGSTORE_LIST_CHATMSG_NOT_FOUND: 5004, //根据sessionid没找到历史消息
+    MSGSTORE_MARK_DEL_CHATMSG_FAILED: 5005, //mark del chatmsg 失败
+
+    //6001~7000  PHONE/SMS Service
+    PHONE_INVALIDNUMBER: 6003,
+    PHONE_FAILEDSENDSMS: 6004,
+    PHONE_FAILEDMAKEPHONE: 6005,
+
+    //7001~7500 organize service
+    ORGANIZE_NOT_FOUD_DEPT: 7001,
+    ORGANIZE_UNKNOW_ERROR: 7002, //请求ORGANIZE的未知错误
+    ORGANIZE_DEPT_NOT_ALLOW_DELETE: 7003, //公司部门-1不允许删除
+
+
+    //70001~75000 WSAccess
+    WSACCESS_USER_WEB_SOCKET_NOT_FIND: 70001,
+
+
+    // 17001~18000 speedyturn
+    // common errors
+    STURN_EXCEPTION: 17001, // exception
+    STURN_NULL_ADDRESS: 17002, // address is null
+    STURN_INVALID_ADDRESS: 17003, // invalid address
+    STURN_IN_PROCESSING: 17004, // in processing
+    STURN_PORT_UNREACHABLE: 17005, // port unreachable
+    STURN_PROFILE_NOT_EXISTS: 17006, // profile not exist
+    STURN_TASK_NOT_EXIST: 17007, // task not exist
+    STURN_TIMEOUT: 17008, //  timeout
+    STURN_NOT_SUPPORT: 17009, // not support
+    STURN_IN_USING: 17010, // alreay in using
+    STURN_INVALID_SEQNUM: 17011, // seq number is invalid
+
+    // stun error
+    STURN_STUN_CHECK_FAILED: 17040,
+
+    //room server errors
+    DUPLICATE_CREATE_ROOM: 18001
+}

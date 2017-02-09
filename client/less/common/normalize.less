@@ -1,0 +1,54 @@
+@import "../_variables";
+
+html{
+    font-size: 16px;
+}
+
+html,
+body{
+    margin:0;
+    padding: 0;
+    height:100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #555459;
+}
+
+body {
+    font-size: 14 * @rex;
+    line-height: 1.2;
+    overflow: hidden;
+}
+
+a, a:focus, a:visited {
+    text-decoration: none;
+    color: @-deprecated-color-text-blue-light;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    margin: 0 0 16*@rex;
+}
+h1 {
+    font-size: 32*@rex;
+    line-height: 40*@rex;
+    letter-spacing: -1px;
+}
+h2 {
+    font-size: 28*@rex;
+}
+h3 {
+    font-size: 24*@rex;
+    line-height: 28*@rex;
+}
+
+p {
+    margin: 0 0 16*@rex;
+}

@@ -1,0 +1,19 @@
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-sprites";
+@import "emoji";
+@import "emojifylist";
+
+.emojify-wrapper {
+  text-align: center;
+  .emojify-btn {
+    display: inline-block;
+    vertical-align: middle;   
+    cursor: pointer;
+    
+    .icon-message-button-action-expression();
+    &:hover{
+      .icon-message-button-action-expression-hover();
+      }
+  }
+
+}

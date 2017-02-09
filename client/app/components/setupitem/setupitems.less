@@ -1,0 +1,129 @@
+@import url('../../../less/_variables.less');
+.setupitems{
+    padding: 1rem 6rem 1rem 0;
+    position: relative;
+
+    &+.setupitems{
+        border-top: 1 * @rex solid #e8e8e8;
+    }
+
+    .top_margin {
+        margin-top: 1rem!important;
+    }
+    .accordion_expand.g_btn{
+        padding: 8 * @rex 14 * @rex 9 * @rex;
+        font-size: .9375rem;
+    }
+
+    .accordion_expand{
+        position: absolute;
+        top: 1rem;
+        right: 0;
+        text-transform: lowercase;
+    }
+    .accordion_subsection{
+        display: none;
+    }
+
+    .ladda-button{
+        font-weight: bold;
+    }
+
+    .timeZoneSelect{
+        margin-top: 11 * @rex;
+        margin-bottom: 12 * @rex;
+        .rc-select-selection--single{
+            height: 36 * @rex;
+            line-height: 34 * @rex;
+        }
+    }
+
+    .saveTimeButton{
+        margin-bottom: 14 * @rex;
+    }
+
+    .email_container{
+        margin-top: 15 * @rex;
+    }
+
+    input[type='text']{
+        font-size: 16 * @rex;
+        line-height: 24 * @rex;
+    }
+}
+
+.setupitems:last-child{
+    border-bottom: none;
+}
+
+.setupitems.open{
+    .accordion_subsection{
+        display: block;
+    }
+}
+
+
+.username_input_container{
+    position: relative;
+    &::before {
+        content: '@';
+        left: .75rem;
+        top: 5 * @rex;
+        line-height: 2.6rem;
+        position: absolute;
+        color: #9e9ea6;
+        font-size: 1.25rem;
+    }
+    
+    input.username_input{
+        padding-left: 32 * @rex;
+        width: auto;
+        line-height: 24 * @rex;
+        color: #555459!important;
+        margin-right: .5rem!important;
+    }
+
+    button.btn_large{
+        padding: 14 * @rex 32 * @rex 16 * @rex;
+        font-size: 1.25rem;
+        vertical-align: top!important;
+    }
+}
+
+
+.input_note {
+    font-size: .9rem;
+    line-height: 1.25rem;
+    color: #9e9ea6;
+}
+
+p.resetPassword{
+
+    .btn_small {
+        padding-top: 4 * @rex;
+        padding-bottom: 4 * @rex;
+        padding-left: 10 * @rex;
+        padding-right: 10 * @rex;
+        font-size: 14 * @rex;
+        border:1 * @rex solid #C5C5C5;
+    }
+}
+
+.password_input_container{
+    position: relative;
+    &.col {
+        display: block;
+        float: left;
+        margin: 0 0 2%;
+        padding-right: 2%;
+    }
+    &.span_1_of_2 {
+        width: 49.2%;
+    }
+
+    input[type='password']{
+        font-size: 16 * @rex;
+        line-height: 24 * @rex;
+    }
+    
+}

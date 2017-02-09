@@ -1,0 +1,176 @@
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-sprites";
+
+  .share-file-item, .search-file-item{
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0;
+    margin-left: 8 * @rex;
+    padding: 12 * @rex 0;
+    transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -webkit-transition: background 0.3s;
+
+    .pic-scan{
+      background-color: #f3f3f3;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 4 * @rex;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+
+      position: absolute;
+      left: 6 * @rex;
+      top: 10 * @rex;
+
+      width: 50 * @rex;
+      height: 50 * @rex;
+    }
+
+    .file-item-type{
+      position: absolute;
+      left: 6 * @rex;
+      top: 19 * @rex;
+
+      width: 38 * @rex;
+      height: 42 * @rex;
+
+      margin-right: 5 * @rex;
+
+      display: inline-block;
+      vertical-align: middle;
+
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;      
+    }
+
+    .file-item-info{
+      display: block;
+
+      flex: 1;
+      overflow: hidden;
+      vertical-align: middle;
+
+      min-height: 49 * @rex;
+
+      margin-left: 55 * @rex;
+      margin-right: 11 * @rex;
+
+      font-size: 13 * @rex;
+
+      &.hasimage{
+        margin-left: 67 * @rex;
+      }
+
+      .file-info-1,.file-info-2{
+          display: -webkit-box!important;
+          vertical-align: middle;
+      }
+
+      .file-author{
+        margin-right: 4 * @rex;
+        line-height: 20 * @rex;
+        font-size: 13 * @rex;
+        vertical-align: middle;
+        color: #00acc1;
+
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+
+      .file-size, .file-time{
+        display: inline;
+        font-size: 13 * @rex;
+        line-height: 20 * @rex;
+        color: #9991a0;
+        vertical-align: middle;
+      }
+
+      .file-name{
+        margin-bottom: 2 * @rex;
+        color: #555459;
+        font-size: 16 * @rex;
+        line-height: 20 * @rex;
+
+        vertical-align: middle;
+
+        display: -webkit-box!important;
+        -webkit-line-clamp: 2!important;
+        -webkit-box-orient: vertical!important;
+        
+        word-break: break-word;
+
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+
+      .share-info{
+        font-size: 13 * @rex;
+        line-height: 20 * @rex;
+        color: #9991a0;
+        vertical-align: middle;
+        padding-left: 3 * @rex;
+
+        .file-share-label{
+            cursor: pointer;
+            font-weight: 700;
+            line-height: 20 * @rex;
+            white-space: nowrap;
+            padding-left: 5 * @rex;
+
+            &:hover{
+            text-decoration: underline;
+            }
+        }
+    }
+}
+
+    .btn-container{
+      display: none;
+
+      position: absolute;
+      right: 5 * @rex;
+      top: 32 * @rex;
+    }
+
+    .operate{
+      display: inline-block;
+      margin-left: 5 * @rex;
+
+      vertical-align: middle;
+      width: 32 * @rex;
+      height: 32 * @rex;      
+      box-shadow: none;      
+
+      .operate-icon{
+        margin-left: 5 * @rex;
+        margin-top: 4 * @rex;
+
+        font-size: 18 * @rex;
+        color: #aeaeae;
+        vertical-align: middle;
+        text-align: center;
+        display: inline-block;
+      }
+
+      &:hover{
+        .operate-icon{
+          color: @color-green-3;
+        }
+      }
+    }
+
+    &:hover{      
+
+      .btn-container{
+        display: inherit;
+      }
+    }
+  }

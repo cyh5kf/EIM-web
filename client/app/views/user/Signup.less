@@ -1,0 +1,216 @@
+@media only screen and (max-height: 44rem) and (min-width: 767px) {
+    .signup_wrapper {
+        .fs_split {
+            display: table;
+            overflow: scroll;
+            .fs_split_pane {
+                display: table-cell;
+                vertical-align: top;
+                overflow: hidden !important;
+            }
+            .fs_split_pane_left {
+                min-height: 100%;
+                width: 486px;
+            }
+            .fs_split_pane_right {
+                width: 100%;
+                .fs_split_flex_wrapper {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .signup_wrapper {
+        .fs_split {
+            .fs_split_pane.fs_split_pane_left {
+                width: 100%;
+                min-width: inherit;
+                max-width: inherit;
+                overflow: scroll;
+                .show_on_mobile {
+                    display: block !important;
+                }
+            }
+            .fs_split_pane {
+                .fs_split_flex_wrapper {
+                    display: block;
+                    max-height: initial;
+                    max-width: 420px;
+                    margin: auto;
+                    .fs_split_body {
+                        padding: 0 1rem 3rem;
+                    }
+                }
+            }
+            .fs_split_pane_right {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 975px) and (min-width: 767px) {
+    .signup_wrapper {
+        .fs_split_pane_right {
+            .fs_split_header {
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.signup_wrapper {
+    position: relative;
+    height: 100%;
+    .fs_split {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #e8e8e8;
+        .fs_split_pane {
+            height: 100%;
+            .fs_split_flex_wrapper {
+                position: relative;
+                min-height: 100%;
+                font-size: 16px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .fs_split_body {
+                padding: 0 12%;
+                position: relative;
+                align-self: center;
+                max-width: 100%;
+                h1 {
+                    font-family: "DeskMo-Lato-light";
+                    font-size: 42px;
+                    color: #433A39;
+                    line-height: 54px;
+                    font-weight: normal;
+                    letter-spacing: 0;
+                    margin-bottom: 32px;
+                }
+                .textinput_wrap{
+                    margin-bottom: 32px;
+                }
+                .submit_btn {
+                    width: 100%;
+                }
+                .submit_btn:hover{
+                    box-shadow: none;
+                }
+            }
+            .fs_split_header {
+                align-self: flex-start;
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+        .fs_split_pane_left {
+            background-color: #fff;
+            color: #434245;
+            width: 50%;
+            min-width: 486px;
+            max-width: 624px;
+            float: left;
+            z-index: 1;
+            overflow-y: auto;
+            word-wrap: break-word;
+            .find_team_mobile {
+                align-self: flex-start;
+                text-align: center;
+                padding: .5rem;
+                width: 100%;
+                max-width: 100%;
+                border-bottom: 1px solid #e8e8e8;
+                font-size: .8rem;
+                line-height: 1rem;
+                .find_team_mobile_link {
+                    text-decoration: underline;
+                    color: #434245;
+                }
+            }
+            .show_on_mobile {
+                display: none;
+            }
+            .fs_split_body {
+                width: 100%;
+                .email_checkbox {
+                    font-weight: normal;
+                    display: inline-block;
+                    margin: 15px auto 0;
+                    cursor: pointer;
+                }
+            }
+            .fs_split_header {
+                text-align: left;
+            }
+        }
+        .desc {
+            font-size: 1.25rem;
+            color: #9e9ea6;
+            margin-bottom: 2rem;
+        }
+    }
+    .signup_flow {
+        background-color: #826863;
+    }
+    .fs_split_pane_right {
+        width: auto;
+        overflow: hidden;
+        .fs_split_flex_wrapper {
+            max-width: 750px;
+            margin: auto;
+            height: 100%;
+            .fs_split_body {
+                width: 100%;
+                flex: 1;
+                .signup_graphics {
+                    transition: opacity 0.2s, background-position 0.2s;
+                }
+                .fs_split_graphics {
+                    position: absolute;
+                    height: 100%;
+                    width: 76%;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    transition: height 0.5s ease-out 0s;
+                }
+                .companyemail_graphics {
+                    // background-image: url(../../static/index/step1-illi@2x.png);
+                }
+            }
+        }
+        .fs_split_header {
+            text-align: right;
+            z-index: 1;
+            color: #fff;
+            font-size: 1rem;
+            .find_team_link {
+                font-weight: normal;
+                color: #fff;
+                padding: .5rem 1.25rem;
+                line-height: 3rem;
+                border: 1px solid #fff;
+                text-decoration: none;
+                border-radius: .25rem;
+                margin-left: 0.5rem;
+            }
+            .find_team_link:hover {
+                background: #fff;
+                color: #555459 !important;
+            }
+        }
+    }
+}

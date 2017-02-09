@@ -1,0 +1,50 @@
+@import "../../../less/_variables";
+@import "../../../less/_mixins";
+
+.dlg-confirm .dialog-entity {
+  width: 560*@rex;
+  height: auto;
+
+  .header {
+    height: auto;
+    padding: 0 16*@rex;
+    line-height: 50*@rex;
+
+    .btn_close {
+      width: auto;
+      height: auto;
+      background: none;
+      line-height: normal;
+      font-size: 32*@rex;
+      line-height: 24*@rex;
+      font-weight: 700;
+      right: 16*@rex;
+      color: @-deprecated-color-text-secondary;
+      opacity: .25;
+      &:before {
+        content: 'x';
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .content {
+    padding: 16*@rex 15*@rex;
+  }
+
+  .footer {
+    position: static;
+    padding: 8*@rex 15*@rex 15*@rex;
+    height: auto;
+    .clear-float();
+    .button {
+      height: 36*@rex;
+      font-weight: 700;
+      &:not(:last-child) {
+        margin-right: 8*@rex;
+      }
+    }
+  }
+}

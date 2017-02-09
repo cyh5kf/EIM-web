@@ -1,0 +1,177 @@
+//频道列表--(组管理可能也能公用,所以提炼出来了)
+@import "./_variables.less";
+@import "./baselayout-mixin.less";
+@import "./_mixins";
+@import (reference) "./eim-sprites";
+
+.list-with-icon{
+    span.glyphicon{
+        margin:0 8 * @rex 0 2 * @rex;
+         font-size:12 * @rex;
+         font-family: inherit;                  
+         }
+
+    .list-header{
+        font-size:12.8 * @rex;
+        line-height: 20 * @rex;
+        font-weight:700;
+        height: 28 * @rex;            
+    }
+
+    .list-header{ 
+        
+        white-space: nowrap;
+        margin-top: 10 * @rex;
+        
+        .list-title{
+            color: #ab9ba9; 
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;   
+            
+            max-width: 125 * @rex;   
+        }     
+         
+        .icon-channels-button-action-add{
+            //.enlarge-icon-clickable-area();
+            cursor: pointer;
+                                
+            .icon-channels-button-action-add();
+            &:hover{
+                .icon-channels-button-action-add-hover();
+            }
+        }
+        
+        .glyphicon{
+           float: left;
+           top: 6 * @rex;
+           margin-right: 5 * @rex;
+           width: 12 * @rex;
+           height: 12 * @rex;
+           background-size: 100% auto;
+        }       
+    }
+    
+    li{
+        line-height: 24 * @rex;
+        display: block;
+        vertical-align: middle;
+
+        .channel-list-item{
+            border-top-right-radius: 4 * @rex;
+            border-bottom-right-radius: 4 * @rex;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+
+            width:100%;
+            display:block;
+            position: relative;
+            white-space: nowrap;
+            text-decoration:none;
+            // background:@channel-bg-color;
+            cursor: pointer;
+            
+            transition: background 0.3s;
+            -moz-transition: background 0.3s;
+            -webkit-transition: background 0.3s;
+                        
+            padding-left: 20 * @rex;
+            margin: 2 * @rex 0 2 * @rex 0;
+            
+            .glyphicon{                
+                overflow:hidden;
+                text-overflow:ellipsis; 
+                white-space:nowrap;
+                top: 2 * @rex;
+                margin: 0;
+                height: 18 * @rex;
+                line-height: 21 * @rex;
+                vertical-align: top;
+            }
+            
+            .channel-icon{                
+                width: 16 * @rex;
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5 * @rex;
+            }
+            
+            .newmessage-count{
+                position: absolute;
+                top: 3 * @rex;
+                background-color: #4c9789;
+                color: white;
+                font-size: 12 * @rex;
+                line-height: 18 * @rex;
+                padding-left: 4 * @rex;
+                padding-right: 4 * @rex;
+                border-radius: 8px;
+                -webkit-border-radius: 8px;
+            }
+
+            .channel-name{
+                vertical-align: middle;
+                top: -2 * @rex;
+                width: 120 * @rex;
+                height: 24 * @rex;
+
+                font-size: 14 * @rex;
+                line-height: 24 * @rex;
+            }
+
+            .channel-icon.private{
+                position: relative;
+                top: -2 * @rex;
+            }
+            
+            .icon-channels-button-action-cancel{
+                //display: inline-block;
+                position: absolute;
+                right: 1 * @rex;
+                cursor: pointer;
+
+                opacity: 0;
+                                                    
+                .icon-channels-button-action-cancel();
+                            
+                margin-top: 4 * @rex;
+                margin-right: 6 * @rex;
+            }
+            
+            .Group,.Mail{                
+                height: 24 * @rex;
+                line-height: 22 * @rex;
+            }
+        }
+        .channel-list-item:hover{            
+            background: @-deprecated-nav-hover-bg-color;
+            
+            .icon-channels-button-action-cancel{
+                opacity: 1;
+            }
+        }
+        .channel-list-item.active{          
+            background: @-deprecated-nav-active-bg-color;
+            color: @-deprecated-nav-active-font-color;
+            
+            .online-status-indicator.online{
+                color: white;
+            }
+            .online-status-indicator.offline{
+                color: #625361;
+            }        
+
+            &:hover{
+                .icon-channels-button-action-cancel{
+                    .icon-channels-button-action-cancel-hover();
+                }
+            }      
+        }
+
+        ul{
+           a{padding-left: 20 * @rex;}
+        }
+    }
+
+}

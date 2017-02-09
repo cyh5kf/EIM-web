@@ -1,0 +1,113 @@
+@import "../../../../less/_variables";
+@import "../../../../less/_mixins";
+
+.contact {
+  width: 290px;
+  border: 1px solid @color-border;
+  border-width: 0 1px 0 1px;
+  overflow-y: scroll;
+  .contact-member, .contact-group, .general-helper{
+  }
+  .head {
+    height: 56px;
+    padding-top: 19px;
+    margin-left: 12px;
+    color: @color-green-3;
+    font-size: 16px;
+    cursor: pointer;
+    .s2 {
+      font-size: 12px;
+      margin-left: 5px;
+    }
+    i{
+      float: right;
+      margin-right: 6px;
+    }
+    .ficon {
+      color: @color-coffee-2;
+    }
+  }
+  .current-session {
+    background-color: @color-bg-light;
+  }
+  .contact-group-item {
+    padding: 12px 12px 12px 62px;
+  }
+  .contact-member-item {
+    padding: 22px 12px 12px 62px;
+  }
+  .contact-group-item, .contact-member-item {
+    position: relative;
+    height: 62px;
+
+    cursor: pointer;
+
+    .session-logo {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      //background: url(../../../../static/images/default_user_avatar.png) center/cover no-repeat;
+      img {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+      }
+      .status-indicator {
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+    }
+
+    .session-detail {
+      white-space: nowrap;
+      .session-detail-first {
+        padding-bottom: 4px;
+        font-size: 16px;
+        color: @color-coffee-5;
+        .session-name {
+          padding-right: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 16px;
+        }
+      }
+      .session-detail-second {
+        .session-members-cnt {
+          font-size: 13px;
+          color: @color-text-light;
+        }
+      }
+    }
+  }
+
+  .online {
+    .status-indicator {
+      box-shadow: 0 0 0 2px @color-white;
+      background-color: @color-green-3;
+    }
+  }
+  .offline {
+    .status-indicator {
+      box-shadow: 0 0 0 2px @color-white;
+      border: 1px solid @color-coffee-11;
+      background-color: @color-white;
+    }
+    //.session-logo {
+    //  opacity: .5;
+    //  filter: grayscale(100%);
+    //}
+    //&:hover {
+    //  .session-logo {
+    //    opacity: 1;
+    //  }
+    //}
+  }
+}

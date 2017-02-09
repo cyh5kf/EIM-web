@@ -1,0 +1,402 @@
+.index_layout_component {
+    height: 100%;
+    nav.top {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 74px;
+        z-index: 99;
+        ul {
+            list-style-type: none;
+            margin: 0 25px 0 0;
+            padding: 0;
+            float: right;
+            line-height: 74px;
+            font-family: 'DeskMo-Lato-bold';
+            li {
+                display: inline-block;
+                .btn_sticky {
+                    display: inline-block;
+                    padding: 10px 14px 12px;
+                    line-height: 16px;
+                    text-decoration: none;
+                    color: #433A39;
+                    border-radius: 4px;
+                    font-size: 15px;
+                    margin-left: 17px;
+                    box-shadow: inset 0 0 0 2px #433A39;
+                }
+                .btn_sticky:hover {
+                    opacity: 0.69;
+                    background: rgba(67, 58, 56, 0.30);
+                }
+                a {
+                    color: #433A39;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 15px;
+                    margin-left: 9px;
+                    position: relative;
+                    cursor: pointer;
+                    line-height: 18px;
+                    padding: 8px 7px 9px;
+                    opacity: .8;
+                }
+                a:hover {
+                    opacity: 1;
+                    background: rgba(0, 0, 0, .1);
+                }
+            }
+        }
+        .logo {
+            float: left;
+            margin: 20px 0 0 1rem;
+            &:hover {
+                text-decoration: none;
+            }
+            .ficon_logo {
+                font-size: 30px;
+                color: #433A39;
+                line-height: 30px;
+            }
+        }
+        .toggle_mobile_menu {
+            display: none;
+            position: absolute;
+            right: 34px;
+            top: 22px;
+            .icon_bar {
+                background-color: #000;
+                width: 33px;
+                height: 3px;
+                transition: all .2s;
+                display: block;
+                border-radius: 1px;
+            }
+            .icon_bar+.icon_bar {
+                margin-top: 6px;
+            }
+            .top_bar {
+                transform-origin: 10% 10%;
+                transform: rotate(0);
+            }
+            .middle_bar {
+                opacity: 1;
+            }
+            .bottom_bar {
+                transform: rotate(0);
+                transform-origin: 10% 90%;
+            }
+        }
+        .toggle_mobile_menu:hover {
+            text-decoration: none;
+        }
+    }
+    &.index_nav {
+        nav.top {
+            position: absolute;
+            top: initial;
+        }
+    }
+    &.login_nav {
+        nav.top {
+            background: #FFFFFF;
+            box-shadow: 0px 1px 0px 0px #DEDEDE;
+            ul a {
+                color: #433A39;
+            }
+            ul a:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &.show_mobile_nav {
+        overflow: hidden;
+    }
+    .signup_c {
+        width: 100%;
+        min-height: 100%;
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        position: relative;
+        &.marsandbeyond {
+            background-image: url(../../../static/index/new-images/ic_bg_signin_1440-900.png);
+            background-color: #F3F6FB;
+        }
+    }
+    .email_tooltip {
+        max-width: 480px;
+        .popover-content {
+            padding: 15px 20px!important;
+        }
+        .tooltip_message {
+            background: #fff;
+            border-radius: 4px;
+            color: #F95B50!important;
+            opacity: 1!important;
+            line-height: 24px;
+            text-align: left;
+            font-size: 16px;
+        }
+    }
+}
+
+.login_nav {
+    .page_contents {
+        margin: 0 auto;
+        padding: 8rem 2rem;
+        .login_btn {
+            margin-top: 12px;
+            box-shadow: none;
+            width: 100%;
+        }
+        .visible_psd_wrap {
+            input {
+                padding-right: 20px!important;
+            }
+            .visible_psd {
+                position: absolute;
+                right: 0;
+                margin-top: 15px;
+                font-size: 20px;
+                line-height: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 2rem 2rem 1rem;
+        margin: 0 auto 2rem;
+        position: relative;
+        border: 1px solid #dedede;
+        h1 {
+            font-size: 30px;
+            color: #433A39;
+            font-weight: normal;
+            line-height: 36px;
+            margin: 0 auto 25px;
+        }
+    }
+    .card.card1 {
+        h1 {
+            margin: 0 auto 20px;
+        }
+        .title_desc {
+            margin: 0 auto 25px;
+            opacity: 0.5;
+            font-size: 16px;
+            color: #433A39;
+            line-height: 24px;
+            text-align: left;
+        }
+    }
+    .login_layout,
+    header {
+        width: 100%;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    }
+    .login_layout {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+        background: #f8f8f8;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .index_layout_component {
+        .signup_c {
+            background-size: contain;
+            background-position: center bottom;
+            padding: 4.25rem 0;
+            position: relative;
+            width: inherit;
+            &.marsandbeyond {
+                background-image: url(../../../static/index/new-images/ic_bg_signin_640.png);
+            }
+        }
+    }
+    .login_nav {
+        .page_contents {
+            width: 100%;
+            padding: 1rem .8rem;
+            margin-top: 4rem;
+        }
+        .card {
+            padding: 1rem;
+        }
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and only screen and (min-resolution: 192dpi) and only screen and (min-resolution: 2dppx) and only screen and (max-width: 640px) {
+    .index_layout_component {
+        .signup_c {
+            &.marsandbeyond {
+                background-image: url(../../../static/index/new-images/ic_bg_signin_640@2x.png);
+            }
+        }
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .index_layout_component {
+        .signup_c {
+            &.marsandbeyond {
+                background-image: url(../../../static/index/new-images/ic_bg_signin_1440-900@2x.png), url(../../../static/index/new-images/ic_bg_signin_128@1x.png);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .index_layout_component {
+        nav.top {
+            ul {
+                li {
+                    display: none;
+                }
+            }
+            .toggle_mobile_menu {
+                display: block;
+            }
+        }
+    }
+    .show_mobile_nav {
+        nav.top {
+            position: absolute;
+            top: 0!important;
+            bottom: 0;
+            width: 100%;
+            height: inherit;
+            background: #F3F6FB!important;
+            ul {
+                position: absolute;
+                top: 95px;
+                bottom: 0;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                float: none;
+                height: 100%;
+                li {
+                    display: block;
+                    padding: 0 38px;
+                    height: 64px;
+                    width: 100%;
+                    a,
+                    a.btn_sticky {
+                        opacity: 0.6;
+                        font-size: 19px;
+                        color: #433A39;
+                        width: 100%;
+                        text-align: left;
+                        line-height: 23px;
+                        margin: 0;
+                    }
+                    a.btn_sticky {
+                        padding: 8px 7px 9px;
+                        line-height: 23px;
+                        border: none;
+                        box-shadow: none;
+                    }
+                    a:hover,
+                    a.btn_sticky:hover {
+                        opacity: 1;
+                        background: rgba(67, 58, 57, 0.05);
+                    }
+                }
+                li.index_menu_active {
+                    a {
+                        color: #00ACC1;
+                    }
+                }
+            }
+            .toggle_mobile_menu {
+                .top_bar {
+                    transform-origin: 10% 10%;
+                    transform: rotate(45deg);
+                }
+                .middle_bar {
+                    opacity: 0;
+                }
+                .bottom_bar {
+                    transform: rotate(-45deg);
+                    transform-origin: 10% 90%;
+                }
+            }
+        }
+        .signup_c {
+            display: none;
+        }
+    }
+    .login_nav {
+        .signup_c {
+            .page_contents {
+                .col {
+                    margin: 0 0 2%;
+                    width: 100%!important;
+                    padding-right: 0;
+                }
+                .col + .col {
+                    margin-left: 0;
+                }
+                .navigator-tabs.bottom-bordered-style {
+                    width: 100%!important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 435px) {
+    .index_layout_component {}
+}
+
+@media only screen and (max-height: 567px) {
+    .index_layout_component {}
+}
+
+@media only screen and (max-height: 768px),
+screen and (max-width: 640px) {
+    .login_nav {
+        .page_contents {
+            padding: 6rem 2rem;
+        }
+    }
+}
+
+@media only screen and (max-height: 666px) {
+    .index_layout_component {}
+}
+
+@media only screen and (min-width: 1024px) {
+    .login_nav {
+        .page_contents {
+            width: 1024px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .login_nav {
+        .api .page_contents {
+            padding: 6.5rem 0;
+        }
+    }
+}
+
+@media only screen and (max-height: 768px) {
+    .login_nav {
+        .api .page_contents {
+            padding: 5.5rem 1rem;
+        }
+    }
+}

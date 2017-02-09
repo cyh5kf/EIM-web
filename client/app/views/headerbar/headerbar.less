@@ -1,0 +1,68 @@
+//应用上方--全局标题导航栏目
+@import "../../../less/_variables";
+@import "../../../less/baselayout-mixin.less";
+@import "../../../less/_mixins.less";
+.header-bar {
+    width: 100%;
+    height: 58 * @rex;
+
+    vertical-align: middle;
+    background-color: #776564;
+
+      .pull-left{
+        float: left;
+      }
+
+      //消息头-右侧-图标按钮
+      .icon-box {
+        margin-top: 12 * @rex;
+        overflow: hidden;
+
+        display: block;
+
+        .search-input-composer{
+            margin-right: 4 * @rex;
+        }
+
+        .icon-container:last-child {
+          margin-right: 18 * @rex;
+        }
+        .icon-container {          
+          margin-left: 6 * @rex; 
+          padding: 4 * @rex;         
+          color: @-deprecated-color-text-hint;
+
+          display: inline-block;
+          vertical-align: middle;
+          cursor: pointer;
+
+          .conversaton-opt{
+            display: block;
+
+            padding: 2px;
+            font-size: 16px;
+            color: white;
+          }
+
+          &:hover{
+            .btn-at{
+              color: @color-purple-2;
+            }
+
+            .btn-fav{
+              color: @-deprecated-color-text-search-highlight;
+            }
+
+            .btn-files{
+              color: @color-green-5;
+            }
+          }
+
+          &.active{
+            background-color: rgba(0,0,0,.2);
+            border-radius: 4px;
+          }
+        }
+      }
+}
+

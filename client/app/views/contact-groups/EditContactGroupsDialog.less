@@ -1,0 +1,255 @@
+@import "../../../less/_mixins";
+@import "../../../less/_variables";
+@import (reference) "../../../less/eim-deprecated";
+
+.dlg-edit-contact-group {
+  color: @-deprecated-color-text-secondary;
+
+  .content {
+    width: 640*@rex;
+    height: 100%;
+    margin: 0 auto;
+    padding: 198*@rex 0 24*@rex;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    flex-shrink: 0;
+    .button {
+      float: right;
+      font-size: 18px;
+      width: auto;
+      height: 36px;
+    }
+  }
+
+  .settings-content {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+
+    .cg-tab {
+      display: flex;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      background-color: @color-white;
+      &.has-cg-buttons {
+        @buttons-container-height: 80 * @rex;
+        padding-bottom: @buttons-container-height;
+        .cg-buttons {
+          @btn-height: 32 * @rex;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: @buttons-container-height;
+          padding-right: 24 * @rex;
+          padding-top: (@buttons-container-height - @btn-height) / 2;
+          border-top: 1px solid #f5f5f5;
+          background-color: @-deprecated-color-lightest;
+          text-align: right;
+          .button {
+            height: @btn-height;
+            margin-left: 12 * @rex;
+            font-size: 12 * @rex;
+          }
+        }
+      }
+
+      .tab-back-icon.eim-back-nor {
+        .enlarge-icon-clickable-area(20 * @rex);
+        cursor: pointer;
+        &:hover {
+          .eim-back-hover();
+        }
+      }
+    }
+
+    .edit-tab-animator > .cg-tab,
+    .tab-add-group .creating-group-members-animator .cg-tab {
+      transition: transform 500ms;
+      transform: translate(100%, 0);
+    }
+    .edit-tab-animator.active > .cg-tab,
+    .tab-add-group .creating-group-members-animator.active .cg-tab {
+      transform: translate(0, 0);
+    }
+    &.disable-animation .edit-tab-animator .cg-tab {
+      transition: none;
+    }
+
+
+    ///////////////////
+    .tab-group-list {
+      .wg-search-input {
+        margin-bottom: 18 * @rex;
+        height: 32 * @rex;
+      }
+
+      .group-item-list {
+        flex-grow: 1;
+        line-height: 1;
+        font-size: 14 * @rex;
+        overflow: auto;
+        border-top: 1px solid @-deprecated-color-split-line;
+        .group-item {
+          position: relative;
+          padding: 18* @rex 24*@rex 18*@rex 16*@rex;
+          border-radius: 4 * @rex;
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1 * @rex;
+            background-color: @-deprecated-color-split-line;
+          }
+          .group-item-title {
+            display: flex;
+            line-height: 20 * @rex;
+            .group-name {
+              font-weight: bold;
+              .highlight {
+                color: #f9ba56;
+              }
+            }
+          }
+
+          &.enabled-group {
+            &:hover:after {
+              background-color: @-deprecated-color-border-active;
+            }
+            .group-item-title {
+              padding-bottom: 5 * @rex;
+              .group-name {
+                color: @-deprecated-color-text-default;
+                padding-right: 10 * @rex;
+              }
+              .group-name-alt {
+                flex-grow: 1;
+                color: @-deprecated-color-light;
+              }
+              .group-member-cnt {
+                display: flex;
+                color: @-deprecated-color-text-hint;
+                .eim-chengyuan {
+                  margin-right: 5 * @rex;
+                }
+              }
+              .group-item-actions {
+                display: none;
+                .group-item-act {
+                  &:nth-child(n+2) {
+                    margin-left: 4 * @rex;
+                  }
+                  cursor: pointer;
+                }
+                .eim-jinzhi:hover {
+                  .eim-hoverjinzhi();
+                }
+                .eim-settingcopy:hover {
+                  .eim-settingcopy2();
+                }
+                .eim-chengyuan:hover {
+                  .eim-chengyuancopy();
+                }
+              }
+            }
+            .group-desc {
+              padding-bottom: 5*@rex;
+              font-size: 12 * @rex;
+              color: @-deprecated-color-light;
+            }
+            .group-creator {
+              font-size: 12 * @rex;
+              color: @-deprecated-color-text-hint;
+            }
+
+            &:hover {
+              background-color: #f7f7f7;
+              .group-member-cnt {
+                display: none;
+              }
+              .group-item-actions {
+                display: flex;
+              }
+            }
+          }
+
+          &.disabled-group {
+            padding: 16 * @rex 8 * @rex;
+            .group-item-title {
+              color: @-deprecated-color-text-hint;
+              .disabled-desc {
+                flex-grow: 1;
+                font-size: 12 * @rex;
+              }
+              .group-item-actions {
+                display: flex;
+                .group-item-act {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    ///////////////////
+    .tab-add-edit-group {
+      .tab-back-icon {
+        margin-bottom: 4 * @rex;
+      }
+      .tab-setting-title {
+        line-height: 1;
+        padding-top: 20 * @rex;
+        font-size: 16 * @rex;
+        font-weight: bold;
+        color: @-deprecated-color-text-default;
+      }
+      .tab-setting-hint {
+        line-height: 1;
+        padding-top: 6 * @rex;
+        font-size: 12 * @rex;
+        color: @-deprecated-color-text-hint;
+      }
+      .tab-setting-input {
+        margin-top: 8 * @rex;
+      }
+      .users-selector {
+        margin-top: 8*@rex;
+        .rc-select-selection {
+          height: 34*@rex;
+          line-height: 34*@rex;
+        }
+      }
+    }
+
+
+    ////////////////
+    .tab-edit-group-members {
+      .tab-header {
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        padding-bottom: 28 * @rex;
+        .tab-back-icon {
+          margin-right: 20 * @rex;
+        }
+      }
+
+      .rc-select-selection {
+        min-height: 70 * @rex;
+      }
+    }
+  }
+}

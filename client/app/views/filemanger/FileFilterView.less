@@ -1,0 +1,96 @@
+@import "../../../less/_variables";
+@import "../../../less/_mixins";
+
+.file-filter-result-panel {
+    .filter-button-list{            
+            .bottom-btn{               
+                .btn-filter-pop{
+                    cursor: pointer;
+                    margin-left: 10px;
+                    font-size: 12px;
+
+                    display: inline-block;
+                    transform: scale(.6);
+                    .enlarge-icon-clickable-area(40px);
+                }
+            }
+        }
+
+    .msg-list {
+        top: 48 * @rex !important;
+
+        padding-top: 10 * @rex;
+    }
+}
+
+.file-display-view{
+    .panel-title{
+        padding-bottom: 5 * @rex;
+    }
+}
+
+.userCheckPopover{
+    border-radius: 0 0 6 * @rex 6 * @rex;
+    border-top: 0;
+    margin-top: 0 !important;
+    margin-left: -8px;
+
+    .arrow{
+        display: none;
+    }
+
+    .popover-content{
+        padding: 9px 0 0 0;
+
+        .member-filter{
+            padding-left: 12px;
+            padding-right: 12px;
+            .wg-search-input{                
+                input{
+                    border-radius: 15 * @rex;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                }
+            }
+        }
+        
+    }
+    .menu-items-scroller{
+        max-height: 450 * @rex;
+        overflow-y: auto;
+
+        .menu-items{
+            padding-top: 10 * @rex;                  
+        }
+        
+
+        .member-item{
+            cursor: pointer;
+
+            .item-content{                
+                padding: 2 * @rex 5 * @rex 2 * @rex 12px;
+
+                max-width: 200 * @rex;
+                
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }      
+
+            &:hover{
+                background-color: @color-bg-light;                      
+            }
+
+            .member-avatar {
+                display: inline-block;
+                vertical-align: middle;
+                width: 22*@rex;
+                height: 22*@rex;
+                margin-right: 5*@rex;
+                background: url(../../../static/images/default_user_avatar.png) center/cover no-repeat;
+                border-radius: 50%;
+            }
+        }
+        
+    }
+}

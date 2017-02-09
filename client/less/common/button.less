@@ -1,0 +1,68 @@
+@import "../_variables.less";
+
+.button-color(@normal: '', @hover: '', @active: '') {
+    background-color: @normal;
+    & when (@hover) {
+        &:hover {
+            background-color: @hover;
+        }
+    }
+    & when (@active) {
+        &:active {
+            background-color: @active;
+        }
+    }
+}
+
+.button {
+    cursor: pointer;
+    min-width: 108 * @rex;
+    height: 32 * @rex;
+    color: @color-white;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0 14*@rex;
+    font-size: 15*@rex;
+    line-height: normal;
+
+    border: none;
+    background-color: gray;
+    outline: 0;
+}
+
+.button-simple {
+    color: @-deprecated-color-text-secondary;
+    border: 1px solid @-deprecated-color-border;
+    .button-color(#fbfbfa, @color-white);
+    &:hover {
+        color: #3aa3e3;
+    }
+}
+
+.button-purple {
+    .button-color(@-deprecated-color-btn-purple, @-deprecated-color-btn-purple-hover, @-deprecated-color-btn-purple-active);
+}
+
+.button-gray {
+    .button-color(@-deprecated-color-btn-gray, @-deprecated-color-btn-gray-hover, @-deprecated-color-btn-gray-active);
+}
+
+.button-black {
+    background-color: @-deprecated-color-btn-black;
+}
+
+.button-green {
+    background-color: @-deprecated-color-bg-green;
+}
+
+.button-red {
+    background-color: @-deprecated-color-bg-red;
+}
+
+.button-disabled,
+.button:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.35;
+    .button-color(@-deprecated-color-btn-disabled, @-deprecated-color-btn-disabled, @-deprecated-color-btn-disabled);
+}

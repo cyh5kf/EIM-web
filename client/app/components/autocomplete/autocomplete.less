@@ -1,0 +1,46 @@
+@import url('../../../less/_variables.less');
+.autocomplete{
+    @width: 996 * @rex;
+    width: @width;
+    max-width: @width !important;
+    margin-left: 0;
+    
+    margin-top: 0 !important;
+    .arrow {display: none}
+
+    .wrapper{
+         width: @width;
+         position: relative;
+         z-index: 100001;
+        .header{
+            padding: 5*@rex 10*@rex 4*@rex;
+            background: #FaF8F6;
+            color: #7F7F83;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: .75rem;
+            border-bottom: 1*@rex solid rgba(0,0,0,.15);
+            background-clip: padding-box;
+            border-radius: 6*@rex 6*@rex 0 0;
+        }
+
+        .list {
+            max-height: 400 * @rex;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .rc-menu{
+            border: 0; 
+            box-shadow:none;
+            border-radius: 0; 
+        }
+    }
+
+    
+
+    .popover-content {
+         width: 49.6rem;
+         padding: 0;
+    }
+
+}

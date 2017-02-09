@@ -1,0 +1,312 @@
+@import url('../../../../less/_variables.less');
+
+.setupitem{
+    margin: 0 auto 4 * @rex;
+    padding: 8 * @rex 8 * @rex;
+    position: relative;
+    display: block;
+     
+    button{
+        width: 64 * @rex;
+        height: 28 * @rex;
+        line-height: 25 * @rex;
+        border: 0;
+        border-radius: 4 * @rex;
+        font-size: 12 * @rex;
+        color: #fff;
+    }
+
+    input[type='text']{
+        height: 28 * @rex;
+        line-height: 28 * @rex;
+        color:#797d7f;
+        font-size:12 * @rex;
+        border-radius: 4 * @rex;
+        padding-left: 10 * @rex;
+        box-sizing: border-box;
+        border: 1 * @rex solid #ccc;
+    }
+
+
+    input,button,textarea{
+        outline: medium;
+    }
+
+    &.opened{
+        border-radius: 5 * @rex;
+        background-color:#f7f7f7;
+    }
+    
+    &:hover{
+        border-radius: 5 * @rex;
+        background-color:#f7f7f7;
+        button.fixBtn {
+            display: inline-block;
+        }
+    }
+
+    .setupItemHeaderWrap{
+        width: 100%;
+        .setupItemHeader{
+            h4.setupItemTitle{
+                font-weight: bold!important;
+                font-size:16 * @rex;
+                color:#33393d;
+                line-height: 1;
+                font-weight: normal;
+                margin: 0 0 8 * @rex;
+                padding: 0;
+            }
+            p.setupItemSubtitle{
+                color: #c1c1c1;
+                font-size: 12 * @rex;
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .fixBtn{
+            position: absolute;
+            top: 50%;
+            right: 10 * @rex;
+            color: #fff;
+            display: none;
+            margin-top: -14 * @rex;
+            background: #555e65;
+            &.otherOperateBtn{
+                width: auto;
+
+            }
+        }
+    }
+
+    .setupItemContentWrap{
+        position: relative;
+        .setupItemContent{
+            position: relative;
+            width: 467 * @rex;
+            display: inline-block;
+            & > div{
+                margin: 8 * @rex 0 0;
+            }
+        }
+        .setupItemFooter{
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-top: 8 * @rex;
+            button.closeBtn{
+                background: #bcbebf;
+            }
+
+            button.saveBtn{
+                margin-left: 8 * @rex;
+                background: #a068ab;
+            }
+        }
+
+        &.MultiSetupItemContentWrap{
+            .setupItemContent{
+                width: 100%;
+                display: block;
+            }
+            .setupItemFooter{
+                position: static;
+                display: block;
+            }
+        }
+    }
+}
+
+.settingItem{
+    margin: 0 auto 4 * @rex;
+    padding: 16 * @rex 96 * @rex 16 * @rex 0 * @rex;
+    position: relative;
+    display: block;
+    border-top: 1 * @rex solid #e9e9e9;
+    button{
+        width: 64 * @rex;
+        height: 28 * @rex;
+        line-height: 25 * @rex;
+        border: 0;
+        border-radius: 4 * @rex;
+        font-size: 12 * @rex;
+        color: #fff;
+    }
+    .signout_session.g_btn{
+        width: auto;
+        height: 2.25rem;
+        font-size: 0.9375rem;
+    }
+
+    input[type='text']{
+        width:100%;
+        height: 48 * @rex;
+        line-height: 48 * @rex;
+        color:#797d7f;
+        font-size:16 * @rex;
+        border-radius: 4 * @rex;
+        padding-left: 10 * @rex;
+        box-sizing: border-box;
+        border: 1 * @rex solid #ccc;
+    }
+
+    .usernameLine {
+        overflow: hidden;
+        height: 48 * @rex;
+        input.username{
+            float: left;
+            width: 255 * @rex;
+            height: 48 * @rex;
+            position: relative;
+            &::before{
+                content:'@';
+                left: 12 * @rex;
+                line-height: 48 * @rex;
+                position: absolute;
+                color: #9e9ea6;
+            }
+        }
+
+        button.saveName {
+            float: left;
+            margin-left: 10 * @rex;
+            width: 106 * @rex;
+            height: 48 * @rex;
+            color: #fff;
+            line-height: 48 * @rex;
+            font-size: 20 * @rex;
+            font-weight: bold;
+            background: #2ab27b;
+        }
+    }
+
+    .ficon_sign_out{
+        position: relative;
+        top:-2 * @rex;
+    }
+
+    .signout_session {
+        padding: 0 47 * @rex!important;
+    }
+
+    &.no_right_padding {
+        padding-right: 0 * @rex;
+    }
+
+    .signout_session_line{
+        display: flex;
+        padding-top: 4 * @rex;
+        align-items: center;
+        .sign_descp{
+            flex-grow: 1;
+            line-height: 23 * @rex;
+            margin-right: 30 * @rex;
+        }
+
+        .inacitve_button{
+            font-size: 15px;
+            padding: 8px 60px 9px 60px;
+            height: auto;
+            width: auto;
+        }
+    }
+
+    .note_messsge_desc {
+        color: #9e9ea6;
+        width: 68%;
+        margin-top: 15 * @rex;
+    }
+
+    .userNameDesc {
+        color: #9e9ea6;
+        margin-top: 20 * @rex;
+    }
+
+    .usernameNotice{
+        color: #9e9ea6;
+        margin-top:10 * @rex;
+    }
+
+
+    input,button,textarea{
+        outline: medium;
+    }
+
+    .setupItemHeaderWrap{
+        width: 100%;
+        .setupItemHeader{
+            h4.setupItemTitle{
+                font-size:20 * @rex;
+                font-weight: bold!important;
+                color:#33393d;
+                line-height: 1;
+                font-weight: normal;
+                margin: 0 0 8 * @rex;
+                padding: 0;
+            }
+            p.setupItemSubtitle{
+                color: #555459;
+                font-size: 18 * @rex;
+                line-height: 28 * @rex;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .fixBtn{
+            position: absolute;
+            top: 16 * @rex;
+            right: 0 * @rex;
+            height: 36 * @rex;
+            width: 77 * @rex;
+            font-size: 15 * @rex;
+            line-height: 34 * @rex;
+            border-radius: 5 * @rex;
+            border: 1 * @rex solid #C7CACD;
+            background: #fbfbfa;
+            color: #555459;
+            &.otherOperateBtn{
+                width: auto;
+            }
+        }
+    }
+
+    .setupItemContentWrap{
+        position: relative;
+        .setupItemContent{
+            position: relative;
+            & > div{
+                margin: 8 * @rex 0 0;
+            }
+        }
+        .setupItemFooter{
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-top: 8 * @rex;
+            button.closeBtn{
+                background: #bcbebf;
+            }
+
+            button.saveBtn{
+                margin-left: 8 * @rex;
+                background: #a068ab;
+            }
+        }
+
+        &.MultiSetupItemContentWrap{
+            .setupItemContent{
+                width: 100%;
+                display: block;
+            }
+            .setupItemFooter{
+                position: static;
+                display: block;
+            }
+        }
+    }
+}
